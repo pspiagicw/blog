@@ -29,8 +29,8 @@
 
 
 
-  <link rel="shortcut icon" href="https://blog.pspiagicw.xyz/img/theme-colors/orange.png">
-  <link rel="apple-touch-icon" href="https://blog.pspiagicw.xyz/img/theme-colors/orange.png">
+  <link rel="shortcut icon" href="https://blog.pspiagicw.xyz/img/theme-colors/green.png">
+  <link rel="apple-touch-icon" href="https://blog.pspiagicw.xyz/img/theme-colors/green.png">
 
 
 
@@ -46,7 +46,7 @@
 <meta property="og:site_name" content="forked" />
 
   
-    <meta property="og:image" content="img/favicon/%!s().png">
+    <meta property="og:image" content="https://blog.pspiagicw.xyz/img/favicon/green.png">
   
 
 <meta property="og:image:width" content="1200">
@@ -69,7 +69,7 @@
 
 
 </head>
-<body class="">
+<body class="green">
 
 
 <div class="container center headings--one-size">
@@ -92,6 +92,10 @@
       
         
           <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/devlog">DevLog</a></li>
         
       
         
@@ -125,6 +129,10 @@
       
         
           <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/devlog">DevLog</a></li>
         
       
         
@@ -192,11 +200,40 @@
 <p>Matplotlib provides easy and efficient way of creating graphs.It is a python module , so you need <code>pip</code> to install it. <code>Pip</code> is python&rsquo;s modular structure allowing , us to share our code with others.</p>
 <p><code>pip</code> can install any module from PyPI , python&rsquo;s official module location , or as cool people call it repository.
 To install use <code>pip install</code> command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Installing matploblib</span>
-</span></span><span style="display:flex;"><span>pip install --user matplotlib
-</span></span></code></pre></div><p>Now that matplotlib is installed. We have to import it in Python , <strong>importing</strong> in python is easy!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib
-</span></span></code></pre></div><p>But we don&rsquo;t need to import matplotlib itself, <code>matplotlib.pyplot</code> provides most of the features we need. The rest of matplotlib can be used to create extremely complex graphs.
+
+
+
+  <div class="collapsable-code">
+    <input id="362819547" type="checkbox"  />
+    <label for="362819547">
+      <span class="collapsable-code__language">shell</span>
+      <span class="collapsable-code__title">Installing matplotlib</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-shell" ><code>
+pip install --user matplotlib
+</code></pre>
+  </div>
+
+
+<p>Now that matplotlib is installed. We have to import it in Python , <strong>importing</strong> in python is easy!</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="1" type="checkbox"  />
+    <label for="1">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">Importing matplotlib</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-python" ><code>
+import matplotlib
+</code></pre>
+  </div>
+
+
+<p>But we don&rsquo;t need to import matplotlib itself, <code>matplotlib.pyplot</code> provides most of the features we need. The rest of matplotlib can be used to create extremely complex graphs.
 Pyplot is inspired from <em>MATLAB</em> . If you have used <em>MATLAB</em> before , it has the same API.
 This guide only focuses on PyPlot API , for a more object-based approach , see matplotlib&rsquo;s documentation, or refer to this guide.</p>
 <h3 id="important-funcs">Important Funcs<a href="#important-funcs" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
@@ -220,12 +257,27 @@ To alias pyplot to plt</p>
 </span></span></code></pre></div><h3 id="basic-plotting">Basic Plotting<a href="#basic-plotting" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 <p>For plotting basic lines , <code>plt.plot()</code> function is enough, it takes list of x and y coordinates as arguments.</p>
 <p>Plotting points (3,2),(5,4) and (4,1).Keep in mind plot method connects all the dots with a line.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x_coordinates <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">3</span> , <span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">4</span>]
-</span></span><span style="display:flex;"><span>y_coordinates <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">2</span> , <span style="color:#ae81ff">4</span> , <span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Points (3,2),(5,4),(4,1)</span>
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(x_coordinates,y_coordinates)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p>The graph created is</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="861937542" type="checkbox"  />
+    <label for="861937542">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">Plotting a line graph</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-python" ><code>
+x_coordinates = [ 3 , 5 , 4]
+y_coordinates = [ 2 , 4 , 1]
+# Points (3,2),(5,4),(4,1)
+plt.plot(x_coordinates,y_coordinates)
+plt.show()
+</code></pre>
+  </div>
+
+
+<p>The graph created is</p>
 
   <figure class="left" >
     <img src="/images/simple-plot-matplotlib.png"   />
@@ -240,12 +292,27 @@ To alias pyplot to plt</p>
 <p>Scatter plot are very useful in showing actual points , thus analyzing them separately.
 It also takes list of x and y coordinates as arguments.</p>
 <p>Showing (2,6),(4,5),(1,8) and (3,6) on a graph is easy.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x_coordinates <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">2</span> , <span style="color:#ae81ff">4</span> , <span style="color:#ae81ff">1</span> , <span style="color:#ae81ff">3</span> ]
-</span></span><span style="display:flex;"><span>y_coordinates <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">6</span> , <span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">8</span> , <span style="color:#ae81ff">6</span> ]
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Points (2,6) , (4,5) , (1,8) and (3,6)</span>
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(x_coordinates , y_coordinates)
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
-</span></span></code></pre></div><p>The end result</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="324679851" type="checkbox"  />
+    <label for="324679851">
+      <span class="collapsable-code__language">python</span>
+      <span class="collapsable-code__title">Plotting a scatterplot</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-python" ><code>
+x_coordinates = [ 2 , 4 , 1 , 3 ]
+y_coordinates = [ 6 , 5 , 8 , 6 ]
+# Points (2,6) , (4,5) , (1,8) and (3,6)
+plt.scatter(x_coordinates , y_coordinates)
+plt.show()
+</code></pre>
+  </div>
+
+
+<p>The end result</p>
 
   <figure class="left" >
     <img src="/images/scatter-plot-matplotlib.png"   />

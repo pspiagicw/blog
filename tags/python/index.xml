@@ -6,7 +6,63 @@
     <description>Recent content in python on forked</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0530</lastBuildDate><atom:link href="https://blog.pspiagicw.xyz/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.pspiagicw.xyz/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevLog 1</title>
+      <link>https://blog.pspiagicw.xyz/devlog/devlog-1/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.pspiagicw.xyz/devlog/devlog-1/</guid>
+      <description>Welcome to my first devlog!
+Here I would try to show what I have developed over the week!</description>
+      <content>&lt;p&gt;Welcome to my first devlog!&lt;/p&gt;
+&lt;p&gt;Here I would try to show what I have developed over the week! Even if the week is unproductive.
+Through this I would force myself to write more and get better at explaining technical concepts.&lt;/p&gt;
+&lt;h1 id=&#34;python-backends&#34;&gt;Python Backends&lt;/h1&gt;
+&lt;p&gt;Through a college project, I am getting to know the inner working of building a backend with Python.
+I have only built a backend with &lt;code&gt;golang&lt;/code&gt; which resulted to nothing as I scrapped the entire project.
+Building a backend with Python was a great way of getting back to Python after a long time.&lt;/p&gt;
+&lt;p&gt;But I would say this project was one of the best project&amp;rsquo;s I have written in a while.
+Let me elaborate&lt;/p&gt;
+&lt;h2 id=&#34;python-ecosystem&#34;&gt;Python ecosystem&lt;/h2&gt;
+&lt;p&gt;The first thing that impressed me was how cohesive the Python ecosystem has become.
+With the popularity of &lt;code&gt;poetry&lt;/code&gt; and the usage of the &lt;code&gt;pyproject.toml&lt;/code&gt; file, every tool is integrated and works with each other.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;poetry&lt;/code&gt; is an project management tool for Python. It handles project creation, dependency management and even building the Python project without hassle. It&amp;rsquo;s one of the inspiration for &lt;a href=&#34;https://github.com/golang-groom/groom&#34;&gt;groom&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The second thing was the how easily I could use libraries like &lt;code&gt;fastapi&lt;/code&gt;.
+When I imagined of working with &lt;code&gt;Flask&lt;/code&gt; especially for building REST API&amp;rsquo;s I was a little disgusted.&lt;/p&gt;
+&lt;p&gt;Then I found out about &lt;code&gt;fastapi&lt;/code&gt;. It looked similar to things I had been working with &lt;code&gt;golang&lt;/code&gt;.
+After the initial introduction I was hooked. I Immediately started configuring a starter repo.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;fastapi&lt;/code&gt; is a library that enables making REST API&amp;rsquo;s quite efficiently. If you are planning to make a REST API I would recommend &lt;code&gt;fastapi&lt;/code&gt; for your next project instead of &lt;code&gt;Flask&lt;/code&gt; or something heavy like &lt;code&gt;Django&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;autocode-bliss&#34;&gt;AutoCode Bliss&lt;/h2&gt;
+&lt;p&gt;For the first time in my life, my entire repo was automated. Using tools like &lt;code&gt;pdoc&lt;/code&gt; , &lt;code&gt;poethepoet&lt;/code&gt; and &lt;code&gt;pre-commit&lt;/code&gt;,
+I had setup a simple workflow which ensured that never any  unformatted and untested code is pushed to the repository.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;pre-commit&lt;/code&gt; I can be confident that every commit is clean!&lt;/p&gt;
+&lt;h3 id=&#34;why-such-precaution-&#34;&gt;Why such precaution ?&lt;/h3&gt;
+&lt;p&gt;This project was not a personal project, it was a collaborative college project.
+Which meant a lot of people were about to contribute and commit to the repository.
+This workflow not only was enforced on myself but on everybody who wanted to contribute to the repository.&lt;/p&gt;
+&lt;p&gt;I knew this was needed to prevent problems in the future. I was mostly right!&lt;/p&gt;
+&lt;h2 id=&#34;cicd&#34;&gt;CI/CD&lt;/h2&gt;
+&lt;p&gt;I also integrated a simple CI/CD pipeline within the repository which would check every PR.
+It would then build a docker image out of the repository and push it to &lt;code&gt;DockerHub&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;hosting&#34;&gt;Hosting&lt;/h2&gt;
+&lt;p&gt;Through a friend&amp;rsquo;s help I had set up a lightweight &lt;code&gt;x86&lt;/code&gt; instance on the cloud.&lt;/p&gt;
+&lt;p&gt;I could run the docker image of my backend with the appropriate port forwarding.&lt;/p&gt;
+&lt;p&gt;But what happens when I update the image on &lt;code&gt;DockerHub&lt;/code&gt;. Will I need to &lt;code&gt;ssh&lt;/code&gt; into the cloud server and update the docker container manually ?&lt;/p&gt;
+&lt;h4 id=&#34;no&#34;&gt;NO&lt;/h4&gt;
+&lt;p&gt;That&amp;rsquo;s where &lt;code&gt;watchtower&lt;/code&gt; helped me. I found out about it through my self-hosting experiment and since then I have been using it regularly.&lt;/p&gt;
+&lt;p&gt;Basically whenever the &lt;code&gt;DockerHub&lt;/code&gt; image updates, it automatically updates the local docker container with the updated image, preserving all the options like the port forwarding.&lt;/p&gt;
+&lt;h1 id=&#34;frontend&#34;&gt;Frontend&lt;/h1&gt;
+&lt;p&gt;The frontend was handled by the aforementioned friend who is a wizard of React/React Native and gladly began work.&lt;/p&gt;
+&lt;p&gt;Thanks to him I am confident we can complete this college project and maybe learn a thing or two about collaborative development.&lt;/p&gt;
+&lt;p&gt;Writing this post has given me the idea of sharing my Python project setup. I believe it is quite good and maybe helpful to others.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Rough Guide to Matplotlib</title>
       <link>https://blog.pspiagicw.xyz/posts/dirty-guide-on-matplotlib/</link>
@@ -19,11 +75,40 @@
 &lt;p&gt;Matplotlib provides easy and efficient way of creating graphs.It is a python module , so you need &lt;code&gt;pip&lt;/code&gt; to install it. &lt;code&gt;Pip&lt;/code&gt; is python&amp;rsquo;s modular structure allowing , us to share our code with others.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;pip&lt;/code&gt; can install any module from PyPI , python&amp;rsquo;s official module location , or as cool people call it repository.
 To install use &lt;code&gt;pip install&lt;/code&gt; command.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Installing matploblib&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install --user matplotlib
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that matplotlib is installed. We have to import it in Python , &lt;strong&gt;importing&lt;/strong&gt; in python is easy!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But we don&amp;rsquo;t need to import matplotlib itself, &lt;code&gt;matplotlib.pyplot&lt;/code&gt; provides most of the features we need. The rest of matplotlib can be used to create extremely complex graphs.
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;362819547&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;362819547&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;shell&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;Installing matplotlib&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-shell&#34; &gt;&lt;code&gt;
+pip install --user matplotlib
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;Now that matplotlib is installed. We have to import it in Python , &lt;strong&gt;importing&lt;/strong&gt; in python is easy!&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;1&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;1&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;Importing matplotlib&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+import matplotlib
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;But we don&amp;rsquo;t need to import matplotlib itself, &lt;code&gt;matplotlib.pyplot&lt;/code&gt; provides most of the features we need. The rest of matplotlib can be used to create extremely complex graphs.
 Pyplot is inspired from &lt;em&gt;MATLAB&lt;/em&gt; . If you have used &lt;em&gt;MATLAB&lt;/em&gt; before , it has the same API.
 This guide only focuses on PyPlot API , for a more object-based approach , see matplotlib&amp;rsquo;s documentation, or refer to this guide.&lt;/p&gt;
 &lt;h3 id=&#34;important-funcs&#34;&gt;Important Funcs&lt;/h3&gt;
@@ -47,12 +132,27 @@ To alias pyplot to plt&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;basic-plotting&#34;&gt;Basic Plotting&lt;/h3&gt;
 &lt;p&gt;For plotting basic lines , &lt;code&gt;plt.plot()&lt;/code&gt; function is enough, it takes list of x and y coordinates as arguments.&lt;/p&gt;
 &lt;p&gt;Plotting points (3,2),(5,4) and (4,1).Keep in mind plot method connects all the dots with a line.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;x_coordinates &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y_coordinates &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Points (3,2),(5,4),(4,1)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot(x_coordinates,y_coordinates)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The graph created is&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;861937542&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;861937542&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;Plotting a line graph&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+x_coordinates = [ 3 , 5 , 4]
+y_coordinates = [ 2 , 4 , 1]
+# Points (3,2),(5,4),(4,1)
+plt.plot(x_coordinates,y_coordinates)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;The graph created is&lt;/p&gt;
 
   &lt;figure class=&#34;left&#34; &gt;
     &lt;img src=&#34;https://blog.pspiagicw.xyz/images/simple-plot-matplotlib.png&#34;   /&gt;
@@ -67,12 +167,27 @@ To alias pyplot to plt&lt;/p&gt;
 &lt;p&gt;Scatter plot are very useful in showing actual points , thus analyzing them separately.
 It also takes list of x and y coordinates as arguments.&lt;/p&gt;
 &lt;p&gt;Showing (2,6),(4,5),(1,8) and (3,6) on a graph is easy.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;x_coordinates &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; ]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y_coordinates &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; ]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Points (2,6) , (4,5) , (1,8) and (3,6)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scatter(x_coordinates , y_coordinates)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The end result&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;324679851&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;324679851&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;Plotting a scatterplot&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-python&#34; &gt;&lt;code&gt;
+x_coordinates = [ 2 , 4 , 1 , 3 ]
+y_coordinates = [ 6 , 5 , 8 , 6 ]
+# Points (2,6) , (4,5) , (1,8) and (3,6)
+plt.scatter(x_coordinates , y_coordinates)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;The end result&lt;/p&gt;
 
   &lt;figure class=&#34;left&#34; &gt;
     &lt;img src=&#34;https://blog.pspiagicw.xyz/images/scatter-plot-matplotlib.png&#34;   /&gt;

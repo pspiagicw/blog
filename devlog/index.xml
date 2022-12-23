@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>forked</title>
+    <link>https://blog.pspiagicw.xyz/devlog/</link>
+    <description>Recent content on forked</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.pspiagicw.xyz/devlog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevLog 1</title>
+      <link>https://blog.pspiagicw.xyz/devlog/devlog-1/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.pspiagicw.xyz/devlog/devlog-1/</guid>
+      <description>Welcome to my first devlog!
+Here I would try to show what I have developed over the week!</description>
+      <content>&lt;p&gt;Welcome to my first devlog!&lt;/p&gt;
+&lt;p&gt;Here I would try to show what I have developed over the week! Even if the week is unproductive.
+Through this I would force myself to write more and get better at explaining technical concepts.&lt;/p&gt;
+&lt;h1 id=&#34;python-backends&#34;&gt;Python Backends&lt;/h1&gt;
+&lt;p&gt;Through a college project, I am getting to know the inner working of building a backend with Python.
+I have only built a backend with &lt;code&gt;golang&lt;/code&gt; which resulted to nothing as I scrapped the entire project.
+Building a backend with Python was a great way of getting back to Python after a long time.&lt;/p&gt;
+&lt;p&gt;But I would say this project was one of the best project&amp;rsquo;s I have written in a while.
+Let me elaborate&lt;/p&gt;
+&lt;h2 id=&#34;python-ecosystem&#34;&gt;Python ecosystem&lt;/h2&gt;
+&lt;p&gt;The first thing that impressed me was how cohesive the Python ecosystem has become.
+With the popularity of &lt;code&gt;poetry&lt;/code&gt; and the usage of the &lt;code&gt;pyproject.toml&lt;/code&gt; file, every tool is integrated and works with each other.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;poetry&lt;/code&gt; is an project management tool for Python. It handles project creation, dependency management and even building the Python project without hassle. It&amp;rsquo;s one of the inspiration for &lt;a href=&#34;https://github.com/golang-groom/groom&#34;&gt;groom&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The second thing was the how easily I could use libraries like &lt;code&gt;fastapi&lt;/code&gt;.
+When I imagined of working with &lt;code&gt;Flask&lt;/code&gt; especially for building REST API&amp;rsquo;s I was a little disgusted.&lt;/p&gt;
+&lt;p&gt;Then I found out about &lt;code&gt;fastapi&lt;/code&gt;. It looked similar to things I had been working with &lt;code&gt;golang&lt;/code&gt;.
+After the initial introduction I was hooked. I Immediately started configuring a starter repo.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;fastapi&lt;/code&gt; is a library that enables making REST API&amp;rsquo;s quite efficiently. If you are planning to make a REST API I would recommend &lt;code&gt;fastapi&lt;/code&gt; for your next project instead of &lt;code&gt;Flask&lt;/code&gt; or something heavy like &lt;code&gt;Django&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;autocode-bliss&#34;&gt;AutoCode Bliss&lt;/h2&gt;
+&lt;p&gt;For the first time in my life, my entire repo was automated. Using tools like &lt;code&gt;pdoc&lt;/code&gt; , &lt;code&gt;poethepoet&lt;/code&gt; and &lt;code&gt;pre-commit&lt;/code&gt;,
+I had setup a simple workflow which ensured that never any  unformatted and untested code is pushed to the repository.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;pre-commit&lt;/code&gt; I can be confident that every commit is clean!&lt;/p&gt;
+&lt;h3 id=&#34;why-such-precaution-&#34;&gt;Why such precaution ?&lt;/h3&gt;
+&lt;p&gt;This project was not a personal project, it was a collaborative college project.
+Which meant a lot of people were about to contribute and commit to the repository.
+This workflow not only was enforced on myself but on everybody who wanted to contribute to the repository.&lt;/p&gt;
+&lt;p&gt;I knew this was needed to prevent problems in the future. I was mostly right!&lt;/p&gt;
+&lt;h2 id=&#34;cicd&#34;&gt;CI/CD&lt;/h2&gt;
+&lt;p&gt;I also integrated a simple CI/CD pipeline within the repository which would check every PR.
+It would then build a docker image out of the repository and push it to &lt;code&gt;DockerHub&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;hosting&#34;&gt;Hosting&lt;/h2&gt;
+&lt;p&gt;Through a friend&amp;rsquo;s help I had set up a lightweight &lt;code&gt;x86&lt;/code&gt; instance on the cloud.&lt;/p&gt;
+&lt;p&gt;I could run the docker image of my backend with the appropriate port forwarding.&lt;/p&gt;
+&lt;p&gt;But what happens when I update the image on &lt;code&gt;DockerHub&lt;/code&gt;. Will I need to &lt;code&gt;ssh&lt;/code&gt; into the cloud server and update the docker container manually ?&lt;/p&gt;
+&lt;h4 id=&#34;no&#34;&gt;NO&lt;/h4&gt;
+&lt;p&gt;That&amp;rsquo;s where &lt;code&gt;watchtower&lt;/code&gt; helped me. I found out about it through my self-hosting experiment and since then I have been using it regularly.&lt;/p&gt;
+&lt;p&gt;Basically whenever the &lt;code&gt;DockerHub&lt;/code&gt; image updates, it automatically updates the local docker container with the updated image, preserving all the options like the port forwarding.&lt;/p&gt;
+&lt;h1 id=&#34;frontend&#34;&gt;Frontend&lt;/h1&gt;
+&lt;p&gt;The frontend was handled by the aforementioned friend who is a wizard of React/React Native and gladly began work.&lt;/p&gt;
+&lt;p&gt;Thanks to him I am confident we can complete this college project and maybe learn a thing or two about collaborative development.&lt;/p&gt;
+&lt;p&gt;Writing this post has given me the idea of sharing my Python project setup. I believe it is quite good and maybe helpful to others.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
