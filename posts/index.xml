@@ -341,8 +341,8 @@ To install use &lt;code&gt;pip install&lt;/code&gt; command.&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;362819547&#34; type=&#34;checkbox&#34;  /&gt;
-    &lt;label for=&#34;362819547&#34;&gt;
+    &lt;input id=&#34;395617284&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;395617284&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;shell&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;Installing matplotlib&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
@@ -398,8 +398,8 @@ To alias pyplot to plt&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;861937542&#34; type=&#34;checkbox&#34;  /&gt;
-    &lt;label for=&#34;861937542&#34;&gt;
+    &lt;input id=&#34;432687519&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;432687519&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;Plotting a line graph&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
@@ -433,8 +433,8 @@ It also takes list of x and y coordinates as arguments.&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;324679851&#34; type=&#34;checkbox&#34;  /&gt;
-    &lt;label for=&#34;324679851&#34;&gt;
+    &lt;input id=&#34;591783426&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;591783426&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;Plotting a scatterplot&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;

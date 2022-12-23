@@ -16,8 +16,7 @@
       <description>Welcome to my first devlog!
 Here I would try to show what I have developed over the week!</description>
       <content>&lt;p&gt;Welcome to my first devlog!&lt;/p&gt;
-&lt;p&gt;Here I would try to show what I have developed over the week! Even if the week is unproductive.
-Through this I would force myself to write more and get better at explaining technical concepts.&lt;/p&gt;
+&lt;p&gt;Here I would try to show what I have developed over the week! Even if the week is unproductive.&lt;/p&gt;
 &lt;h1 id=&#34;python-backends&#34;&gt;Python Backends&lt;/h1&gt;
 &lt;p&gt;Through a college project, I am getting to know the inner working of building a backend with Python.
 I have only built a backend with &lt;code&gt;golang&lt;/code&gt; which resulted to nothing as I scrapped the entire project.
@@ -60,6 +59,7 @@ It would then build a docker image out of the repository and push it to &lt;code
 &lt;p&gt;The frontend was handled by the aforementioned friend who is a wizard of React/React Native and gladly began work.&lt;/p&gt;
 &lt;p&gt;Thanks to him I am confident we can complete this college project and maybe learn a thing or two about collaborative development.&lt;/p&gt;
 &lt;p&gt;Writing this post has given me the idea of sharing my Python project setup. I believe it is quite good and maybe helpful to others.&lt;/p&gt;
+&lt;p&gt;BTW the &lt;a href=&#34;https://github.com/pspiagicw/placy&#34;&gt;code&lt;/a&gt;&lt;/p&gt;
 </content>
     </item>
     
