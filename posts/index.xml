@@ -6,7 +6,236 @@
     <description>Recent content in Posts on forked</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.pspiagicw.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.pspiagicw.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Project Starter</title>
+      <link>https://blog.pspiagicw.xyz/posts/python-project-starter/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.pspiagicw.xyz/posts/python-project-starter/</guid>
+      <description>I recently dived back into Python and got to build a fully featured Python application. Here&amp;rsquo;s how maybe you can setup a sick Python Project setup.</description>
+      <content>&lt;p&gt;I recently dived back into Python and got to build a fully featured Python application.
+Here&amp;rsquo;s how maybe you can setup a sick Python Project setup.&lt;/p&gt;
+&lt;h2 id=&#34;dependencies&#34;&gt;Dependencies&lt;/h2&gt;
+&lt;p&gt;For obvious reasons you need &lt;code&gt;pip&lt;/code&gt; which is the package manager for Python.&lt;/p&gt;
+&lt;p&gt;You may use &lt;code&gt;pipx&lt;/code&gt; which is what I use. It provides a isolated environment for every package installed through pip.
+It is designed to be accompanied with command line tools written in Python.&lt;/p&gt;
+&lt;p&gt;A very good example for this would be the official &lt;code&gt;kaggle&lt;/code&gt; command line tool.
+Installing this through &lt;code&gt;pipx&lt;/code&gt; means it is kept in a separate virtual environment and it&amp;rsquo;s dependencies are tracked.
+If any other command-line tool has the same dependency but with a different version it would not cause problems.&lt;/p&gt;
+&lt;p&gt;Another side effect of this is that when you delete a &lt;code&gt;pipx&lt;/code&gt; package, it&amp;rsquo;s dependencies are also deleted, which is not the default behaviour when using &lt;code&gt;pip&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For following this tutorial you will need 2 python packages.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;poetry&lt;/code&gt; It manages our Python project for us.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;poethepoet&lt;/code&gt; It is a task runner. You can run &lt;code&gt;make&lt;/code&gt; but DOS/Windows users may face problem installing  and configuring &lt;code&gt;make&lt;/code&gt;.By using &lt;code&gt;poethepoet&lt;/code&gt; we use a os-agnostic task runner.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can install it using &lt;code&gt;pip&lt;/code&gt; or &lt;code&gt;pipx&lt;/code&gt;.&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;341297865&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;341297865&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;shell&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;Installing using pip&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-shell&#34; &gt;&lt;code&gt;
+pip install poetry poethepoet
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;874523619&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;874523619&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;shell&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;Installing using pipx&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-shell&#34; &gt;&lt;code&gt;
+pipx install poetry
+pipx install poethepoet
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;h2 id=&#34;init&#34;&gt;&lt;code&gt;init!&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Creating a project directory is trivial.&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;461237859&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;461237859&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;shell&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;Creating a new project&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-shell&#34; &gt;&lt;code&gt;
+poetry new &amp;lt;project-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;This would create a new directory with the name &lt;code&gt;&amp;lt;project-name&amp;gt;&lt;/code&gt;. It will ask you for some defaults simply answer them as you wish. You can change these later.&lt;/p&gt;
+&lt;p&gt;It would ask for your program dependencies.If you have any dependency in mind, please feel free to add them.&lt;/p&gt;
+&lt;p&gt;It will ask for development dependencies. I recommend skipping this question for now (To skip simply leave the prompt empty and press Enter).&lt;/p&gt;
+&lt;p&gt;Simply move into the new directory using &lt;code&gt;cd &amp;lt;project-name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;dev&#34;&gt;&lt;code&gt;dev!&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s install a few dependencies which will help you maintain a clean code. These are not the dependencies that the project uses to run.
+These are only needed when developing/contributing to the project. That&amp;rsquo;s the reason it is called the development dependencies.&lt;/p&gt;
+&lt;p&gt;Ofcourse development of any software is a subjective process. You can take help of any number of tools.&lt;/p&gt;
+&lt;p&gt;These are my suggestions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;black&lt;/code&gt; is the formatter that I prefer. It is simple and non-intrusive. You are free to install any formatter that you currently use.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;pytest&lt;/code&gt; is the testing framework. I have never required anything beside &lt;code&gt;pytest&lt;/code&gt;. Although if you need complex features you may install other testing frameworks&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;pydocstyle&lt;/code&gt; ensures that all the code is documented. Especially useful when working on group projects where every little function may need to be documented.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;pdoc&lt;/code&gt; extracts the documentation from the code and converts into user friendly html format. You can use &lt;code&gt;sphinx&lt;/code&gt; but it requires knowledge of &lt;code&gt;RST&lt;/code&gt; format.
+This might be a learning curve and ensuring everybody learns and uses it in a team is hard.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;pre-commit&lt;/code&gt; is the most important tool. It provides &lt;code&gt;git-hooks&lt;/code&gt; which does not allow us to commit code without checking it through all the above programs.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Keep in mind we are installing these tools in a development environment, not production. Thus we would need to tell poetry to add them to the dev dependencies.
+To do the same run&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;243869517&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;243869517&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;shell&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;Add development dependencies&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-shell&#34; &gt;&lt;code&gt;
+poetry add -G dev black pytest pydocstyle pdoc pre-commit
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;This will not only create a new virtual environment for your dependencies but also create a &lt;code&gt;poetry.lock&lt;/code&gt; file which will track all dependencies.&lt;/p&gt;
+&lt;h2 id=&#34;pre-commit&#34;&gt;&lt;code&gt;pre-commit!&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s configure &lt;code&gt;pre-commit&lt;/code&gt;. For that we need a &lt;code&gt;.pre-commit-config.yml&lt;/code&gt; file in the root of our project.&lt;/p&gt;
+&lt;p&gt;Populate the &lt;code&gt;.pre-commit-config.yml&lt;/code&gt; file with the given content. For more information refer to the &lt;code&gt;pre-commit&lt;/code&gt; documentation.&lt;/p&gt;
+&lt;p&gt;The given file configures some checks to be done before commiting any code. This includes&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;formatting changes.&lt;/li&gt;
+&lt;li&gt;documentation validation.&lt;/li&gt;
+&lt;li&gt;misc things like trailing whitespaces.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;513678249&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;513678249&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;yaml&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;.pre-commit-config.yml file&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-yaml&#34; &gt;&lt;code&gt;
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+-   repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+    -   id: black
+-   repo: https://github.com/pycqa/pydocstyle
+    rev: 6.1.1  # pick a git hash / tag to point to
+    hooks:
+    -   id: pydocstyle
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;Now is a good time to initialize &lt;code&gt;git&lt;/code&gt;. Add the current folder to &lt;code&gt;git&lt;/code&gt; and make a initial commit.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# In the project root&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Initial Commit&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;poethepoet&#34;&gt;&lt;code&gt;poethepoet!&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Now we can configure the task runner. This would help you to run common tasks like formatting , testing without enabling the virtual environment.
+&lt;code&gt;poethepoet&lt;/code&gt; uses &lt;code&gt;pyproject.toml&lt;/code&gt; file for the list of tasks.&lt;/p&gt;
+&lt;p&gt;You only need to append the following section&lt;/p&gt;
+
+
+
+  &lt;div class=&#34;collapsable-code&#34;&gt;
+    &lt;input id=&#34;369748512&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;369748512&#34;&gt;
+      &lt;span class=&#34;collapsable-code__language&#34;&gt;toml&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__title&#34;&gt;poethepoet configuration&lt;/span&gt;
+      &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;pre class=&#34;language-toml&#34; &gt;&lt;code&gt;
+[tool.poe.tasks]
+test = &amp;#34;pytest&amp;#34;
+run = [&amp;#34;doc&amp;#34;, { shell = &amp;#34;python -m &amp;lt;project-name&amp;gt;&amp;#34;}]
+format = [ { shell = &amp;#34;black &amp;lt;project-name&amp;gt; tests&amp;#34;}]
+init = [ { shell = &amp;#34;poetry install&amp;#34;} , { shell = &amp;#34;poetry run pre-commit install&amp;#34;} , { shell = &amp;#34;poetry run pre-commit &amp;#34;} ]
+doc = &amp;#34;pdoc -o docs &amp;lt;project-name&amp;gt;&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+&lt;p&gt;After adding this code you can run tasks using &lt;code&gt;poe&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For example to format the entire code.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;poe format
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This would automatically run the formatting tool &lt;code&gt;black&lt;/code&gt; within the virtual environment &lt;code&gt;poetry&lt;/code&gt; created for us.
+We don&amp;rsquo;t have to manually run anything.&lt;/p&gt;
+&lt;p&gt;This is just the tip of the iceberg. We can run any tasks including building Docker images or deploying to PyPI.
+Refer to the &lt;code&gt;poethepoet&lt;/code&gt; documentation for more information.&lt;/p&gt;
+&lt;p&gt;To configure &lt;code&gt;pre-commit&lt;/code&gt; and confirm every dependency is already installed. Run &lt;code&gt;poe init&lt;/code&gt;.
+This would make sure all dependencies are installed and configure pre-commit.&lt;/p&gt;
+&lt;p&gt;Until now &lt;code&gt;pre-commit&lt;/code&gt; has not integrated with git. &lt;code&gt;poe init&lt;/code&gt; takes care of doing this.
+It will also run &lt;code&gt;pre-commit&lt;/code&gt; for the first time to check if everything is working.&lt;/p&gt;
+&lt;p&gt;Because we have setup &lt;code&gt;pydocstyle&lt;/code&gt; within &lt;code&gt;pre-commit&lt;/code&gt; it may complain about missing documentation within the pre-generated code.&lt;/p&gt;
+&lt;p&gt;Everything we need will be inside the virtual environment. Isolation at it&amp;rsquo;s peak!&lt;/p&gt;
+&lt;h2 id=&#34;coding&#34;&gt;&lt;code&gt;coding!&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Now the only thing remaining is coding!. Build your dream app.&lt;/p&gt;
+&lt;p&gt;The features provided through this process are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pre-commit&lt;/code&gt; for automatically formatting, checking and maintaining code quality&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;poethepoet&lt;/code&gt; for a os-agnostic task runner. This will run irrespective of your operating system or dev environment.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;poetry&lt;/code&gt; for creating and managing a separate virtual environment. All dependencies will be handled by &lt;code&gt;poetry&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you need others to run your software. You only need to tell them to install &lt;code&gt;poetry&lt;/code&gt; and &lt;code&gt;poethepoet&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Then clone the repository and run &lt;code&gt;poe init&lt;/code&gt; within the project root. It will setup everything needed to develop and run your application.&lt;/p&gt;
+&lt;p&gt;Some tips:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adding non-development dependencies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;poetry add &amp;lt;dependency&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Add a cute .gitignore to ignore &lt;code&gt;__pycache__&lt;/code&gt; folders and other build files.&lt;/li&gt;
+&lt;li&gt;If possible setup a Continous Integration workflow using GitHub Actions or any other CI service.&lt;/li&gt;
+&lt;li&gt;Maybe add a &lt;code&gt;Dockerfile&lt;/code&gt; and make it more isolated.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;errata&#34;&gt;&lt;code&gt;errata!&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;printgoodbye-and-may-you-have-a-good-day&#34;&gt;&lt;code&gt;print(&amp;quot;Goodbye and may you have a good day!&amp;quot;)&lt;/code&gt;&lt;/h2&gt;
+</content>
+    </item>
+    
     <item>
       <title>Microservices and Editors</title>
       <link>https://blog.pspiagicw.xyz/posts/microservices-and-editors/</link>
@@ -341,8 +570,8 @@ To install use &lt;code&gt;pip install&lt;/code&gt; command.&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;395617284&#34; type=&#34;checkbox&#34;  /&gt;
-    &lt;label for=&#34;395617284&#34;&gt;
+    &lt;input id=&#34;218643579&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;218643579&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;shell&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;Installing matplotlib&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
@@ -398,8 +627,8 @@ To alias pyplot to plt&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;432687519&#34; type=&#34;checkbox&#34;  /&gt;
-    &lt;label for=&#34;432687519&#34;&gt;
+    &lt;input id=&#34;452819376&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;452819376&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;Plotting a line graph&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;
@@ -433,8 +662,8 @@ It also takes list of x and y coordinates as arguments.&lt;/p&gt;
 
 
   &lt;div class=&#34;collapsable-code&#34;&gt;
-    &lt;input id=&#34;591783426&#34; type=&#34;checkbox&#34;  /&gt;
-    &lt;label for=&#34;591783426&#34;&gt;
+    &lt;input id=&#34;581479236&#34; type=&#34;checkbox&#34;  /&gt;
+    &lt;label for=&#34;581479236&#34;&gt;
       &lt;span class=&#34;collapsable-code__language&#34;&gt;python&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__title&#34;&gt;Plotting a scatterplot&lt;/span&gt;
       &lt;span class=&#34;collapsable-code__toggle&#34; data-label-expand=&#34;△&#34; data-label-collapse=&#34;▽&#34;&gt;&lt;/span&gt;

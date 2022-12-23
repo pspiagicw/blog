@@ -18,16 +18,28 @@
     <loc>https://blog.pspiagicw.xyz/devlog/devlog-1/</loc>
     <lastmod>2022-12-23T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://blog.pspiagicw.xyz/tags/devops/</loc>
+    <lastmod>2022-12-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.pspiagicw.xyz/</loc>
     <lastmod>2022-12-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.pspiagicw.xyz/tags/linux/</loc>
     <lastmod>2022-12-23T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://blog.pspiagicw.xyz/posts/</loc>
+    <lastmod>2022-12-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.pspiagicw.xyz/tags/programming/</loc>
     <lastmod>2022-12-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.pspiagicw.xyz/tags/python/</loc>
+    <lastmod>2022-12-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/categories/python/</loc>
+    <lastmod>2022-12-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/posts/python-project-starter/</loc>
     <lastmod>2022-12-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.pspiagicw.xyz/tags/</loc>
@@ -46,9 +58,6 @@
     <lastmod>2022-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.pspiagicw.xyz/tags/neovim/</loc>
-    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.pspiagicw.xyz/posts/</loc>
     <lastmod>2022-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.pspiagicw.xyz/categories/emacs/</loc>

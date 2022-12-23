@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Python Project Starter :: forked</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I recently dived back into Python and got to build a fully featured Python application. Here&amp;rsquo;s how maybe you can setup a sick Python Project setup." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.pspiagicw.xyz/posts/python-project-starter/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.pspiagicw.xyz/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://blog.pspiagicw.xyz/img/theme-colors/green.png">
+  <link rel="apple-touch-icon" href="https://blog.pspiagicw.xyz/img/theme-colors/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Python Project Starter">
+<meta property="og:description" content="I recently dived back into Python and got to build a fully featured Python application. Here&amp;rsquo;s how maybe you can setup a sick Python Project setup." />
+<meta property="og:url" content="https://blog.pspiagicw.xyz/posts/python-project-starter/" />
+<meta property="og:site_name" content="forked" />
+
+  
+    <meta property="og:image" content="https://blog.pspiagicw.xyz/img/favicon/green.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="python" />
+
+
+  <meta property="article:published_time" content="2022-12-23 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://blog.pspiagicw.xyz">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/devlog">DevLog</a></li>
+        
+      
+        
+          <li><a href="/posts">Writings</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/index.xml">RSS</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/devlog">DevLog</a></li>
+        
+      
+        
+          <li><a href="/posts">Writings</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/index.xml">RSS</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://blog.pspiagicw.xyz/posts/python-project-starter/">Python Project Starter</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2022-12-23 ::
+        
+      </time>
+    
+    
+      <span class="post-author">[pspiagicw]</span>
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/linux/">linux</a>&nbsp;
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/python/">python</a>&nbsp;
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/devops/">devops</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>I recently dived back into Python and got to build a fully featured Python application.
+Here&rsquo;s how maybe you can setup a sick Python Project setup.</p>
+<h2 id="dependencies">Dependencies<a href="#dependencies" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>For obvious reasons you need <code>pip</code> which is the package manager for Python.</p>
+<p>You may use <code>pipx</code> which is what I use. It provides a isolated environment for every package installed through pip.
+It is designed to be accompanied with command line tools written in Python.</p>
+<p>A very good example for this would be the official <code>kaggle</code> command line tool.
+Installing this through <code>pipx</code> means it is kept in a separate virtual environment and it&rsquo;s dependencies are tracked.
+If any other command-line tool has the same dependency but with a different version it would not cause problems.</p>
+<p>Another side effect of this is that when you delete a <code>pipx</code> package, it&rsquo;s dependencies are also deleted, which is not the default behaviour when using <code>pip</code>.</p>
+<p>For following this tutorial you will need 2 python packages.</p>
+<ul>
+<li><code>poetry</code> It manages our Python project for us.</li>
+<li><code>poethepoet</code> It is a task runner. You can run <code>make</code> but DOS/Windows users may face problem installing  and configuring <code>make</code>.By using <code>poethepoet</code> we use a os-agnostic task runner.</li>
+</ul>
+<p>You can install it using <code>pip</code> or <code>pipx</code>.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="341297865" type="checkbox"  />
+    <label for="341297865">
+      <span class="collapsable-code__language">shell</span>
+      <span class="collapsable-code__title">Installing using pip</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-shell" ><code>
+pip install poetry poethepoet
+</code></pre>
+  </div>
+
+
+
+
+
+  <div class="collapsable-code">
+    <input id="874523619" type="checkbox"  />
+    <label for="874523619">
+      <span class="collapsable-code__language">shell</span>
+      <span class="collapsable-code__title">Installing using pipx</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-shell" ><code>
+pipx install poetry
+pipx install poethepoet
+</code></pre>
+  </div>
+
+
+<h2 id="init"><code>init!</code><a href="#init" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Creating a project directory is trivial.</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="461237859" type="checkbox"  />
+    <label for="461237859">
+      <span class="collapsable-code__language">shell</span>
+      <span class="collapsable-code__title">Creating a new project</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-shell" ><code>
+poetry new &lt;project-name&gt;
+</code></pre>
+  </div>
+
+
+<p>This would create a new directory with the name <code>&lt;project-name&gt;</code>. It will ask you for some defaults simply answer them as you wish. You can change these later.</p>
+<p>It would ask for your program dependencies.If you have any dependency in mind, please feel free to add them.</p>
+<p>It will ask for development dependencies. I recommend skipping this question for now (To skip simply leave the prompt empty and press Enter).</p>
+<p>Simply move into the new directory using <code>cd &lt;project-name&gt;</code></p>
+<h2 id="dev"><code>dev!</code><a href="#dev" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Let&rsquo;s install a few dependencies which will help you maintain a clean code. These are not the dependencies that the project uses to run.
+These are only needed when developing/contributing to the project. That&rsquo;s the reason it is called the development dependencies.</p>
+<p>Ofcourse development of any software is a subjective process. You can take help of any number of tools.</p>
+<p>These are my suggestions</p>
+<ul>
+<li>
+<p><code>black</code> is the formatter that I prefer. It is simple and non-intrusive. You are free to install any formatter that you currently use.</p>
+</li>
+<li>
+<p><code>pytest</code> is the testing framework. I have never required anything beside <code>pytest</code>. Although if you need complex features you may install other testing frameworks</p>
+</li>
+<li>
+<p><code>pydocstyle</code> ensures that all the code is documented. Especially useful when working on group projects where every little function may need to be documented.</p>
+</li>
+<li>
+<p><code>pdoc</code> extracts the documentation from the code and converts into user friendly html format. You can use <code>sphinx</code> but it requires knowledge of <code>RST</code> format.
+This might be a learning curve and ensuring everybody learns and uses it in a team is hard.</p>
+</li>
+<li>
+<p><code>pre-commit</code> is the most important tool. It provides <code>git-hooks</code> which does not allow us to commit code without checking it through all the above programs.</p>
+</li>
+</ul>
+<p>Keep in mind we are installing these tools in a development environment, not production. Thus we would need to tell poetry to add them to the dev dependencies.
+To do the same run</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="243869517" type="checkbox"  />
+    <label for="243869517">
+      <span class="collapsable-code__language">shell</span>
+      <span class="collapsable-code__title">Add development dependencies</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-shell" ><code>
+poetry add -G dev black pytest pydocstyle pdoc pre-commit
+</code></pre>
+  </div>
+
+
+<p>This will not only create a new virtual environment for your dependencies but also create a <code>poetry.lock</code> file which will track all dependencies.</p>
+<h2 id="pre-commit"><code>pre-commit!</code><a href="#pre-commit" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Let&rsquo;s configure <code>pre-commit</code>. For that we need a <code>.pre-commit-config.yml</code> file in the root of our project.</p>
+<p>Populate the <code>.pre-commit-config.yml</code> file with the given content. For more information refer to the <code>pre-commit</code> documentation.</p>
+<p>The given file configures some checks to be done before commiting any code. This includes</p>
+<ul>
+<li>formatting changes.</li>
+<li>documentation validation.</li>
+<li>misc things like trailing whitespaces.</li>
+</ul>
+
+
+
+  <div class="collapsable-code">
+    <input id="513678249" type="checkbox"  />
+    <label for="513678249">
+      <span class="collapsable-code__language">yaml</span>
+      <span class="collapsable-code__title">.pre-commit-config.yml file</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-yaml" ><code>
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+-   repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+    -   id: black
+-   repo: https://github.com/pycqa/pydocstyle
+    rev: 6.1.1  # pick a git hash / tag to point to
+    hooks:
+    -   id: pydocstyle
+</code></pre>
+  </div>
+
+
+<p>Now is a good time to initialize <code>git</code>. Add the current folder to <code>git</code> and make a initial commit.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># In the project root</span>
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Initial Commit&#34;</span>
+</span></span></code></pre></div><h2 id="poethepoet"><code>poethepoet!</code><a href="#poethepoet" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Now we can configure the task runner. This would help you to run common tasks like formatting , testing without enabling the virtual environment.
+<code>poethepoet</code> uses <code>pyproject.toml</code> file for the list of tasks.</p>
+<p>You only need to append the following section</p>
+
+
+
+  <div class="collapsable-code">
+    <input id="369748512" type="checkbox"  />
+    <label for="369748512">
+      <span class="collapsable-code__language">toml</span>
+      <span class="collapsable-code__title">poethepoet configuration</span>
+      <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>
+    <pre class="language-toml" ><code>
+[tool.poe.tasks]
+test = &#34;pytest&#34;
+run = [&#34;doc&#34;, { shell = &#34;python -m &lt;project-name&gt;&#34;}]
+format = [ { shell = &#34;black &lt;project-name&gt; tests&#34;}]
+init = [ { shell = &#34;poetry install&#34;} , { shell = &#34;poetry run pre-commit install&#34;} , { shell = &#34;poetry run pre-commit &#34;} ]
+doc = &#34;pdoc -o docs &lt;project-name&gt;&#34;
+</code></pre>
+  </div>
+
+
+<p>After adding this code you can run tasks using <code>poe</code>.</p>
+<p>For example to format the entire code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>poe format
+</span></span></code></pre></div><p>This would automatically run the formatting tool <code>black</code> within the virtual environment <code>poetry</code> created for us.
+We don&rsquo;t have to manually run anything.</p>
+<p>This is just the tip of the iceberg. We can run any tasks including building Docker images or deploying to PyPI.
+Refer to the <code>poethepoet</code> documentation for more information.</p>
+<p>To configure <code>pre-commit</code> and confirm every dependency is already installed. Run <code>poe init</code>.
+This would make sure all dependencies are installed and configure pre-commit.</p>
+<p>Until now <code>pre-commit</code> has not integrated with git. <code>poe init</code> takes care of doing this.
+It will also run <code>pre-commit</code> for the first time to check if everything is working.</p>
+<p>Because we have setup <code>pydocstyle</code> within <code>pre-commit</code> it may complain about missing documentation within the pre-generated code.</p>
+<p>Everything we need will be inside the virtual environment. Isolation at it&rsquo;s peak!</p>
+<h2 id="coding"><code>coding!</code><a href="#coding" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Now the only thing remaining is coding!. Build your dream app.</p>
+<p>The features provided through this process are</p>
+<ul>
+<li><code>pre-commit</code> for automatically formatting, checking and maintaining code quality</li>
+<li><code>poethepoet</code> for a os-agnostic task runner. This will run irrespective of your operating system or dev environment.</li>
+<li><code>poetry</code> for creating and managing a separate virtual environment. All dependencies will be handled by <code>poetry</code>.</li>
+</ul>
+<p>If you need others to run your software. You only need to tell them to install <code>poetry</code> and <code>poethepoet</code>.</p>
+<p>Then clone the repository and run <code>poe init</code> within the project root. It will setup everything needed to develop and run your application.</p>
+<p>Some tips:</p>
+<ul>
+<li>Adding non-development dependencies</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>poetry add &lt;dependency&gt;
+</span></span></code></pre></div><ul>
+<li>Add a cute .gitignore to ignore <code>__pycache__</code> folders and other build files.</li>
+<li>If possible setup a Continous Integration workflow using GitHub Actions or any other CI service.</li>
+<li>Maybe add a <code>Dockerfile</code> and make it more isolated.</li>
+</ul>
+<h2 id="errata"><code>errata!</code><a href="#errata" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="printgoodbye-and-may-you-have-a-good-day"><code>print(&quot;Goodbye and may you have a good day!&quot;)</code><a href="#printgoodbye-and-may-you-have-a-good-day" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
