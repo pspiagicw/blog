@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Microservices and Editors :: forked</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="When&amp;rsquo;s the last time you looked into how your editor works ? I don&amp;rsquo;t mean when you downloaded a few extensions and glanced a few themes." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.pspiagicw.xyz/posts/microservices-and-editors/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.pspiagicw.xyz/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://blog.pspiagicw.xyz/img/theme-colors/orange.png">
+  <link rel="apple-touch-icon" href="https://blog.pspiagicw.xyz/img/theme-colors/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Microservices and Editors">
+<meta property="og:description" content="When&amp;rsquo;s the last time you looked into how your editor works ? I don&amp;rsquo;t mean when you downloaded a few extensions and glanced a few themes." />
+<meta property="og:url" content="https://blog.pspiagicw.xyz/posts/microservices-and-editors/" />
+<meta property="og:site_name" content="forked" />
+
+  
+    <meta property="og:image" content="img/favicon/%!s().png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="editors" />
+
+
+  <meta property="article:published_time" content="2022-11-15 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://blog.pspiagicw.xyz">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/posts">Writings</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/index.xml">RSS</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/posts">Writings</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/index.xml">RSS</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://blog.pspiagicw.xyz/posts/microservices-and-editors/">Microservices and Editors</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2022-11-15 ::
+        
+      </time>
+    
+    
+      <span class="post-author">[pspiagicw]</span>
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/linux/">linux</a>&nbsp;
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/emacs/">emacs</a>&nbsp;
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/neovim/">neovim</a>&nbsp;
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/editors/">editors</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>When&rsquo;s the last time you looked into how your editor works ?
+I don&rsquo;t mean when you downloaded a few extensions and glanced a few themes.</p>
+<!-- raw HTML omitted -->
+<h1 id="disclaimer">DISCLAIMER!<a href="#disclaimer" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>This article tries to contrast the <code>Microservices</code> architecture with current editor ecosystem.
+This is not a strict comparison, it is only done to explore how editors work in this day and age.</p>
+</blockquote>
+<h2 id="vim-anyone-">Vim anyone ?<a href="#vim-anyone-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Neovim is one such editor I have used in my entire programming journey.
+It is not like your standard editor. It is not like any other editors.</p>
+<p>But this post is not about neovim, this post is to explore how your editors work.
+This post is applicable to most modern editors, including</p>
+<ul>
+<li>Emacs</li>
+<li>Neovim/Vim</li>
+<li>VSCode</li>
+<li>Atom (RIP, you will be missed)</li>
+<li>Helix</li>
+</ul>
+<h2 id="back-to-2015">Back to 2015<a href="#back-to-2015" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Consider you are Microsoft, you just released a Open Source editor <code>Visual Studio Code</code>.
+You are trying to build it&rsquo;s plugin ecosystem from scratch.</p>
+<p>Visual Studio Code will be referred as VSCode from now on.</p>
+<p>VSCode is not a IDE, it is a editor.
+It does not target any specific language/technology.
+Thus it needs to fit for all technologies and languages present out there.</p>
+<p>Microsoft needed to develop plugins and integrations for all those technologies by themselves.
+Atleast for the first few years, until it&rsquo;s adoption goes high.</p>
+
+  <figure class="center" >
+    <img src="https://code.visualstudio.com/assets/docs/editor/extension-marketplace/extensions-view-filter-menu.png"  alt="VSCode Plugins"   style="border-radius: 5px;border-width: 20px; border-style: solid; border-color: #ffb86c;"  />
+    
+  </figure>
+
+
+<!-- raw HTML omitted -->
+<h2 id="enter-microservices">Enter Microservices<a href="#enter-microservices" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Microsoft had a brilliant idea, why bother implementing intellisense for multiple languages.</p>
+<h4 id="why-not-separate-the-intellisense-from-the-editor-">Why not separate the intellisense from the editor ?<a href="#why-not-separate-the-intellisense-from-the-editor-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>This allows the editor to focus on being a great editor and it only needs to communicate with a external service which handles intellisense.</p>
+<h3 id="microservices-anyone-">Microservices anyone ?<a href="#microservices-anyone-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>This idea of multiple services working together to complete a application can be though of as <code>Microservices Architecture</code>.
+The idea that instead of building a web application/server that handles everything, we build small services that excel in handling one single service.</p>
+<p>That service can be either authentication or database operations etc.
+Every service communicates with each other and each service can be scaled separately.</p>
+<p>If you want a more formal introduction, see <a href="https://microservices.io">here</a>.</p>
+<h3 id="microservices-and-editors">Microservices and Editors<a href="#microservices-and-editors" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Microsoft proposed the Language Server Protocol (LSP), every language will have a associated server.
+This server will be responsible for providing language features like formatting, autoimport, autocompletion, documentation etc.
+The editor will only need to know which language connects with which server. The server and the client can talk using JSON-RPC protocol.</p>
+<p>This idea was proposed to the Open Source Community by Microsoft in 2016. The Open Source community relied on editors like neovim, Emacs, Atom etc.
+The Open Source community accepted, thus LSP was born.</p>
+<p>This meant all the editors had to build a LSP client which was embedded into the editor.
+Other than that they did not require any effort to support intellisense features.</p>
+<p>That responsibility was transferred to the people developing the Language Servers.</p>
+
+  <figure class="center" >
+    <img src="https://miro.medium.com/max/1838/1*NWvQepJvLQJLZLkLbNnEzA.png"   style="border-style: solid; border-width: 30px; border-color: #ffb86c; border-radius: 5px;"  />
+    
+  </figure>
+
+
+<!-- raw HTML omitted -->
+<h3 id="six-years-later">Six Years Later<a href="#six-years-later" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Today almost all text editors implement LSP and each language has their well known language server.
+When you install a extension for a specific language on VSCode, it only installs a server for that language.
+VSCode already knew how to show intellisense features, it just didn&rsquo;t know what to show.</p>
+<p>The server starts communicating with VSCode for intellisense and boom!</p>
+<p>There is a server for almost all languages. Most modern languages like Go, Rust and TypeScript come with a language server packaged with their compiler/interpreter.</p>
+<p>Even COBOL has it&rsquo;s own Language Server.</p>
+<p>Some of the popular editors support LSP are</p>
+<ul>
+<li>Emacs</li>
+<li>neovim</li>
+<li>Visual Studio Code</li>
+<li>Helix</li>
+<li>Atom</li>
+<li>Sublime Text</li>
+</ul>
+<p>Some of the most popular languages and their Language Servers are</p>
+<ul>
+<li>Python (PyRight)</li>
+<li>TypeScript (tsserver)</li>
+<li>Golang (gopls)</li>
+<li>Rust (rust-analysis-server)</li>
+</ul>
+<p>Some of the niche languages which have their own servers are</p>
+<ul>
+<li>COBOL</li>
+<li>FOTRAN</li>
+<li>JSON/YAML/TOML</li>
+<li>Assembly!! (PowerPC)</li>
+<li>VHDL/Verilog</li>
+</ul>
+<p>The official LSP documentation can be found <a href="https://microsoft.github.io/language-server-protocol/">here</a>.</p>
+<h2 id="syntax-highlighting">Syntax Highlighting<a href="#syntax-highlighting" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>The second obstacle when designing editors is <code>Syntax Highlighting</code>.
+Beginners adore it and pros hate it. But one can&rsquo;t deny it makes code look sexy.
+This problem can only be understood by understanding how syntax highlighting works</p>
+<p>Syntax highlighting in all editors is done by regex matching. <code>regex</code> means Regular Expressions.
+It is like a type of language for matching sequence of characters.</p>
+<p>The study of how to make a regular expression engine and parsing them leads to complicated theory of automata.
+It is quite a difficult task to make a efficient and accurate regex engine, although many pre-built implementations exist.
+Almost every programming language has a regex matcher in it&rsquo;s standard library.</p>
+<p>But regex matching is still quite slow and does not actually highlight syntactically.
+You might have encountered this while opening a huge file, it takes a second for the syntax highlighting to appear.
+It cannot actually understand the code, just matches according to the pattern defined.</p>
+<p>Multi-lingual environments, like JSX, HTML, Markdown present more challenges to regex based syntax highlighting.
+These require multiple syntax highlighters in a single file. Which is slow and complex to implement.</p>
+
+  <img src="https://raw.githubusercontent.com/ericwbailey/a11y-prism-theme/master/images/a11y-dark.png"  class="center"  style="border-style: solid; border-width: 20px; border-color: #ffb86c; border-radius: 5px;"  />
+
+
+<!-- raw HTML omitted -->
+<h3 id="atom">Atom<a href="#atom" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>The Atom developers were facing this exact problem.
+They came up with a solution, why not outsource this syntax highlighting to a service!</p>
+<p>The result was tree-sitter, a incremental parsing library.
+This is written in C and is super fast, parsing a languages into a syntax tree character-wise!
+This was again extracted and shared with the Open Source Community.</p>
+<p>It might be the only relic left of Atom in modern editors, after it&rsquo;s death!</p>
+<p><em>Fun Fact: GitHub uses tree-sitter to syntax highlight code on your repositories!</em></p>
+<h3 id="tree-sitter">Tree Sitter<a href="#tree-sitter" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Tree Sitter allows for syntax highlighting being provided by a separate service.
+In more recent versions it provides indentation support.
+Modal editors like neo[vim] can provide text-object support efficiently using treesitter.</p>
+<p>Most languages only need to program a parser according to the Tree Sitter specifications and it automatically
+builds and compiles the grammar needed for the language.</p>
+<p>It&rsquo;s technical details can be found <a href="https://tree-sitter.github.io/tree-sitter/">here</a>.</p>
+<p>VSCode does not support Tree Sitter yet, and still follows RegEX.
+But there are proposals to integrate it using extensions and it might be right around the corner.</p>
+
+  <img src="https://i.ibb.co/BypQxTB/cmp.png"  class="center"  style="border-radius: 5px;border-width: 20px; border-style: solid; border-color: #ffb86c;"  />
+
+
+<!-- raw HTML omitted -->
+<h2 id="debugging">Debugging<a href="#debugging" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Just like LSP, Microsoft pioneered the idea that debugging was needed to be separated from the editor.</p>
+<p>For exactly that reason, the Debug Adapter Protocol was born.
+Just like LSP it provides a separate debugger which communicates with the editor using DAP.</p>
+<p>It is quite new and it&rsquo;s adoption is on the way. Currently almost all the modern editors support DAP.
+Each and every language either comes with a DAP enabled debugger or a third-party program provides it.</p>
+<p>It&rsquo;s technical details can be found <a href="https://microsoft.github.io/debug-adapter-protocol/">here</a></p>
+<p>It&rsquo;s little adoption might be the fact that debuggers were already separate from the editors.
+All languages have their own separate debuggers, either provided by the authors of the language or the community.
+This meant, people already have tightly integrated workflows for debugging.</p>
+<ul>
+<li>C (<code>gdb</code>)</li>
+<li>Python (<code>pdb</code>)</li>
+</ul>
+
+  <img src="https://code.visualstudio.com/assets/blogs/2018/08/07/without-DAP.png"  class="center"  style="border-radius: 5px;border-width: 20px; border-style: solid; border-color: #ffb86c;"  />
+
+
+<!-- raw HTML omitted -->
+<h2 id="microservices">Microservices<a href="#microservices" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>You must have noticed something, all the features except text editing have been outsourced.</p>
+<p>Thus the text editor has been microserviced instead of the previously monolith structure.
+This is the reason for the speed modern editors provide, while providing such advanced features.</p>
+<p>While this is not a perfect example for a microservice architecture it is not a bad one.</p>
+<p>The advantage of all editors built like these are</p>
+<ul>
+<li>Better editing functionality</li>
+<li>All editors have same syntax highlighting, intellisense and debugging capabilities.</li>
+<li>Very fast code feedback.</li>
+<li>Easily recover from crashes and errors.</li>
+<li>More fine control over code features.</li>
+</ul>
+<p>Gone are the days editors are popular, because of their language support.
+Now editors can focus on making text editing efficient and productive.</p>
+<p>Language developers can focus on making their language easily written on multiple editors simultaenously.</p>
+<p>If you are feeling adventurous, you might wanna try other editors for their editing features.
+Here is a list of editors with their editing features you might wanna try out:</p>
+<p>! Beware by being adventurous you might be caught in the middle of the <a href="https://en.wikipedia.org/wiki/Editor_war">Editor Wars</a>. Take your next steps very carefully!</p>
+<ul>
+<li>Neo[vim] - Modal editing with Action-Object methodology</li>
+<li>Kakoune/Helix - Modal editing with Object-Action methodology.</li>
+<li>Emacs - Macro editing with lisp based configuration.</li>
+<li>Visual Studio Code - Beginner Friendly, simple text editor for noobs.</li>
+</ul>
+<h1 id="goodbye">Goodbye!<a href="#goodbye" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

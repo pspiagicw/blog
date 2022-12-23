@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on forked</title>
+    <link>https://blog.pspiagicw.xyz/tags/linux/</link>
+    <description>Recent content in linux on forked</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.pspiagicw.xyz/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microservices and Editors</title>
+      <link>https://blog.pspiagicw.xyz/posts/microservices-and-editors/</link>
+      <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.pspiagicw.xyz/posts/microservices-and-editors/</guid>
+      <description>When&amp;rsquo;s the last time you looked into how your editor works ? I don&amp;rsquo;t mean when you downloaded a few extensions and glanced a few themes.</description>
+      <content>&lt;p&gt;When&amp;rsquo;s the last time you looked into how your editor works ?
+I don&amp;rsquo;t mean when you downloaded a few extensions and glanced a few themes.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;disclaimer&#34;&gt;DISCLAIMER!&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This article tries to contrast the &lt;code&gt;Microservices&lt;/code&gt; architecture with current editor ecosystem.
+This is not a strict comparison, it is only done to explore how editors work in this day and age.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;vim-anyone-&#34;&gt;Vim anyone ?&lt;/h2&gt;
+&lt;p&gt;Neovim is one such editor I have used in my entire programming journey.
+It is not like your standard editor. It is not like any other editors.&lt;/p&gt;
+&lt;p&gt;But this post is not about neovim, this post is to explore how your editors work.
+This post is applicable to most modern editors, including&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Emacs&lt;/li&gt;
+&lt;li&gt;Neovim/Vim&lt;/li&gt;
+&lt;li&gt;VSCode&lt;/li&gt;
+&lt;li&gt;Atom (RIP, you will be missed)&lt;/li&gt;
+&lt;li&gt;Helix&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;back-to-2015&#34;&gt;Back to 2015&lt;/h2&gt;
+&lt;p&gt;Consider you are Microsoft, you just released a Open Source editor &lt;code&gt;Visual Studio Code&lt;/code&gt;.
+You are trying to build it&amp;rsquo;s plugin ecosystem from scratch.&lt;/p&gt;
+&lt;p&gt;Visual Studio Code will be referred as VSCode from now on.&lt;/p&gt;
+&lt;p&gt;VSCode is not a IDE, it is a editor.
+It does not target any specific language/technology.
+Thus it needs to fit for all technologies and languages present out there.&lt;/p&gt;
+&lt;p&gt;Microsoft needed to develop plugins and integrations for all those technologies by themselves.
+Atleast for the first few years, until it&amp;rsquo;s adoption goes high.&lt;/p&gt;
+
+  &lt;figure class=&#34;center&#34; &gt;
+    &lt;img src=&#34;https://code.visualstudio.com/assets/docs/editor/extension-marketplace/extensions-view-filter-menu.png&#34;  alt=&#34;VSCode Plugins&#34;   style=&#34;border-radius: 5px;border-width: 20px; border-style: solid; border-color: #ffb86c;&#34;  /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;enter-microservices&#34;&gt;Enter Microservices&lt;/h2&gt;
+&lt;p&gt;Microsoft had a brilliant idea, why bother implementing intellisense for multiple languages.&lt;/p&gt;
+&lt;h4 id=&#34;why-not-separate-the-intellisense-from-the-editor-&#34;&gt;Why not separate the intellisense from the editor ?&lt;/h4&gt;
+&lt;p&gt;This allows the editor to focus on being a great editor and it only needs to communicate with a external service which handles intellisense.&lt;/p&gt;
+&lt;h3 id=&#34;microservices-anyone-&#34;&gt;Microservices anyone ?&lt;/h3&gt;
+&lt;p&gt;This idea of multiple services working together to complete a application can be though of as &lt;code&gt;Microservices Architecture&lt;/code&gt;.
+The idea that instead of building a web application/server that handles everything, we build small services that excel in handling one single service.&lt;/p&gt;
+&lt;p&gt;That service can be either authentication or database operations etc.
+Every service communicates with each other and each service can be scaled separately.&lt;/p&gt;
+&lt;p&gt;If you want a more formal introduction, see &lt;a href=&#34;https://microservices.io&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;microservices-and-editors&#34;&gt;Microservices and Editors&lt;/h3&gt;
+&lt;p&gt;Microsoft proposed the Language Server Protocol (LSP), every language will have a associated server.
+This server will be responsible for providing language features like formatting, autoimport, autocompletion, documentation etc.
+The editor will only need to know which language connects with which server. The server and the client can talk using JSON-RPC protocol.&lt;/p&gt;
+&lt;p&gt;This idea was proposed to the Open Source Community by Microsoft in 2016. The Open Source community relied on editors like neovim, Emacs, Atom etc.
+The Open Source community accepted, thus LSP was born.&lt;/p&gt;
+&lt;p&gt;This meant all the editors had to build a LSP client which was embedded into the editor.
+Other than that they did not require any effort to support intellisense features.&lt;/p&gt;
+&lt;p&gt;That responsibility was transferred to the people developing the Language Servers.&lt;/p&gt;
+
+  &lt;figure class=&#34;center&#34; &gt;
+    &lt;img src=&#34;https://miro.medium.com/max/1838/1*NWvQepJvLQJLZLkLbNnEzA.png&#34;   style=&#34;border-style: solid; border-width: 30px; border-color: #ffb86c; border-radius: 5px;&#34;  /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;six-years-later&#34;&gt;Six Years Later&lt;/h3&gt;
+&lt;p&gt;Today almost all text editors implement LSP and each language has their well known language server.
+When you install a extension for a specific language on VSCode, it only installs a server for that language.
+VSCode already knew how to show intellisense features, it just didn&amp;rsquo;t know what to show.&lt;/p&gt;
+&lt;p&gt;The server starts communicating with VSCode for intellisense and boom!&lt;/p&gt;
+&lt;p&gt;There is a server for almost all languages. Most modern languages like Go, Rust and TypeScript come with a language server packaged with their compiler/interpreter.&lt;/p&gt;
+&lt;p&gt;Even COBOL has it&amp;rsquo;s own Language Server.&lt;/p&gt;
+&lt;p&gt;Some of the popular editors support LSP are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Emacs&lt;/li&gt;
+&lt;li&gt;neovim&lt;/li&gt;
+&lt;li&gt;Visual Studio Code&lt;/li&gt;
+&lt;li&gt;Helix&lt;/li&gt;
+&lt;li&gt;Atom&lt;/li&gt;
+&lt;li&gt;Sublime Text&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some of the most popular languages and their Language Servers are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python (PyRight)&lt;/li&gt;
+&lt;li&gt;TypeScript (tsserver)&lt;/li&gt;
+&lt;li&gt;Golang (gopls)&lt;/li&gt;
+&lt;li&gt;Rust (rust-analysis-server)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some of the niche languages which have their own servers are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;COBOL&lt;/li&gt;
+&lt;li&gt;FOTRAN&lt;/li&gt;
+&lt;li&gt;JSON/YAML/TOML&lt;/li&gt;
+&lt;li&gt;Assembly!! (PowerPC)&lt;/li&gt;
+&lt;li&gt;VHDL/Verilog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The official LSP documentation can be found &lt;a href=&#34;https://microsoft.github.io/language-server-protocol/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;syntax-highlighting&#34;&gt;Syntax Highlighting&lt;/h2&gt;
+&lt;p&gt;The second obstacle when designing editors is &lt;code&gt;Syntax Highlighting&lt;/code&gt;.
+Beginners adore it and pros hate it. But one can&amp;rsquo;t deny it makes code look sexy.
+This problem can only be understood by understanding how syntax highlighting works&lt;/p&gt;
+&lt;p&gt;Syntax highlighting in all editors is done by regex matching. &lt;code&gt;regex&lt;/code&gt; means Regular Expressions.
+It is like a type of language for matching sequence of characters.&lt;/p&gt;
+&lt;p&gt;The study of how to make a regular expression engine and parsing them leads to complicated theory of automata.
+It is quite a difficult task to make a efficient and accurate regex engine, although many pre-built implementations exist.
+Almost every programming language has a regex matcher in it&amp;rsquo;s standard library.&lt;/p&gt;
+&lt;p&gt;But regex matching is still quite slow and does not actually highlight syntactically.
+You might have encountered this while opening a huge file, it takes a second for the syntax highlighting to appear.
+It cannot actually understand the code, just matches according to the pattern defined.&lt;/p&gt;
+&lt;p&gt;Multi-lingual environments, like JSX, HTML, Markdown present more challenges to regex based syntax highlighting.
+These require multiple syntax highlighters in a single file. Which is slow and complex to implement.&lt;/p&gt;
+
+  &lt;img src=&#34;https://raw.githubusercontent.com/ericwbailey/a11y-prism-theme/master/images/a11y-dark.png&#34;  class=&#34;center&#34;  style=&#34;border-style: solid; border-width: 20px; border-color: #ffb86c; border-radius: 5px;&#34;  /&gt;
+
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;atom&#34;&gt;Atom&lt;/h3&gt;
+&lt;p&gt;The Atom developers were facing this exact problem.
+They came up with a solution, why not outsource this syntax highlighting to a service!&lt;/p&gt;
+&lt;p&gt;The result was tree-sitter, a incremental parsing library.
+This is written in C and is super fast, parsing a languages into a syntax tree character-wise!
+This was again extracted and shared with the Open Source Community.&lt;/p&gt;
+&lt;p&gt;It might be the only relic left of Atom in modern editors, after it&amp;rsquo;s death!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Fun Fact: GitHub uses tree-sitter to syntax highlight code on your repositories!&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tree-sitter&#34;&gt;Tree Sitter&lt;/h3&gt;
+&lt;p&gt;Tree Sitter allows for syntax highlighting being provided by a separate service.
+In more recent versions it provides indentation support.
+Modal editors like neo[vim] can provide text-object support efficiently using treesitter.&lt;/p&gt;
+&lt;p&gt;Most languages only need to program a parser according to the Tree Sitter specifications and it automatically
+builds and compiles the grammar needed for the language.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s technical details can be found &lt;a href=&#34;https://tree-sitter.github.io/tree-sitter/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;VSCode does not support Tree Sitter yet, and still follows RegEX.
+But there are proposals to integrate it using extensions and it might be right around the corner.&lt;/p&gt;
+
+  &lt;img src=&#34;https://i.ibb.co/BypQxTB/cmp.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;border-width: 20px; border-style: solid; border-color: #ffb86c;&#34;  /&gt;
+
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;debugging&#34;&gt;Debugging&lt;/h2&gt;
+&lt;p&gt;Just like LSP, Microsoft pioneered the idea that debugging was needed to be separated from the editor.&lt;/p&gt;
+&lt;p&gt;For exactly that reason, the Debug Adapter Protocol was born.
+Just like LSP it provides a separate debugger which communicates with the editor using DAP.&lt;/p&gt;
+&lt;p&gt;It is quite new and it&amp;rsquo;s adoption is on the way. Currently almost all the modern editors support DAP.
+Each and every language either comes with a DAP enabled debugger or a third-party program provides it.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s technical details can be found &lt;a href=&#34;https://microsoft.github.io/debug-adapter-protocol/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s little adoption might be the fact that debuggers were already separate from the editors.
+All languages have their own separate debuggers, either provided by the authors of the language or the community.
+This meant, people already have tightly integrated workflows for debugging.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C (&lt;code&gt;gdb&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Python (&lt;code&gt;pdb&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;https://code.visualstudio.com/assets/blogs/2018/08/07/without-DAP.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;border-width: 20px; border-style: solid; border-color: #ffb86c;&#34;  /&gt;
+
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;microservices&#34;&gt;Microservices&lt;/h2&gt;
+&lt;p&gt;You must have noticed something, all the features except text editing have been outsourced.&lt;/p&gt;
+&lt;p&gt;Thus the text editor has been microserviced instead of the previously monolith structure.
+This is the reason for the speed modern editors provide, while providing such advanced features.&lt;/p&gt;
+&lt;p&gt;While this is not a perfect example for a microservice architecture it is not a bad one.&lt;/p&gt;
+&lt;p&gt;The advantage of all editors built like these are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Better editing functionality&lt;/li&gt;
+&lt;li&gt;All editors have same syntax highlighting, intellisense and debugging capabilities.&lt;/li&gt;
+&lt;li&gt;Very fast code feedback.&lt;/li&gt;
+&lt;li&gt;Easily recover from crashes and errors.&lt;/li&gt;
+&lt;li&gt;More fine control over code features.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Gone are the days editors are popular, because of their language support.
+Now editors can focus on making text editing efficient and productive.&lt;/p&gt;
+&lt;p&gt;Language developers can focus on making their language easily written on multiple editors simultaenously.&lt;/p&gt;
+&lt;p&gt;If you are feeling adventurous, you might wanna try other editors for their editing features.
+Here is a list of editors with their editing features you might wanna try out:&lt;/p&gt;
+&lt;p&gt;! Beware by being adventurous you might be caught in the middle of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Editor_war&#34;&gt;Editor Wars&lt;/a&gt;. Take your next steps very carefully!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neo[vim] - Modal editing with Action-Object methodology&lt;/li&gt;
+&lt;li&gt;Kakoune/Helix - Modal editing with Object-Action methodology.&lt;/li&gt;
+&lt;li&gt;Emacs - Macro editing with lisp based configuration.&lt;/li&gt;
+&lt;li&gt;Visual Studio Code - Beginner Friendly, simple text editor for noobs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;goodbye&#34;&gt;Goodbye!&lt;/h1&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>The Weirdest mode in Emacs</title>
+      <link>https://blog.pspiagicw.xyz/posts/the-wierdest-mode-in-emacs-mpd-mode/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0530</pubDate>
+      
+      <guid>https://blog.pspiagicw.xyz/posts/the-wierdest-mode-in-emacs-mpd-mode/</guid>
+      <description>Considering Emacs has a lot of inbuilt functionality , existence of this mode is not a suprise.</description>
+      <content>&lt;p&gt;Considering Emacs has a lot of inbuilt functionality , existence of this mode is not a suprise.&lt;/p&gt;
+&lt;p&gt;If you don&amp;rsquo;t know  about MPC-Mode , this mode  allows us to control , manage and restructure your music database
+by interfacing with the MPD Server.&lt;/p&gt;
+&lt;p&gt;MPD(Music Player Daemon) is a popular music server on the Linux world. It helps in keeping your large music collection organized.
+You can also stream , and remotely control your own music collection.&lt;/p&gt;
+&lt;h3 id=&#34;the-suprise&#34;&gt;The Suprise&lt;/h3&gt;
+&lt;p&gt;The biggest problem with this mode, is the lack of documentation.
+There is minimal documentation for this mode , available through &lt;code&gt;describe-package&lt;/code&gt; command.
+Although it is not enough to use it efficiently. And for evil-users the journey is quite hard.&lt;/p&gt;
+&lt;h3 id=&#34;how-does-it-work&#34;&gt;How does it work ?&lt;/h3&gt;
+&lt;p&gt;To start the mpc interface , just use the command &lt;code&gt;mpc&lt;/code&gt; using &lt;code&gt;M-x&lt;/code&gt;.
+The interface contains 5 windows/splits.
+Here&amp;rsquo;s a pic for reference&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;The screen is effectively divided into 2 parts vertically. The top split is further divided into 3 splits  horizontally.
+The bottom split is split into 2 horizontally splits.&lt;/p&gt;
+&lt;p&gt;The top-left split is the &lt;code&gt;Genre&lt;/code&gt; split. The top-middle split is the &lt;code&gt;Artist | Composer&lt;/code&gt; split. The top-right one is the &lt;code&gt;Playlist | Album&lt;/code&gt; split.&lt;/p&gt;
+&lt;p&gt;The bottom-left split is the &lt;code&gt;Status&lt;/code&gt; split.The bottom-right split is the &lt;code&gt;MPC-Songs&lt;/code&gt; split.&lt;/p&gt;
+&lt;p&gt;Now that we know what each split is called, let&amp;rsquo;s begin!&lt;/p&gt;
+&lt;p&gt;One things you have to know about MPC is that you cannot select a single song! You have to select a artist / playlist / genre .&lt;/p&gt;
+&lt;h4 id=&#34;mpc-songs&#34;&gt;MPC-Songs&lt;/h4&gt;
+&lt;p&gt;This is the main split with the main information. It shows the songs included in currently selected artist / playlist / genre.
+Use the &lt;code&gt;mpc-playlist&lt;/code&gt; command to show the current playlist. You can select a song using the command &lt;code&gt;mpc-select&lt;/code&gt;. Remove it using the &lt;code&gt;mpc-playlist-delete&lt;/code&gt; command.
+You can save the current playlist using &lt;code&gt;mpc-playlist-create&lt;/code&gt;.If viewing a different playlist  in &amp;ldquo;MPC-Songs&amp;rdquo; split. , you can use
+&lt;code&gt;mpc-playlist-add&lt;/code&gt; to add it in the current playlist.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-songs.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-playlist&#34;&gt;MPC Playlist&lt;/h4&gt;
+&lt;p&gt;This view is useful for viewing all the differnt albums and playlists you currently have.Again to actually select a song use the command &lt;code&gt;mpc-select&lt;/code&gt;.
+Moving up and down is using the standard C-n and C-p.When a album or playlist is selected , the artists involved are shown in the &amp;ldquo;MPC-Artist&amp;rdquo; split.
+The white line denotes where the involved artists name ends and uninvolved artists name starts.To add the selected album to current playlist use &lt;code&gt;mpc-playlist-add&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In the same way the currently selected album / playlist has it&amp;rsquo;s genre shown in the &amp;ldquo;MPC-Genre&amp;rdquo; split.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-playlist.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-genre&#34;&gt;MPC Genre&lt;/h4&gt;
+&lt;p&gt;This view works in the same way. When selected a genre using &lt;code&gt;mpc-select&lt;/code&gt; , all the artist involved are shown in the &amp;ldquo;MPC-Artist&amp;rdquo; split.
+All the albums in the genre are shown in the &amp;ldquo;MPC-Album&amp;rdquo; split.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-genre.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-artist&#34;&gt;MPC Artist&lt;/h4&gt;
+&lt;p&gt;In the same way , you can select a artist using &lt;code&gt;mpc-select&lt;/code&gt;. And it&amp;rsquo;s information will be shown in the respective splits.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-artist.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-status&#34;&gt;MPC Status&lt;/h4&gt;
+&lt;p&gt;The currently playing song , album and artist are shown here.Also there is a graphical volume bar.
+This is a little lacking as it does not show whether &amp;ldquo;Shuffle , Consume , Single &amp;quot; modes are active.
+It has a mouse-based volume bar , but it cannot be controlled using keyboard  , nor there is a command for it.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-status.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h3 id=&#34;evil-keybindings&#34;&gt;Evil Keybindings&lt;/h3&gt;
+&lt;p&gt;Currently the &lt;code&gt;evil-collection&lt;/code&gt; does not support mpc-mode.Although it has been requested (&lt;a href=&#34;https://github.com/emacs-evil/evil-collection/issues/535&#34;&gt;https://github.com/emacs-evil/evil-collection/issues/535&lt;/a&gt;) .
+Using &lt;code&gt;general.el&lt;/code&gt; I have created some of my own keybindings. My keybindings also need custom function for moving up and down.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-emacs-lisp&#34; data-lang=&#34;emacs-lisp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(defun move-mpc-down ()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (interactive)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (evil-next-visual-line)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (mpc-select)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(defun move-mpc-up ()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (interactive)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (evil-previous-visual-line)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (mpc-select)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Below are the keybindings I use for MPC-mode.&lt;/p&gt;
+&lt;p&gt;You can change these , according to your workflow.
+The &lt;code&gt;mpc-play-at-point&lt;/code&gt; simply plays whatever you have selected directly , clearing the current playlist.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-emacs-lisp&#34; data-lang=&#34;emacs-lisp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(general-define-key
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; :keymaps &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-mode-map&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; :states &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;normal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;j&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;move-mpc-down&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;k&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;move-mpc-up&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;t&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-play&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-repeat&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-shuffle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;S&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-shuffle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-consume&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-playlist-add&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;p&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-playlist&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-next&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-prev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;R&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-playlist-delete&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RET&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-select&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;x&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-play-at-point&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;down-the-rabbit-hole&#34;&gt;Down the Rabbit Hole&lt;/h2&gt;
+&lt;p&gt;Keep falling in the rabbit hole of Emacs! Till next time!&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

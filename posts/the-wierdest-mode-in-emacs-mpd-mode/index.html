@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>The Weirdest mode in Emacs :: forked</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Considering Emacs has a lot of inbuilt functionality , existence of this mode is not a suprise." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.pspiagicw.xyz/posts/the-wierdest-mode-in-emacs-mpd-mode/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.pspiagicw.xyz/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://blog.pspiagicw.xyz/img/theme-colors/orange.png">
+  <link rel="apple-touch-icon" href="https://blog.pspiagicw.xyz/img/theme-colors/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Weirdest mode in Emacs">
+<meta property="og:description" content="Considering Emacs has a lot of inbuilt functionality , existence of this mode is not a suprise." />
+<meta property="og:url" content="https://blog.pspiagicw.xyz/posts/the-wierdest-mode-in-emacs-mpd-mode/" />
+<meta property="og:site_name" content="forked" />
+
+  
+    <meta property="og:image" content="img/favicon/%!s().png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="emacs" />
+
+
+  <meta property="article:published_time" content="2021-09-21 00:00:00 &#43;0530 IST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://blog.pspiagicw.xyz">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/posts">Writings</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/index.xml">RSS</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/posts">Writings</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/index.xml">RSS</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://blog.pspiagicw.xyz/posts/the-wierdest-mode-in-emacs-mpd-mode/">The Weirdest mode in Emacs</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2021-09-21 ::
+        
+      </time>
+    
+    
+      <span class="post-author">[pspiagicw]</span>
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/linux/">linux</a>&nbsp;
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/emacs/">emacs</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Considering Emacs has a lot of inbuilt functionality , existence of this mode is not a suprise.</p>
+<p>If you don&rsquo;t know  about MPC-Mode , this mode  allows us to control , manage and restructure your music database
+by interfacing with the MPD Server.</p>
+<p>MPD(Music Player Daemon) is a popular music server on the Linux world. It helps in keeping your large music collection organized.
+You can also stream , and remotely control your own music collection.</p>
+<h3 id="the-suprise">The Suprise<a href="#the-suprise" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>The biggest problem with this mode, is the lack of documentation.
+There is minimal documentation for this mode , available through <code>describe-package</code> command.
+Although it is not enough to use it efficiently. And for evil-users the journey is quite hard.</p>
+<h3 id="how-does-it-work">How does it work ?<a href="#how-does-it-work" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>To start the mpc interface , just use the command <code>mpc</code> using <code>M-x</code>.
+The interface contains 5 windows/splits.
+Here&rsquo;s a pic for reference</p>
+
+  <figure class="left" >
+    <img src="/images/mpc.png"   />
+    
+  </figure>
+
+
+<p>The screen is effectively divided into 2 parts vertically. The top split is further divided into 3 splits  horizontally.
+The bottom split is split into 2 horizontally splits.</p>
+<p>The top-left split is the <code>Genre</code> split. The top-middle split is the <code>Artist | Composer</code> split. The top-right one is the <code>Playlist | Album</code> split.</p>
+<p>The bottom-left split is the <code>Status</code> split.The bottom-right split is the <code>MPC-Songs</code> split.</p>
+<p>Now that we know what each split is called, let&rsquo;s begin!</p>
+<p>One things you have to know about MPC is that you cannot select a single song! You have to select a artist / playlist / genre .</p>
+<h4 id="mpc-songs">MPC-Songs<a href="#mpc-songs" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>This is the main split with the main information. It shows the songs included in currently selected artist / playlist / genre.
+Use the <code>mpc-playlist</code> command to show the current playlist. You can select a song using the command <code>mpc-select</code>. Remove it using the <code>mpc-playlist-delete</code> command.
+You can save the current playlist using <code>mpc-playlist-create</code>.If viewing a different playlist  in &ldquo;MPC-Songs&rdquo; split. , you can use
+<code>mpc-playlist-add</code> to add it in the current playlist.</p>
+
+  <figure class="left" >
+    <img src="/images/mpc-songs.png"   />
+    
+  </figure>
+
+
+<h4 id="mpc-playlist">MPC Playlist<a href="#mpc-playlist" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>This view is useful for viewing all the differnt albums and playlists you currently have.Again to actually select a song use the command <code>mpc-select</code>.
+Moving up and down is using the standard C-n and C-p.When a album or playlist is selected , the artists involved are shown in the &ldquo;MPC-Artist&rdquo; split.
+The white line denotes where the involved artists name ends and uninvolved artists name starts.To add the selected album to current playlist use <code>mpc-playlist-add</code></p>
+<p>In the same way the currently selected album / playlist has it&rsquo;s genre shown in the &ldquo;MPC-Genre&rdquo; split.</p>
+
+  <figure class="left" >
+    <img src="/images/mpc-playlist.png"   />
+    
+  </figure>
+
+
+<h4 id="mpc-genre">MPC Genre<a href="#mpc-genre" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>This view works in the same way. When selected a genre using <code>mpc-select</code> , all the artist involved are shown in the &ldquo;MPC-Artist&rdquo; split.
+All the albums in the genre are shown in the &ldquo;MPC-Album&rdquo; split.</p>
+
+  <figure class="left" >
+    <img src="/images/mpc-genre.png"   />
+    
+  </figure>
+
+
+<h4 id="mpc-artist">MPC Artist<a href="#mpc-artist" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>In the same way , you can select a artist using <code>mpc-select</code>. And it&rsquo;s information will be shown in the respective splits.</p>
+
+  <figure class="left" >
+    <img src="/images/mpc-artist.png"   />
+    
+  </figure>
+
+
+<h4 id="mpc-status">MPC Status<a href="#mpc-status" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>The currently playing song , album and artist are shown here.Also there is a graphical volume bar.
+This is a little lacking as it does not show whether &ldquo;Shuffle , Consume , Single &quot; modes are active.
+It has a mouse-based volume bar , but it cannot be controlled using keyboard  , nor there is a command for it.</p>
+
+  <figure class="left" >
+    <img src="/images/mpc-status.png"   />
+    
+  </figure>
+
+
+<h3 id="evil-keybindings">Evil Keybindings<a href="#evil-keybindings" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Currently the <code>evil-collection</code> does not support mpc-mode.Although it has been requested (<a href="https://github.com/emacs-evil/evil-collection/issues/535">https://github.com/emacs-evil/evil-collection/issues/535</a>) .
+Using <code>general.el</code> I have created some of my own keybindings. My keybindings also need custom function for moving up and down.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>(defun move-mpc-down ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (evil-next-visual-line)
+</span></span><span style="display:flex;"><span>  (mpc-select)
+</span></span><span style="display:flex;"><span> )
+</span></span><span style="display:flex;"><span>(defun move-mpc-up ()
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (evil-previous-visual-line)
+</span></span><span style="display:flex;"><span>  (mpc-select)
+</span></span><span style="display:flex;"><span> )
+</span></span></code></pre></div><p>Below are the keybindings I use for MPC-mode.</p>
+<p>You can change these , according to your workflow.
+The <code>mpc-play-at-point</code> simply plays whatever you have selected directly , clearing the current playlist.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>(general-define-key
+</span></span><span style="display:flex;"><span> :keymaps <span style="color:#e6db74">&#39;mpc-mode-map</span>
+</span></span><span style="display:flex;"><span> :states <span style="color:#e6db74">&#39;normal</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;j&#34;</span> <span style="color:#e6db74">&#39;move-mpc-down</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;k&#34;</span> <span style="color:#e6db74">&#39;move-mpc-up</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;t&#34;</span> <span style="color:#e6db74">&#39;mpc-toggle-play</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#e6db74">&#39;mpc-toggle-repeat</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;s&#34;</span> <span style="color:#e6db74">&#39;mpc-toggle-shuffle</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;S&#34;</span> <span style="color:#e6db74">&#39;mpc-toggle-shuffle</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#e6db74">&#39;mpc-toggle-consume</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#39;mpc-playlist-add</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;p&#34;</span> <span style="color:#e6db74">&#39;mpc-playlist</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;&gt;&#34;</span> <span style="color:#e6db74">&#39;mpc-next</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;&lt;&#34;</span> <span style="color:#e6db74">&#39;mpc-prev</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;R&#34;</span> <span style="color:#e6db74">&#39;mpc-playlist-delete</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;RET&#34;</span> <span style="color:#e6db74">&#39;mpc-select</span>
+</span></span><span style="display:flex;"><span> <span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#e6db74">&#39;mpc-play-at-point</span>
+</span></span><span style="display:flex;"><span> )
+</span></span></code></pre></div><h2 id="down-the-rabbit-hole">Down the Rabbit Hole<a href="#down-the-rabbit-hole" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Keep falling in the rabbit hole of Emacs! Till next time!</p>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

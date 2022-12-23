@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Rough Guide to Matplotlib :: forked</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Do you have the need to create graphs? Visualize highly numerical data , or just look at beautifully generated graphs and get turned on!" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.pspiagicw.xyz/posts/dirty-guide-on-matplotlib/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.pspiagicw.xyz/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://blog.pspiagicw.xyz/img/theme-colors/orange.png">
+  <link rel="apple-touch-icon" href="https://blog.pspiagicw.xyz/img/theme-colors/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Rough Guide to Matplotlib">
+<meta property="og:description" content="Do you have the need to create graphs? Visualize highly numerical data , or just look at beautifully generated graphs and get turned on!" />
+<meta property="og:url" content="https://blog.pspiagicw.xyz/posts/dirty-guide-on-matplotlib/" />
+<meta property="og:site_name" content="forked" />
+
+  
+    <meta property="og:image" content="img/favicon/%!s().png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="programming" />
+
+
+  <meta property="article:published_time" content="2021-05-17 00:00:00 &#43;0530 IST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://blog.pspiagicw.xyz">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/posts">Writings</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/index.xml">RSS</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/posts">Writings</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/tags">Tags</a></li>
+        
+      
+        
+          <li><a href="/index.xml">RSS</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://blog.pspiagicw.xyz/posts/dirty-guide-on-matplotlib/">Rough Guide to Matplotlib</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2021-05-17 ::
+        
+      </time>
+    
+    
+      <span class="post-author">[pspiagicw]</span>
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/python/">python</a>&nbsp;
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/programming/">programming</a>&nbsp;
+      
+      #<a href="https://blog.pspiagicw.xyz/tags/machinelearning/">machinelearning</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Do you have the need to create graphs? Visualize highly numerical data , or just look at beautifully generated graphs and get turned on!</p>
+<p><strong>Well like any other situation Python has you covered!</strong></p>
+<p>Matplotlib provides easy and efficient way of creating graphs.It is a python module , so you need <code>pip</code> to install it. <code>Pip</code> is python&rsquo;s modular structure allowing , us to share our code with others.</p>
+<p><code>pip</code> can install any module from PyPI , python&rsquo;s official module location , or as cool people call it repository.
+To install use <code>pip install</code> command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Installing matploblib</span>
+</span></span><span style="display:flex;"><span>pip install --user matplotlib
+</span></span></code></pre></div><p>Now that matplotlib is installed. We have to import it in Python , <strong>importing</strong> in python is easy!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib
+</span></span></code></pre></div><p>But we don&rsquo;t need to import matplotlib itself, <code>matplotlib.pyplot</code> provides most of the features we need. The rest of matplotlib can be used to create extremely complex graphs.
+Pyplot is inspired from <em>MATLAB</em> . If you have used <em>MATLAB</em> before , it has the same API.
+This guide only focuses on PyPlot API , for a more object-based approach , see matplotlib&rsquo;s documentation, or refer to this guide.</p>
+<h3 id="important-funcs">Important Funcs<a href="#important-funcs" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>PyPlot provides some useful functions mainly <code>pyplot.show()</code> and <code>pyplot.savefig()</code>.
+These provide functionality to show and save the graphs we create!.
+Without these method, you can plot your graphs , but can never see them.</p>
+<p>Plotting is when you call a particular method (More on that later!).These method configure the matplotlib backend with your graph ,
+<code>pyplot.show()</code> simply shows the configured , graph.
+When you try to configure more than one plot , both are shown in same frame/picture.</p>
+<p>To see a already plotted graph , use <code>pyplot.show()</code> , but using it also clears the graph after showing.
+While using it in a REPL , keep in mind to plot the graph again , before calling <code>pyplot.show()</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pyplot<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>To save a already plotted graph , use <code>pyplot.savefig()</code> , it takes name and format of image as arguments.
+For example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Graph already plotted!</span>
+</span></span><span style="display:flex;"><span>pyplot<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#39;example-graph.png&#39;</span>,format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;png&#39;</span>)
+</span></span></code></pre></div><p>One thing before moving to next section!
+Most people alias <code>pyplot</code> to <code>plt</code> in Python. So if you see <code>plt</code> anywhere, don&rsquo;t worry it is the same thing.
+To alias pyplot to plt</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span></code></pre></div><h3 id="basic-plotting">Basic Plotting<a href="#basic-plotting" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>For plotting basic lines , <code>plt.plot()</code> function is enough, it takes list of x and y coordinates as arguments.</p>
+<p>Plotting points (3,2),(5,4) and (4,1).Keep in mind plot method connects all the dots with a line.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x_coordinates <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">3</span> , <span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">4</span>]
+</span></span><span style="display:flex;"><span>y_coordinates <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">2</span> , <span style="color:#ae81ff">4</span> , <span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Points (3,2),(5,4),(4,1)</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(x_coordinates,y_coordinates)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>The graph created is</p>
+
+  <figure class="left" >
+    <img src="/images/simple-plot-matplotlib.png"   />
+    
+      <figcaption class="center" >Figure 1: Simple Plot</figcaption>
+    
+  </figure>
+
+
+<h3 id="simple-scattering">Simple Scattering<a href="#simple-scattering" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Scatter plot simply shows all the coordinates/points without connecting them with a line.</p>
+<p>Scatter plot are very useful in showing actual points , thus analyzing them separately.
+It also takes list of x and y coordinates as arguments.</p>
+<p>Showing (2,6),(4,5),(1,8) and (3,6) on a graph is easy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x_coordinates <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">2</span> , <span style="color:#ae81ff">4</span> , <span style="color:#ae81ff">1</span> , <span style="color:#ae81ff">3</span> ]
+</span></span><span style="display:flex;"><span>y_coordinates <span style="color:#f92672">=</span> [ <span style="color:#ae81ff">6</span> , <span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">8</span> , <span style="color:#ae81ff">6</span> ]
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Points (2,6) , (4,5) , (1,8) and (3,6)</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(x_coordinates , y_coordinates)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>The end result</p>
+
+  <figure class="left" >
+    <img src="/images/scatter-plot-matplotlib.png"   />
+    
+      <figcaption class="center" >Figure 2: Scattering Example</figcaption>
+    
+  </figure>
+
+
+<h3 id="histograms">Histograms<a href="#histograms" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Histograms in matplotlib is as easy as just giving the list of values you want a histogram of.Matplotlib automatically calculates the rest!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>hist([ random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">300</span>) ])
+</span></span></code></pre></div>
+  <figure class="left" >
+    <img src="/images/simple-hist-matplotlib.png"   />
+    
+      <figcaption class="center" >Figure 3: Simple Histogram</figcaption>
+    
+  </figure>
+
+
+<p>It provides a good view of how the data is distributed.</p>
+<h3 id="showing-images-dot">Showing Images.<a href="#showing-images-dot" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>One more useful function , I use most of the time is <code>plt.imshow()</code> . When working with a lot of images data ,  this can display your image with extra info/special filters etc.</p>
+<p>It takes a 2-D matrix or 3-D matrix as input , depending on channels of image , that is how many colors are recorded , in data.A single color is represented as intensity value.
+It can vary from 1 to 255.
+No of channels/colors can vary between 1-3 colors, if only 1 channel , image is black and white.
+If having all 3 colors , image is a normal color image.The colors are simply RGB(Red ,Green and Blue).</p>
+<p>For example this is an handwritten 5 , from MNIST dataset which is stored in a 2-D array.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Usage of matplotlib.pyplot.imshow()</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>imshow(image)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div>
+  <figure class="left" >
+    <img src="/images/mnist-plot-matplotlib.png"   />
+    
+      <figcaption class="center" >Figure 4: MNIST Number in Matplotlib</figcaption>
+    
+  </figure>
+
+
+<h3 id="aesthetics-dot">Aesthetics.<a href="#aesthetics-dot" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Graphs being almost 100% visual feedback , you might need to add some bling to it.
+Matplotlib supports everything a graph might have.Make sure to read it&rsquo;s documentation later.</p>
+<p>To add label to any plot/scatter , just add label argument.Label make it easy to spot , when multiple plots are present.
+You can also add label to x-axis and y-axis using methods like <code>plt.xlabel()</code> and <code>plt.ylabel()</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Speed&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Distance&#39;</span>)
+</span></span></code></pre></div><p>You can add title to your graphs using <code>plt.title()</code> method.</p>
+<p>You can also add <code>text</code> to the graph , using the <code>plt.text()</code> method.For using this , you have to provide a coordinate and the text to plot.
+This text can be customized (Color , Border etc).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(x_coordinates,y_coordinates,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Group 1&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> x,y <span style="color:#f92672">in</span> zip(x_coordinates,y_coordinates):
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>text(x,y,<span style="color:#e6db74">&#39;Point (</span><span style="color:#e6db74">{x}</span><span style="color:#e6db74">,</span><span style="color:#e6db74">{y}</span><span style="color:#e6db74">)&#39;</span><span style="color:#f92672">.</span>format(x<span style="color:#f92672">=</span>x,y<span style="color:#f92672">=</span>y))
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div>
+  <figure class="left" >
+    <img src="/images/labels-matplotlib.png"   />
+    
+      <figcaption class="center" >Figure 5: Labels in Matplotlib</figcaption>
+    
+  </figure>
+
+
+<p>To plot one graph over another , use the plot/scatter function without using <code>plt.show()</code> or <code>plt.savefig()</code> first.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([ <span style="color:#ae81ff">3</span> , <span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">7</span>] , [ <span style="color:#ae81ff">3</span> , <span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">7</span>],label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Line y=x&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter([ <span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">6</span> ] , [ <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span> ] , label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Group of people&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div>
+  <figure class="left" >
+    <img src="/images/multiple-plot-matplotlib.png"   />
+    
+      <figcaption class="center" >Figure 6: Multiple Plots in Matplotlib</figcaption>
+    
+  </figure>
+
+
+<p>To show a legend in the graph use the <code>plt.legend()</code> function .</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([ <span style="color:#ae81ff">3</span> , <span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">7</span>] , [ <span style="color:#ae81ff">3</span> , <span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">7</span>],label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Line y=x&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter([ <span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">6</span> ] , [ <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span> ] , label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Group of people&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>You can customize plotting style by , specifying parameters such as</p>
+<ul>
+<li>LineStyle: Using <code>linestyle</code> parameter to customize the line-drawn.</li>
+<li>LineWidth: Using <code>linewidth</code> parameter to increase thickness of the line.</li>
+<li>Marker: Using <code>marker</code> parameter , this changes how actual points are shown in the graph.See here for all the marker codes.</li>
+<li>Color: Using color parameter, this changes color of the line drawn, see here for all the color codes.</li>
+</ul>
+<p>This graph uses linestyle of <code>--</code> and linewidth of 3.5 ,marker type of <code>+</code> and color green.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(x_coodinates,y_coordinates,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Line&#39;</span>,linestyle<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3.5</span>,marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;+&#39;</span>,color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div>
+  <figure class="left" >
+    <img src="/images/ultimate-custom-matplotlib.png"   />
+    
+  </figure>
+
+
+<p>You can also customize matplotlib itself, using <code>styles</code>.
+By default matplotlib&rsquo;s style is boring,I am using dracula style for my graphs.You can change everything from fonts to background. More info is present in matplotlib&rsquo;s documentation.
+If you want to learn to use matplotlib , you have to read it.</p>
+<p>Anyway , here&rsquo;s how to use a default dark-style(included in matplotlib).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;dark_background&#39;</span>)
+</span></span></code></pre></div><h3 id="bon-voyage">Bon Voyage!<a href="#bon-voyage" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>That&rsquo;s basic matplotlib for you.You should definately look at their documentation.
+You can also look at the Object API for matplotlib. It is a little advanced , but is highly configurable.</p>
+<p>With the required info, you can make basic graphs , with text. I personally use matplotlib to create graphs for my Physics classes and of-course Data Visualization in ML.</p>
+
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

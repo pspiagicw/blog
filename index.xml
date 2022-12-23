@@ -1,19 +1,570 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>forked</title>
+    <link>https://blog.pspiagicw.xyz/</link>
+    <description>Recent content on forked</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Dec 2022 15:05:46 +0530</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.pspiagicw.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>http://example.org/posts/my-first-post/</link>
-      <pubDate>Fri, 23 Dec 2022 15:05:46 +0530</pubDate>
+      <title>Microservices and Editors</title>
+      <link>https://blog.pspiagicw.xyz/posts/microservices-and-editors/</link>
+      <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/my-first-post/</guid>
-      <description></description>
+      <guid>https://blog.pspiagicw.xyz/posts/microservices-and-editors/</guid>
+      <description>When&amp;rsquo;s the last time you looked into how your editor works ? I don&amp;rsquo;t mean when you downloaded a few extensions and glanced a few themes.</description>
+      <content>&lt;p&gt;When&amp;rsquo;s the last time you looked into how your editor works ?
+I don&amp;rsquo;t mean when you downloaded a few extensions and glanced a few themes.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h1 id=&#34;disclaimer&#34;&gt;DISCLAIMER!&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This article tries to contrast the &lt;code&gt;Microservices&lt;/code&gt; architecture with current editor ecosystem.
+This is not a strict comparison, it is only done to explore how editors work in this day and age.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;vim-anyone-&#34;&gt;Vim anyone ?&lt;/h2&gt;
+&lt;p&gt;Neovim is one such editor I have used in my entire programming journey.
+It is not like your standard editor. It is not like any other editors.&lt;/p&gt;
+&lt;p&gt;But this post is not about neovim, this post is to explore how your editors work.
+This post is applicable to most modern editors, including&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Emacs&lt;/li&gt;
+&lt;li&gt;Neovim/Vim&lt;/li&gt;
+&lt;li&gt;VSCode&lt;/li&gt;
+&lt;li&gt;Atom (RIP, you will be missed)&lt;/li&gt;
+&lt;li&gt;Helix&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;back-to-2015&#34;&gt;Back to 2015&lt;/h2&gt;
+&lt;p&gt;Consider you are Microsoft, you just released a Open Source editor &lt;code&gt;Visual Studio Code&lt;/code&gt;.
+You are trying to build it&amp;rsquo;s plugin ecosystem from scratch.&lt;/p&gt;
+&lt;p&gt;Visual Studio Code will be referred as VSCode from now on.&lt;/p&gt;
+&lt;p&gt;VSCode is not a IDE, it is a editor.
+It does not target any specific language/technology.
+Thus it needs to fit for all technologies and languages present out there.&lt;/p&gt;
+&lt;p&gt;Microsoft needed to develop plugins and integrations for all those technologies by themselves.
+Atleast for the first few years, until it&amp;rsquo;s adoption goes high.&lt;/p&gt;
+
+  &lt;figure class=&#34;center&#34; &gt;
+    &lt;img src=&#34;https://code.visualstudio.com/assets/docs/editor/extension-marketplace/extensions-view-filter-menu.png&#34;  alt=&#34;VSCode Plugins&#34;   style=&#34;border-radius: 5px;border-width: 20px; border-style: solid; border-color: #ffb86c;&#34;  /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;enter-microservices&#34;&gt;Enter Microservices&lt;/h2&gt;
+&lt;p&gt;Microsoft had a brilliant idea, why bother implementing intellisense for multiple languages.&lt;/p&gt;
+&lt;h4 id=&#34;why-not-separate-the-intellisense-from-the-editor-&#34;&gt;Why not separate the intellisense from the editor ?&lt;/h4&gt;
+&lt;p&gt;This allows the editor to focus on being a great editor and it only needs to communicate with a external service which handles intellisense.&lt;/p&gt;
+&lt;h3 id=&#34;microservices-anyone-&#34;&gt;Microservices anyone ?&lt;/h3&gt;
+&lt;p&gt;This idea of multiple services working together to complete a application can be though of as &lt;code&gt;Microservices Architecture&lt;/code&gt;.
+The idea that instead of building a web application/server that handles everything, we build small services that excel in handling one single service.&lt;/p&gt;
+&lt;p&gt;That service can be either authentication or database operations etc.
+Every service communicates with each other and each service can be scaled separately.&lt;/p&gt;
+&lt;p&gt;If you want a more formal introduction, see &lt;a href=&#34;https://microservices.io&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;microservices-and-editors&#34;&gt;Microservices and Editors&lt;/h3&gt;
+&lt;p&gt;Microsoft proposed the Language Server Protocol (LSP), every language will have a associated server.
+This server will be responsible for providing language features like formatting, autoimport, autocompletion, documentation etc.
+The editor will only need to know which language connects with which server. The server and the client can talk using JSON-RPC protocol.&lt;/p&gt;
+&lt;p&gt;This idea was proposed to the Open Source Community by Microsoft in 2016. The Open Source community relied on editors like neovim, Emacs, Atom etc.
+The Open Source community accepted, thus LSP was born.&lt;/p&gt;
+&lt;p&gt;This meant all the editors had to build a LSP client which was embedded into the editor.
+Other than that they did not require any effort to support intellisense features.&lt;/p&gt;
+&lt;p&gt;That responsibility was transferred to the people developing the Language Servers.&lt;/p&gt;
+
+  &lt;figure class=&#34;center&#34; &gt;
+    &lt;img src=&#34;https://miro.medium.com/max/1838/1*NWvQepJvLQJLZLkLbNnEzA.png&#34;   style=&#34;border-style: solid; border-width: 30px; border-color: #ffb86c; border-radius: 5px;&#34;  /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;six-years-later&#34;&gt;Six Years Later&lt;/h3&gt;
+&lt;p&gt;Today almost all text editors implement LSP and each language has their well known language server.
+When you install a extension for a specific language on VSCode, it only installs a server for that language.
+VSCode already knew how to show intellisense features, it just didn&amp;rsquo;t know what to show.&lt;/p&gt;
+&lt;p&gt;The server starts communicating with VSCode for intellisense and boom!&lt;/p&gt;
+&lt;p&gt;There is a server for almost all languages. Most modern languages like Go, Rust and TypeScript come with a language server packaged with their compiler/interpreter.&lt;/p&gt;
+&lt;p&gt;Even COBOL has it&amp;rsquo;s own Language Server.&lt;/p&gt;
+&lt;p&gt;Some of the popular editors support LSP are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Emacs&lt;/li&gt;
+&lt;li&gt;neovim&lt;/li&gt;
+&lt;li&gt;Visual Studio Code&lt;/li&gt;
+&lt;li&gt;Helix&lt;/li&gt;
+&lt;li&gt;Atom&lt;/li&gt;
+&lt;li&gt;Sublime Text&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some of the most popular languages and their Language Servers are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python (PyRight)&lt;/li&gt;
+&lt;li&gt;TypeScript (tsserver)&lt;/li&gt;
+&lt;li&gt;Golang (gopls)&lt;/li&gt;
+&lt;li&gt;Rust (rust-analysis-server)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some of the niche languages which have their own servers are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;COBOL&lt;/li&gt;
+&lt;li&gt;FOTRAN&lt;/li&gt;
+&lt;li&gt;JSON/YAML/TOML&lt;/li&gt;
+&lt;li&gt;Assembly!! (PowerPC)&lt;/li&gt;
+&lt;li&gt;VHDL/Verilog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The official LSP documentation can be found &lt;a href=&#34;https://microsoft.github.io/language-server-protocol/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;syntax-highlighting&#34;&gt;Syntax Highlighting&lt;/h2&gt;
+&lt;p&gt;The second obstacle when designing editors is &lt;code&gt;Syntax Highlighting&lt;/code&gt;.
+Beginners adore it and pros hate it. But one can&amp;rsquo;t deny it makes code look sexy.
+This problem can only be understood by understanding how syntax highlighting works&lt;/p&gt;
+&lt;p&gt;Syntax highlighting in all editors is done by regex matching. &lt;code&gt;regex&lt;/code&gt; means Regular Expressions.
+It is like a type of language for matching sequence of characters.&lt;/p&gt;
+&lt;p&gt;The study of how to make a regular expression engine and parsing them leads to complicated theory of automata.
+It is quite a difficult task to make a efficient and accurate regex engine, although many pre-built implementations exist.
+Almost every programming language has a regex matcher in it&amp;rsquo;s standard library.&lt;/p&gt;
+&lt;p&gt;But regex matching is still quite slow and does not actually highlight syntactically.
+You might have encountered this while opening a huge file, it takes a second for the syntax highlighting to appear.
+It cannot actually understand the code, just matches according to the pattern defined.&lt;/p&gt;
+&lt;p&gt;Multi-lingual environments, like JSX, HTML, Markdown present more challenges to regex based syntax highlighting.
+These require multiple syntax highlighters in a single file. Which is slow and complex to implement.&lt;/p&gt;
+
+  &lt;img src=&#34;https://raw.githubusercontent.com/ericwbailey/a11y-prism-theme/master/images/a11y-dark.png&#34;  class=&#34;center&#34;  style=&#34;border-style: solid; border-width: 20px; border-color: #ffb86c; border-radius: 5px;&#34;  /&gt;
+
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;atom&#34;&gt;Atom&lt;/h3&gt;
+&lt;p&gt;The Atom developers were facing this exact problem.
+They came up with a solution, why not outsource this syntax highlighting to a service!&lt;/p&gt;
+&lt;p&gt;The result was tree-sitter, a incremental parsing library.
+This is written in C and is super fast, parsing a languages into a syntax tree character-wise!
+This was again extracted and shared with the Open Source Community.&lt;/p&gt;
+&lt;p&gt;It might be the only relic left of Atom in modern editors, after it&amp;rsquo;s death!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Fun Fact: GitHub uses tree-sitter to syntax highlight code on your repositories!&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tree-sitter&#34;&gt;Tree Sitter&lt;/h3&gt;
+&lt;p&gt;Tree Sitter allows for syntax highlighting being provided by a separate service.
+In more recent versions it provides indentation support.
+Modal editors like neo[vim] can provide text-object support efficiently using treesitter.&lt;/p&gt;
+&lt;p&gt;Most languages only need to program a parser according to the Tree Sitter specifications and it automatically
+builds and compiles the grammar needed for the language.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s technical details can be found &lt;a href=&#34;https://tree-sitter.github.io/tree-sitter/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;VSCode does not support Tree Sitter yet, and still follows RegEX.
+But there are proposals to integrate it using extensions and it might be right around the corner.&lt;/p&gt;
+
+  &lt;img src=&#34;https://i.ibb.co/BypQxTB/cmp.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;border-width: 20px; border-style: solid; border-color: #ffb86c;&#34;  /&gt;
+
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;debugging&#34;&gt;Debugging&lt;/h2&gt;
+&lt;p&gt;Just like LSP, Microsoft pioneered the idea that debugging was needed to be separated from the editor.&lt;/p&gt;
+&lt;p&gt;For exactly that reason, the Debug Adapter Protocol was born.
+Just like LSP it provides a separate debugger which communicates with the editor using DAP.&lt;/p&gt;
+&lt;p&gt;It is quite new and it&amp;rsquo;s adoption is on the way. Currently almost all the modern editors support DAP.
+Each and every language either comes with a DAP enabled debugger or a third-party program provides it.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s technical details can be found &lt;a href=&#34;https://microsoft.github.io/debug-adapter-protocol/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s little adoption might be the fact that debuggers were already separate from the editors.
+All languages have their own separate debuggers, either provided by the authors of the language or the community.
+This meant, people already have tightly integrated workflows for debugging.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C (&lt;code&gt;gdb&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Python (&lt;code&gt;pdb&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;img src=&#34;https://code.visualstudio.com/assets/blogs/2018/08/07/without-DAP.png&#34;  class=&#34;center&#34;  style=&#34;border-radius: 5px;border-width: 20px; border-style: solid; border-color: #ffb86c;&#34;  /&gt;
+
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;microservices&#34;&gt;Microservices&lt;/h2&gt;
+&lt;p&gt;You must have noticed something, all the features except text editing have been outsourced.&lt;/p&gt;
+&lt;p&gt;Thus the text editor has been microserviced instead of the previously monolith structure.
+This is the reason for the speed modern editors provide, while providing such advanced features.&lt;/p&gt;
+&lt;p&gt;While this is not a perfect example for a microservice architecture it is not a bad one.&lt;/p&gt;
+&lt;p&gt;The advantage of all editors built like these are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Better editing functionality&lt;/li&gt;
+&lt;li&gt;All editors have same syntax highlighting, intellisense and debugging capabilities.&lt;/li&gt;
+&lt;li&gt;Very fast code feedback.&lt;/li&gt;
+&lt;li&gt;Easily recover from crashes and errors.&lt;/li&gt;
+&lt;li&gt;More fine control over code features.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Gone are the days editors are popular, because of their language support.
+Now editors can focus on making text editing efficient and productive.&lt;/p&gt;
+&lt;p&gt;Language developers can focus on making their language easily written on multiple editors simultaenously.&lt;/p&gt;
+&lt;p&gt;If you are feeling adventurous, you might wanna try other editors for their editing features.
+Here is a list of editors with their editing features you might wanna try out:&lt;/p&gt;
+&lt;p&gt;! Beware by being adventurous you might be caught in the middle of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Editor_war&#34;&gt;Editor Wars&lt;/a&gt;. Take your next steps very carefully!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neo[vim] - Modal editing with Action-Object methodology&lt;/li&gt;
+&lt;li&gt;Kakoune/Helix - Modal editing with Object-Action methodology.&lt;/li&gt;
+&lt;li&gt;Emacs - Macro editing with lisp based configuration.&lt;/li&gt;
+&lt;li&gt;Visual Studio Code - Beginner Friendly, simple text editor for noobs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;goodbye&#34;&gt;Goodbye!&lt;/h1&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>The Weirdest mode in Emacs</title>
+      <link>https://blog.pspiagicw.xyz/posts/the-wierdest-mode-in-emacs-mpd-mode/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0530</pubDate>
+      
+      <guid>https://blog.pspiagicw.xyz/posts/the-wierdest-mode-in-emacs-mpd-mode/</guid>
+      <description>Considering Emacs has a lot of inbuilt functionality , existence of this mode is not a suprise.</description>
+      <content>&lt;p&gt;Considering Emacs has a lot of inbuilt functionality , existence of this mode is not a suprise.&lt;/p&gt;
+&lt;p&gt;If you don&amp;rsquo;t know  about MPC-Mode , this mode  allows us to control , manage and restructure your music database
+by interfacing with the MPD Server.&lt;/p&gt;
+&lt;p&gt;MPD(Music Player Daemon) is a popular music server on the Linux world. It helps in keeping your large music collection organized.
+You can also stream , and remotely control your own music collection.&lt;/p&gt;
+&lt;h3 id=&#34;the-suprise&#34;&gt;The Suprise&lt;/h3&gt;
+&lt;p&gt;The biggest problem with this mode, is the lack of documentation.
+There is minimal documentation for this mode , available through &lt;code&gt;describe-package&lt;/code&gt; command.
+Although it is not enough to use it efficiently. And for evil-users the journey is quite hard.&lt;/p&gt;
+&lt;h3 id=&#34;how-does-it-work&#34;&gt;How does it work ?&lt;/h3&gt;
+&lt;p&gt;To start the mpc interface , just use the command &lt;code&gt;mpc&lt;/code&gt; using &lt;code&gt;M-x&lt;/code&gt;.
+The interface contains 5 windows/splits.
+Here&amp;rsquo;s a pic for reference&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;The screen is effectively divided into 2 parts vertically. The top split is further divided into 3 splits  horizontally.
+The bottom split is split into 2 horizontally splits.&lt;/p&gt;
+&lt;p&gt;The top-left split is the &lt;code&gt;Genre&lt;/code&gt; split. The top-middle split is the &lt;code&gt;Artist | Composer&lt;/code&gt; split. The top-right one is the &lt;code&gt;Playlist | Album&lt;/code&gt; split.&lt;/p&gt;
+&lt;p&gt;The bottom-left split is the &lt;code&gt;Status&lt;/code&gt; split.The bottom-right split is the &lt;code&gt;MPC-Songs&lt;/code&gt; split.&lt;/p&gt;
+&lt;p&gt;Now that we know what each split is called, let&amp;rsquo;s begin!&lt;/p&gt;
+&lt;p&gt;One things you have to know about MPC is that you cannot select a single song! You have to select a artist / playlist / genre .&lt;/p&gt;
+&lt;h4 id=&#34;mpc-songs&#34;&gt;MPC-Songs&lt;/h4&gt;
+&lt;p&gt;This is the main split with the main information. It shows the songs included in currently selected artist / playlist / genre.
+Use the &lt;code&gt;mpc-playlist&lt;/code&gt; command to show the current playlist. You can select a song using the command &lt;code&gt;mpc-select&lt;/code&gt;. Remove it using the &lt;code&gt;mpc-playlist-delete&lt;/code&gt; command.
+You can save the current playlist using &lt;code&gt;mpc-playlist-create&lt;/code&gt;.If viewing a different playlist  in &amp;ldquo;MPC-Songs&amp;rdquo; split. , you can use
+&lt;code&gt;mpc-playlist-add&lt;/code&gt; to add it in the current playlist.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-songs.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-playlist&#34;&gt;MPC Playlist&lt;/h4&gt;
+&lt;p&gt;This view is useful for viewing all the differnt albums and playlists you currently have.Again to actually select a song use the command &lt;code&gt;mpc-select&lt;/code&gt;.
+Moving up and down is using the standard C-n and C-p.When a album or playlist is selected , the artists involved are shown in the &amp;ldquo;MPC-Artist&amp;rdquo; split.
+The white line denotes where the involved artists name ends and uninvolved artists name starts.To add the selected album to current playlist use &lt;code&gt;mpc-playlist-add&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In the same way the currently selected album / playlist has it&amp;rsquo;s genre shown in the &amp;ldquo;MPC-Genre&amp;rdquo; split.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-playlist.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-genre&#34;&gt;MPC Genre&lt;/h4&gt;
+&lt;p&gt;This view works in the same way. When selected a genre using &lt;code&gt;mpc-select&lt;/code&gt; , all the artist involved are shown in the &amp;ldquo;MPC-Artist&amp;rdquo; split.
+All the albums in the genre are shown in the &amp;ldquo;MPC-Album&amp;rdquo; split.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-genre.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-artist&#34;&gt;MPC Artist&lt;/h4&gt;
+&lt;p&gt;In the same way , you can select a artist using &lt;code&gt;mpc-select&lt;/code&gt;. And it&amp;rsquo;s information will be shown in the respective splits.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-artist.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-status&#34;&gt;MPC Status&lt;/h4&gt;
+&lt;p&gt;The currently playing song , album and artist are shown here.Also there is a graphical volume bar.
+This is a little lacking as it does not show whether &amp;ldquo;Shuffle , Consume , Single &amp;quot; modes are active.
+It has a mouse-based volume bar , but it cannot be controlled using keyboard  , nor there is a command for it.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-status.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h3 id=&#34;evil-keybindings&#34;&gt;Evil Keybindings&lt;/h3&gt;
+&lt;p&gt;Currently the &lt;code&gt;evil-collection&lt;/code&gt; does not support mpc-mode.Although it has been requested (&lt;a href=&#34;https://github.com/emacs-evil/evil-collection/issues/535&#34;&gt;https://github.com/emacs-evil/evil-collection/issues/535&lt;/a&gt;) .
+Using &lt;code&gt;general.el&lt;/code&gt; I have created some of my own keybindings. My keybindings also need custom function for moving up and down.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-emacs-lisp&#34; data-lang=&#34;emacs-lisp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(defun move-mpc-down ()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (interactive)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (evil-next-visual-line)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (mpc-select)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(defun move-mpc-up ()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (interactive)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (evil-previous-visual-line)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (mpc-select)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Below are the keybindings I use for MPC-mode.&lt;/p&gt;
+&lt;p&gt;You can change these , according to your workflow.
+The &lt;code&gt;mpc-play-at-point&lt;/code&gt; simply plays whatever you have selected directly , clearing the current playlist.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-emacs-lisp&#34; data-lang=&#34;emacs-lisp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(general-define-key
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; :keymaps &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-mode-map&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; :states &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;normal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;j&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;move-mpc-down&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;k&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;move-mpc-up&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;t&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-play&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-repeat&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-shuffle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;S&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-shuffle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-consume&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-playlist-add&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;p&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-playlist&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-next&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-prev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;R&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-playlist-delete&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RET&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-select&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;x&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-play-at-point&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;down-the-rabbit-hole&#34;&gt;Down the Rabbit Hole&lt;/h2&gt;
+&lt;p&gt;Keep falling in the rabbit hole of Emacs! Till next time!&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Rough Guide to Matplotlib</title>
+      <link>https://blog.pspiagicw.xyz/posts/dirty-guide-on-matplotlib/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0530</pubDate>
+      
+      <guid>https://blog.pspiagicw.xyz/posts/dirty-guide-on-matplotlib/</guid>
+      <description>Do you have the need to create graphs? Visualize highly numerical data , or just look at beautifully generated graphs and get turned on!</description>
+      <content>&lt;p&gt;Do you have the need to create graphs? Visualize highly numerical data , or just look at beautifully generated graphs and get turned on!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Well like any other situation Python has you covered!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Matplotlib provides easy and efficient way of creating graphs.It is a python module , so you need &lt;code&gt;pip&lt;/code&gt; to install it. &lt;code&gt;Pip&lt;/code&gt; is python&amp;rsquo;s modular structure allowing , us to share our code with others.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip&lt;/code&gt; can install any module from PyPI , python&amp;rsquo;s official module location , or as cool people call it repository.
+To install use &lt;code&gt;pip install&lt;/code&gt; command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Installing matploblib&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install --user matplotlib
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that matplotlib is installed. We have to import it in Python , &lt;strong&gt;importing&lt;/strong&gt; in python is easy!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But we don&amp;rsquo;t need to import matplotlib itself, &lt;code&gt;matplotlib.pyplot&lt;/code&gt; provides most of the features we need. The rest of matplotlib can be used to create extremely complex graphs.
+Pyplot is inspired from &lt;em&gt;MATLAB&lt;/em&gt; . If you have used &lt;em&gt;MATLAB&lt;/em&gt; before , it has the same API.
+This guide only focuses on PyPlot API , for a more object-based approach , see matplotlib&amp;rsquo;s documentation, or refer to this guide.&lt;/p&gt;
+&lt;h3 id=&#34;important-funcs&#34;&gt;Important Funcs&lt;/h3&gt;
+&lt;p&gt;PyPlot provides some useful functions mainly &lt;code&gt;pyplot.show()&lt;/code&gt; and &lt;code&gt;pyplot.savefig()&lt;/code&gt;.
+These provide functionality to show and save the graphs we create!.
+Without these method, you can plot your graphs , but can never see them.&lt;/p&gt;
+&lt;p&gt;Plotting is when you call a particular method (More on that later!).These method configure the matplotlib backend with your graph ,
+&lt;code&gt;pyplot.show()&lt;/code&gt; simply shows the configured , graph.
+When you try to configure more than one plot , both are shown in same frame/picture.&lt;/p&gt;
+&lt;p&gt;To see a already plotted graph , use &lt;code&gt;pyplot.show()&lt;/code&gt; , but using it also clears the graph after showing.
+While using it in a REPL , keep in mind to plot the graph again , before calling &lt;code&gt;pyplot.show()&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pyplot&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To save a already plotted graph , use &lt;code&gt;pyplot.savefig()&lt;/code&gt; , it takes name and format of image as arguments.
+For example&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Graph already plotted!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pyplot&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;savefig(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;example-graph.png&amp;#39;&lt;/span&gt;,format&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;png&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;One thing before moving to next section!
+Most people alias &lt;code&gt;pyplot&lt;/code&gt; to &lt;code&gt;plt&lt;/code&gt; in Python. So if you see &lt;code&gt;plt&lt;/code&gt; anywhere, don&amp;rsquo;t worry it is the same thing.
+To alias pyplot to plt&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; plt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;basic-plotting&#34;&gt;Basic Plotting&lt;/h3&gt;
+&lt;p&gt;For plotting basic lines , &lt;code&gt;plt.plot()&lt;/code&gt; function is enough, it takes list of x and y coordinates as arguments.&lt;/p&gt;
+&lt;p&gt;Plotting points (3,2),(5,4) and (4,1).Keep in mind plot method connects all the dots with a line.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;x_coordinates &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y_coordinates &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Points (3,2),(5,4),(4,1)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot(x_coordinates,y_coordinates)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The graph created is&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/simple-plot-matplotlib.png&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Figure 1: Simple Plot&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h3 id=&#34;simple-scattering&#34;&gt;Simple Scattering&lt;/h3&gt;
+&lt;p&gt;Scatter plot simply shows all the coordinates/points without connecting them with a line.&lt;/p&gt;
+&lt;p&gt;Scatter plot are very useful in showing actual points , thus analyzing them separately.
+It also takes list of x and y coordinates as arguments.&lt;/p&gt;
+&lt;p&gt;Showing (2,6),(4,5),(1,8) and (3,6) on a graph is easy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;x_coordinates &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y_coordinates &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [ &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Points (2,6) , (4,5) , (1,8) and (3,6)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scatter(x_coordinates , y_coordinates)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The end result&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/scatter-plot-matplotlib.png&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Figure 2: Scattering Example&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h3 id=&#34;histograms&#34;&gt;Histograms&lt;/h3&gt;
+&lt;p&gt;Histograms in matplotlib is as easy as just giving the list of values you want a histogram of.Matplotlib automatically calculates the rest!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;hist([ random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;randint(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt;) ])
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/simple-hist-matplotlib.png&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Figure 3: Simple Histogram&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;It provides a good view of how the data is distributed.&lt;/p&gt;
+&lt;h3 id=&#34;showing-images-dot&#34;&gt;Showing Images.&lt;/h3&gt;
+&lt;p&gt;One more useful function , I use most of the time is &lt;code&gt;plt.imshow()&lt;/code&gt; . When working with a lot of images data ,  this can display your image with extra info/special filters etc.&lt;/p&gt;
+&lt;p&gt;It takes a 2-D matrix or 3-D matrix as input , depending on channels of image , that is how many colors are recorded , in data.A single color is represented as intensity value.
+It can vary from 1 to 255.
+No of channels/colors can vary between 1-3 colors, if only 1 channel , image is black and white.
+If having all 3 colors , image is a normal color image.The colors are simply RGB(Red ,Green and Blue).&lt;/p&gt;
+&lt;p&gt;For example this is an handwritten 5 , from MNIST dataset which is stored in a 2-D array.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Usage of matplotlib.pyplot.imshow()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow(image)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mnist-plot-matplotlib.png&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Figure 4: MNIST Number in Matplotlib&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h3 id=&#34;aesthetics-dot&#34;&gt;Aesthetics.&lt;/h3&gt;
+&lt;p&gt;Graphs being almost 100% visual feedback , you might need to add some bling to it.
+Matplotlib supports everything a graph might have.Make sure to read it&amp;rsquo;s documentation later.&lt;/p&gt;
+&lt;p&gt;To add label to any plot/scatter , just add label argument.Label make it easy to spot , when multiple plots are present.
+You can also add label to x-axis and y-axis using methods like &lt;code&gt;plt.xlabel()&lt;/code&gt; and &lt;code&gt;plt.ylabel()&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;xlabel(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Speed&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ylabel(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Distance&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can add title to your graphs using &lt;code&gt;plt.title()&lt;/code&gt; method.&lt;/p&gt;
+&lt;p&gt;You can also add &lt;code&gt;text&lt;/code&gt; to the graph , using the &lt;code&gt;plt.text()&lt;/code&gt; method.For using this , you have to provide a coordinate and the text to plot.
+This text can be customized (Color , Border etc).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scatter(x_coordinates,y_coordinates,label&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Group 1&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; x,y &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; zip(x_coordinates,y_coordinates):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;text(x,y,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Point (&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{x}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{y}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;)&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;format(x&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;x,y&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;y))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/labels-matplotlib.png&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Figure 5: Labels in Matplotlib&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;To plot one graph over another , use the plot/scatter function without using &lt;code&gt;plt.show()&lt;/code&gt; or &lt;code&gt;plt.savefig()&lt;/code&gt; first.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot([ &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;] , [ &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;],label&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Line y=x&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scatter([ &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; ] , [ &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; ] , label&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Group of people&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/multiple-plot-matplotlib.png&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Figure 6: Multiple Plots in Matplotlib&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;To show a legend in the graph use the &lt;code&gt;plt.legend()&lt;/code&gt; function .&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot([ &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;] , [ &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;],label&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Line y=x&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;scatter([ &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; , &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; ] , [ &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; ] , label&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Group of people&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;legend()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can customize plotting style by , specifying parameters such as&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LineStyle: Using &lt;code&gt;linestyle&lt;/code&gt; parameter to customize the line-drawn.&lt;/li&gt;
+&lt;li&gt;LineWidth: Using &lt;code&gt;linewidth&lt;/code&gt; parameter to increase thickness of the line.&lt;/li&gt;
+&lt;li&gt;Marker: Using &lt;code&gt;marker&lt;/code&gt; parameter , this changes how actual points are shown in the graph.See here for all the marker codes.&lt;/li&gt;
+&lt;li&gt;Color: Using color parameter, this changes color of the line drawn, see here for all the color codes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This graph uses linestyle of &lt;code&gt;--&lt;/code&gt; and linewidth of 3.5 ,marker type of &lt;code&gt;+&lt;/code&gt; and color green.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;plot(x_coodinates,y_coordinates,label&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Line&amp;#39;&lt;/span&gt;,linestyle&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;--&amp;#39;&lt;/span&gt;,linewidth&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3.5&lt;/span&gt;,marker&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;+&amp;#39;&lt;/span&gt;,color&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;g&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;show()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/ultimate-custom-matplotlib.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;You can also customize matplotlib itself, using &lt;code&gt;styles&lt;/code&gt;.
+By default matplotlib&amp;rsquo;s style is boring,I am using dracula style for my graphs.You can change everything from fonts to background. More info is present in matplotlib&amp;rsquo;s documentation.
+If you want to learn to use matplotlib , you have to read it.&lt;/p&gt;
+&lt;p&gt;Anyway , here&amp;rsquo;s how to use a default dark-style(included in matplotlib).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;style&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;use(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;dark_background&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bon-voyage&#34;&gt;Bon Voyage!&lt;/h3&gt;
+&lt;p&gt;That&amp;rsquo;s basic matplotlib for you.You should definately look at their documentation.
+You can also look at the Object API for matplotlib. It is a little advanced , but is highly configurable.&lt;/p&gt;
+&lt;p&gt;With the required info, you can make basic graphs , with text. I personally use matplotlib to create graphs for my Physics classes and of-course Data Visualization in ML.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://blog.pspiagicw.xyz/about/</link>
+      <pubDate>Wed, 24 Aug 2016 17:51:42 +0000</pubDate>
+      
+      <guid>https://blog.pspiagicw.xyz/about/</guid>
+      <description>Hola , this is pspiagicw. Call me psp. This is my dump place where I let loose and talk about anything tech that interests me.</description>
+      <content>&lt;p&gt;Hola , this is &lt;code&gt;pspiagicw&lt;/code&gt;. Call me &lt;code&gt;psp&lt;/code&gt;.
+This is my dump place where I let loose and talk about anything tech that interests me.
+There is no specific topic , nor is there any discipline regarding my writing.&lt;/p&gt;
+&lt;p&gt;For a more formal introduction checkout my &lt;a href=&#34;https://github.com/pspiagicw&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Some personal things about me:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Editor: Emacs or Neovim&lt;/li&gt;
+&lt;li&gt;Font: JetBrains Mono&lt;/li&gt;
+&lt;li&gt;Theme: Catppuccin or Dracula&lt;/li&gt;
+&lt;li&gt;Operating System: Arch Linux/Gentoo Linux&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For communicating with me here is my public GPG key.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+8A==
+=G3t2
+-----END PGP PUBLIC KEY BLOCK-----
+&lt;/code&gt;&lt;/pre&gt;&lt;!-- raw HTML omitted --&gt;
+</content>
     </item>
     
   </channel>

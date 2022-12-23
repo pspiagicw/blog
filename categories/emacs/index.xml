@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emacs on forked</title>
+    <link>https://blog.pspiagicw.xyz/categories/emacs/</link>
+    <description>Recent content in emacs on forked</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 +0530</lastBuildDate><atom:link href="https://blog.pspiagicw.xyz/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Weirdest mode in Emacs</title>
+      <link>https://blog.pspiagicw.xyz/posts/the-wierdest-mode-in-emacs-mpd-mode/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0530</pubDate>
+      
+      <guid>https://blog.pspiagicw.xyz/posts/the-wierdest-mode-in-emacs-mpd-mode/</guid>
+      <description>Considering Emacs has a lot of inbuilt functionality , existence of this mode is not a suprise.</description>
+      <content>&lt;p&gt;Considering Emacs has a lot of inbuilt functionality , existence of this mode is not a suprise.&lt;/p&gt;
+&lt;p&gt;If you don&amp;rsquo;t know  about MPC-Mode , this mode  allows us to control , manage and restructure your music database
+by interfacing with the MPD Server.&lt;/p&gt;
+&lt;p&gt;MPD(Music Player Daemon) is a popular music server on the Linux world. It helps in keeping your large music collection organized.
+You can also stream , and remotely control your own music collection.&lt;/p&gt;
+&lt;h3 id=&#34;the-suprise&#34;&gt;The Suprise&lt;/h3&gt;
+&lt;p&gt;The biggest problem with this mode, is the lack of documentation.
+There is minimal documentation for this mode , available through &lt;code&gt;describe-package&lt;/code&gt; command.
+Although it is not enough to use it efficiently. And for evil-users the journey is quite hard.&lt;/p&gt;
+&lt;h3 id=&#34;how-does-it-work&#34;&gt;How does it work ?&lt;/h3&gt;
+&lt;p&gt;To start the mpc interface , just use the command &lt;code&gt;mpc&lt;/code&gt; using &lt;code&gt;M-x&lt;/code&gt;.
+The interface contains 5 windows/splits.
+Here&amp;rsquo;s a pic for reference&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;The screen is effectively divided into 2 parts vertically. The top split is further divided into 3 splits  horizontally.
+The bottom split is split into 2 horizontally splits.&lt;/p&gt;
+&lt;p&gt;The top-left split is the &lt;code&gt;Genre&lt;/code&gt; split. The top-middle split is the &lt;code&gt;Artist | Composer&lt;/code&gt; split. The top-right one is the &lt;code&gt;Playlist | Album&lt;/code&gt; split.&lt;/p&gt;
+&lt;p&gt;The bottom-left split is the &lt;code&gt;Status&lt;/code&gt; split.The bottom-right split is the &lt;code&gt;MPC-Songs&lt;/code&gt; split.&lt;/p&gt;
+&lt;p&gt;Now that we know what each split is called, let&amp;rsquo;s begin!&lt;/p&gt;
+&lt;p&gt;One things you have to know about MPC is that you cannot select a single song! You have to select a artist / playlist / genre .&lt;/p&gt;
+&lt;h4 id=&#34;mpc-songs&#34;&gt;MPC-Songs&lt;/h4&gt;
+&lt;p&gt;This is the main split with the main information. It shows the songs included in currently selected artist / playlist / genre.
+Use the &lt;code&gt;mpc-playlist&lt;/code&gt; command to show the current playlist. You can select a song using the command &lt;code&gt;mpc-select&lt;/code&gt;. Remove it using the &lt;code&gt;mpc-playlist-delete&lt;/code&gt; command.
+You can save the current playlist using &lt;code&gt;mpc-playlist-create&lt;/code&gt;.If viewing a different playlist  in &amp;ldquo;MPC-Songs&amp;rdquo; split. , you can use
+&lt;code&gt;mpc-playlist-add&lt;/code&gt; to add it in the current playlist.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-songs.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-playlist&#34;&gt;MPC Playlist&lt;/h4&gt;
+&lt;p&gt;This view is useful for viewing all the differnt albums and playlists you currently have.Again to actually select a song use the command &lt;code&gt;mpc-select&lt;/code&gt;.
+Moving up and down is using the standard C-n and C-p.When a album or playlist is selected , the artists involved are shown in the &amp;ldquo;MPC-Artist&amp;rdquo; split.
+The white line denotes where the involved artists name ends and uninvolved artists name starts.To add the selected album to current playlist use &lt;code&gt;mpc-playlist-add&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In the same way the currently selected album / playlist has it&amp;rsquo;s genre shown in the &amp;ldquo;MPC-Genre&amp;rdquo; split.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-playlist.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-genre&#34;&gt;MPC Genre&lt;/h4&gt;
+&lt;p&gt;This view works in the same way. When selected a genre using &lt;code&gt;mpc-select&lt;/code&gt; , all the artist involved are shown in the &amp;ldquo;MPC-Artist&amp;rdquo; split.
+All the albums in the genre are shown in the &amp;ldquo;MPC-Album&amp;rdquo; split.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-genre.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-artist&#34;&gt;MPC Artist&lt;/h4&gt;
+&lt;p&gt;In the same way , you can select a artist using &lt;code&gt;mpc-select&lt;/code&gt;. And it&amp;rsquo;s information will be shown in the respective splits.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-artist.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h4 id=&#34;mpc-status&#34;&gt;MPC Status&lt;/h4&gt;
+&lt;p&gt;The currently playing song , album and artist are shown here.Also there is a graphical volume bar.
+This is a little lacking as it does not show whether &amp;ldquo;Shuffle , Consume , Single &amp;quot; modes are active.
+It has a mouse-based volume bar , but it cannot be controlled using keyboard  , nor there is a command for it.&lt;/p&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://blog.pspiagicw.xyz/images/mpc-status.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;h3 id=&#34;evil-keybindings&#34;&gt;Evil Keybindings&lt;/h3&gt;
+&lt;p&gt;Currently the &lt;code&gt;evil-collection&lt;/code&gt; does not support mpc-mode.Although it has been requested (&lt;a href=&#34;https://github.com/emacs-evil/evil-collection/issues/535&#34;&gt;https://github.com/emacs-evil/evil-collection/issues/535&lt;/a&gt;) .
+Using &lt;code&gt;general.el&lt;/code&gt; I have created some of my own keybindings. My keybindings also need custom function for moving up and down.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-emacs-lisp&#34; data-lang=&#34;emacs-lisp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(defun move-mpc-down ()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (interactive)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (evil-next-visual-line)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (mpc-select)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(defun move-mpc-up ()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (interactive)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (evil-previous-visual-line)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (mpc-select)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Below are the keybindings I use for MPC-mode.&lt;/p&gt;
+&lt;p&gt;You can change these , according to your workflow.
+The &lt;code&gt;mpc-play-at-point&lt;/code&gt; simply plays whatever you have selected directly , clearing the current playlist.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-emacs-lisp&#34; data-lang=&#34;emacs-lisp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(general-define-key
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; :keymaps &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-mode-map&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; :states &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;normal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;j&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;move-mpc-down&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;k&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;move-mpc-up&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;t&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-play&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-repeat&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;s&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-shuffle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;S&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-shuffle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-toggle-consume&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-playlist-add&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;p&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-playlist&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-next&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-prev&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;R&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-playlist-delete&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RET&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-select&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;x&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;mpc-play-at-point&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;down-the-rabbit-hole&#34;&gt;Down the Rabbit Hole&lt;/h2&gt;
+&lt;p&gt;Keep falling in the rabbit hole of Emacs! Till next time!&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

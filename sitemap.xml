@@ -2,17 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/posts/my-first-post/</loc>
-    <lastmod>2022-12-23T15:05:46+05:30</lastmod>
+    <loc>https://blog.pspiagicw.xyz/categories/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/</loc>
-    <lastmod>2022-12-23T15:05:46+05:30</lastmod>
+    <loc>https://blog.pspiagicw.xyz/tags/editors/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/</loc>
-    <lastmod>2022-12-23T15:05:46+05:30</lastmod>
+    <loc>https://blog.pspiagicw.xyz/categories/editors/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://blog.pspiagicw.xyz/tags/emacs/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://blog.pspiagicw.xyz/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/tags/linux/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/posts/microservices-and-editors/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/tags/neovim/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/posts/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/tags/</loc>
+    <lastmod>2022-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/categories/emacs/</loc>
+    <lastmod>2021-09-21T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/posts/the-wierdest-mode-in-emacs-mpd-mode/</loc>
+    <lastmod>2021-09-21T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/tags/machinelearning/</loc>
+    <lastmod>2021-05-17T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/tags/programming/</loc>
+    <lastmod>2021-05-17T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/categories/programming/</loc>
+    <lastmod>2021-05-17T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/tags/python/</loc>
+    <lastmod>2021-05-17T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/posts/dirty-guide-on-matplotlib/</loc>
+    <lastmod>2021-05-17T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>https://blog.pspiagicw.xyz/about/</loc>
+    <lastmod>2016-08-24T17:51:42+00:00</lastmod>
   </url>
 </urlset>
