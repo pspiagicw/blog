@@ -7,6 +7,8 @@ categories = ["emacs"]
 draft = false
 +++
 
+> Note: The user has switched to `neovim` since writing this post. The information may not be up-to-date
+
 Considering Emacs has a lot of inbuilt functionality , existence of this mode is not a suprise.
 
 If you don't know  about MPC-Mode , this mode  allows us to control , manage and restructure your music database
@@ -136,3 +138,5 @@ The `mpc-play-at-point` simply plays whatever you have selected directly , clear
 ## Down the Rabbit Hole {#down-the-rabbit-hole}
 
 Keep falling in the rabbit hole of Emacs! Till next time!
+
+
