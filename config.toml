@@ -1,0 +1,49 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'forked'
+theme = "nightfall"
+# description = "Welcome to my humble abode."
+summaryLength = 15
+
+[params]
+
+author = "pspiagicw"
+
+user = "pspiagicw"
+hostname = "starship"
+
+footerHtml = 'CC-0, made with ♥  using Hugo.'
+
+[[params.social]]
+name = "github"
+url = "https://github.com/pspiagicw"
+
+[[params.social]]
+name = "linkedin"
+url = "https://linkedin.com/in/pspiagicw"
+
+[[params.social]]
+name = "email"
+url = "mailto:pspiagicw@gmail.com" # no need for "mailto:" at the start
+
+[menu]
+
+[[menu.header]]
+name = "home"
+url = "/"
+weight = 1
+
+[[menu.header]]
+name = "writing"
+url = "/posts"
+weight = 2
+
+[[menu.header]]
+name = "devlogs"
+url = "/devlog"
+weight = 2
+
+[[menu.header]]
+name = "about"
+url = "/about"
+weight = 3
