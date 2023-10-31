@@ -8,6 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  line-height: 180%;
 }
 
 a {
@@ -16,7 +17,7 @@ a {
 
 pre code {
   font-family: $fontCode;
-  font-size: 75%;
+  font-size: 95%;
   display: block;
   background: $backgroundDarker;
   padding: 10px;
@@ -24,8 +25,10 @@ pre code {
 }
 
 code {
-  font-family: $fontCode;
-  font-size: 75%;
+  font-family: $fontHeader;
+  font-size: 90%;
+  background: $backgroundDarker;
+  padding: 6px;
 }
 
 @for $i from 1 through 6 {

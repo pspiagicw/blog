@@ -8,15 +8,15 @@ summaryLength = 15
 [params]
 
 author = "pspiagicw"
-
 user = "pspiagicw"
 hostname = "starship"
 
-footerHtml = 'CC-0, made with ♥  using Hugo.'
+footerHtml = 'Made with ♥  using Hugo.'
 
 [[params.social]]
 name = "github"
 url = "https://github.com/pspiagicw"
+# icon = "fa-brands fa-github"
 
 [[params.social]]
 name = "linkedin"
