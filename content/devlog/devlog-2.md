@@ -4,6 +4,7 @@ author = ["pspiagicw"]
 date = 2023-01-25
 categories = ["development", "devlog"]
 tags = ["golang", "linux", "programming"]
+series = ["devlog"]
 +++
 
 

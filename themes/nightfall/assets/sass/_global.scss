@@ -8,24 +8,29 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  line-height: 180%;
+  line-height: 150%;
 }
 
 a {
   color: $blue;
 }
 
+p {
+    padding: 3px;
+}
+
 pre code {
-  font-family: $fontCode;
-  font-size: 95%;
+  font-family: $fontFancy;
+  font-size: 100%;
   display: block;
   background: $backgroundDarker;
   padding: 10px;
+  padding: 30px;
   overflow: auto;
 }
 
 code {
-  font-family: $fontHeader;
+  font-family: $fontFancy;
   font-size: 90%;
   background: $backgroundDarker;
   padding: 6px;

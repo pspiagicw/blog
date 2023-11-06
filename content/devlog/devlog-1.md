@@ -4,6 +4,7 @@ author = ["pspiagicw"]
 date = 2022-12-23
 categories = ["development", "devlog"]
 tags = ["python", "linux", "programming"]
+series = ["devlogs"]
 +++
 
 Welcome to my first devlog!
