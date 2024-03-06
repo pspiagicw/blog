@@ -3,17 +3,7 @@ title: About me
 date: 2016-08-24 17:51:42
 ---
 
-Hola , this is `pspiagicw`. Call me `psp`.
-This is my dump place where I let loose and talk about anything tech that interests me.
-There is no specific topic , nor is there any discipline regarding my writing.
-
-For a more formal introduction checkout my [GitHub](https://github.com/pspiagicw)
-
-Some personal things about me:
-- Editor: Emacs or Neovim
-- Font: JetBrains Mono
-- Theme: Catppuccin or Dracula
-- Operating System: Arch Linux/Gentoo Linux
+Hi, I am `pspiagicw` (call me `psp`).
 
 For communicating with me here is my public PGP key.
 
@@ -62,7 +52,3 @@ eahhIEJyqAjq79OThQkbIYttiOct4OI5gz9ZY4b4wVdOJwzsXWT2QoHHJ67ECdYR
 -----END PGP PUBLIC KEY BLOCK-----
 
 ```
-
-
-<!-- Github: [pspiagicw](https://github.com/pspiagicw) -->
-

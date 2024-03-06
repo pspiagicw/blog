@@ -1,15 +1,15 @@
 baseURL = '/'
 languageCode = 'en-us'
-title = 'forked'
+title = 'falconite'
 theme = "nightfall"
 # description = "Welcome to my humble abode."
+publishDir = "../public"
 summaryLength = 15
-
 [params]
 
 author = "pspiagicw"
 user = "pspiagicw"
-hostname = "starship"
+hostname = "falconite"
 
 footerHtml = 'Made with ♥  using Hugo.'
 
@@ -17,10 +17,6 @@ footerHtml = 'Made with ♥  using Hugo.'
 name = "github"
 url = "https://github.com/pspiagicw"
 # icon = "fa-brands fa-github"
-
-[[params.social]]
-name = "linkedin"
-url = "https://linkedin.com/in/pspiagicw"
 
 [[params.social]]
 name = "email"
@@ -36,11 +32,6 @@ weight = 1
 [[menu.header]]
 name = "writing"
 url = "/posts"
-weight = 2
-
-[[menu.header]]
-name = "devlogs"
-url = "/devlog"
 weight = 2
 
 [[menu.header]]

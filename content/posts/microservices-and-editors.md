@@ -10,6 +10,8 @@ draft = false
 When's the last time you looked into how your editor works ?
 I don't mean when you downloaded a few extensions and glanced a few themes.
 
+> This article is edited from the original writing.
+
 <!----more-->
 
 # DISCLAIMER!
@@ -73,7 +75,7 @@ The Open Source community accepted, thus LSP was born.
 This meant all the editors had to build a LSP client which was embedded into the editor. 
 Other than that they did not require any effort to support intellisense features.
 
-That responsibility was transferred to the people developing the Language Servers.
+That responsibility was transferred to the people developing the language or people maintaining the language.
 
 {{<figure src="https://miro.medium.com/max/1838/1*NWvQepJvLQJLZLkLbNnEzA.png" position="center" style="border-style: solid; border-width: 30px; border-color: #ffb86c; border-radius: 5px;">}}
 <!-- ![LSP](https://miro.medium.com/max/1838/1*NWvQepJvLQJLZLkLbNnEzA.png) -->
@@ -97,39 +99,31 @@ Some of the popular editors support LSP are
 - Atom
 - Sublime Text
 
-Some of the most popular languages and their Language Servers are
-- Python (PyRight)
-- TypeScript (tsserver)
-- Golang (gopls)
-- Rust (rust-analysis-server)
-
-Some of the niche languages which have their own servers are
-- COBOL 
-- FOTRAN
-- JSON/YAML/TOML
-- Assembly!! (PowerPC)
-- VHDL/Verilog
-
 The official LSP documentation can be found [here](https://microsoft.github.io/language-server-protocol/).
 
 
 ## Syntax Highlighting
 The second obstacle when designing editors is `Syntax Highlighting`. 
-Beginners adore it and pros hate it. But one can't deny it makes code look sexy.
-This problem can only be understood by understanding how syntax highlighting works
+Beginners adore it and pros hate it. But one can't deny it makes code look hot!
 
-Syntax highlighting in all editors is done by regex matching. `regex` means Regular Expressions.
-It is like a type of language for matching sequence of characters.
+But adding syntax highlighting is very heavy on the editor, this results in poor performance when user opens a large project
+or file. It also gets in the way of multi-lingual files, such as JSX.
 
-The study of how to make a regular expression engine and parsing them leads to complicated theory of automata.
-It is quite a difficult task to make a efficient and accurate regex engine, although many pre-built implementations exist.
+<!-- This problem can only be understood by understanding how syntax highlighting works -->
+The reason for this can be understood by diving deep into the workings of Syntax highlighting
+Syntax highlighting in most editors is done by regex matching. `regex` here means Regular Expressions.
+It is a separate notation for matching sequence of characters.
+
+The study of how to make a regular expression engine and parsing them leads to the complicated theory of automata.
+It is quite a difficult task to make a efficient and accurate regex engine and many pre-built implementations exist.
 Almost every programming language has a regex matcher in it's standard library.
 
 But regex matching is still quite slow and does not actually highlight syntactically.
 You might have encountered this while opening a huge file, it takes a second for the syntax highlighting to appear.
-It cannot actually understand the code, just matches according to the pattern defined.
 
-Multi-lingual environments, like JSX, HTML, Markdown present more challenges to regex based syntax highlighting.
+In layman terms, it doesn't understand the code itself, just the characters and words.
+
+Multi-lingual environments, like JSX and Markdown,  present more challenges to regex based syntax highlighting.
 These require multiple syntax highlighters in a single file. Which is slow and complex to implement.
 
 {{<figure src="https://raw.githubusercontent.com/ericwbailey/a11y-prism-theme/master/images/a11y-dark.png" position="center" style="border-style: solid; border-width: 20px; border-color: #ffb86c; border-radius: 5px;">}}
@@ -140,10 +134,13 @@ The Atom developers were facing this exact problem.
 They came up with a solution, why not outsource this syntax highlighting to a service!
 
 The result was tree-sitter, a incremental parsing library.
-This is written in C and is super fast, parsing a languages into a syntax tree character-wise!
+This is written in C and is blazingly fast, parsing a languages into a syntax tree in milliseconds!
+
+One can simply match highlighting rules to this syntax tree, and voila!
+
 This was again extracted and shared with the Open Source Community.
 
-It might be the only relic left of Atom in modern editors, after it's death!
+It might be the only relic left of Atom in modern software world, apart from fucking `Electron`.
 
 *Fun Fact: GitHub uses tree-sitter to syntax highlight code on your repositories!*
 
@@ -164,35 +161,30 @@ But there are proposals to integrate it using extensions and it might be right a
 <!-- ![Tree Sitter](https://i.ibb.co/BypQxTB/cmp.png) -->
 
 ## Debugging
-Just like LSP, Microsoft pioneered the idea that debugging was needed to be separated from the editor.
 
-For exactly that reason, the Debug Adapter Protocol was born.
-Just like LSP it provides a separate debugger which communicates with the editor using DAP.
+Debugging is a different game altogether.Most people already used separate debuggers like `gdb` or `pdb`.
+Integrating with editors was also possible due to the awesome design of these first-pary debuggers.
+
+Microsoft saw this and presented a unified communcation layer on top of existing debuggers. This is called `Debug Adapter Protocol`.
+With the right UI to present a debugger, debugging without leaving your editor became less of a hassle.
 
 It is quite new and it's adoption is on the way. Currently almost all the modern editors support DAP.
-Each and every language either comes with a DAP enabled debugger or a third-party program provides it.
+Most languages either come with a DAP enabled debugger or a third-party program provides it.
 
 It's technical details can be found [here](https://microsoft.github.io/debug-adapter-protocol/)
-
-It's little adoption might be the fact that debuggers were already separate from the editors.
-All languages have their own separate debuggers, either provided by the authors of the language or the community.
-This meant, people already have tightly integrated workflows for debugging.
-
-- C (`gdb`)
-- Python (`pdb`)
 
 {{<figure src="https://code.visualstudio.com/assets/blogs/2018/08/07/without-DAP.png" position="center" style="border-radius: 5px;border-width: 20px; border-style: solid; border-color: #ffb86c;">}}
 <!-- ![DAP](https://code.visualstudio.com/assets/blogs/2018/08/07/without-DAP.png) -->
 
 ## Microservices
-You must have noticed something, all the features except text editing have been outsourced.
+You must have noticed something, all the features except text editing have been moved out of the editor.
 
 Thus the text editor has been microserviced instead of the previously monolith structure.
 This is the reason for the speed modern editors provide, while providing such advanced features.
 
 While this is not a perfect example for a microservice architecture it is not a bad one.
 
-The advantage of all editors built like these are
+The advantage of all editors built on these principles are
 - Better editing functionality
 - All editors have same syntax highlighting, intellisense and debugging capabilities.
 - Very fast code feedback.
