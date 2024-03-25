@@ -10,7 +10,6 @@ draft = false
 Anybody remember 'leftpad' ?
 
 If you aren't familiar with it. Read [this](https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code).
-
 TLDR: A developer removed a package from npm and broke the internet.
 
 Do you know what's worse? It's not the first time it happened. It's not the last time it will happen.
