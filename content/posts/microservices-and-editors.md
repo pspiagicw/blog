@@ -14,8 +14,6 @@ I don't mean when you downloaded a few extensions and glanced a few themes.
 
 <!----more-->
 
-# DISCLAIMER!
-
 > This article tries to contrast the `Microservices` architecture with current editor ecosystem.
   This is not a strict comparison, it is only done to explore how editors work in this day and age.
 

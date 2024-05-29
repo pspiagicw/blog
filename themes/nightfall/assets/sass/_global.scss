@@ -12,19 +12,21 @@ body {
 }
 
 a {
-  color: $blue;
+  color: $red;
+  font-weight: bold;
 }
 
 p {
     padding: 3px;
+    font-family: $fontUbuntu;
 }
 
 pre code {
   font-family: $fontFancy;
   font-size: 100%;
   display: block;
-  background: $backgroundDarker;
-  padding: 10px;
+  background: $backgroundCode;
+  padding: 20px;
   padding: 30px;
   overflow: auto;
 }
@@ -32,13 +34,35 @@ pre code {
 code {
   font-family: $fontFancy;
   font-size: 90%;
-  background: $backgroundDarker;
+  background: $backgroundCode;
   padding: 6px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+blockquote {
+    border: 1px;
+    border-style: solid;
+    padding: 20px;
+    margin: 20px 0px 20px 0px;
+    border-color: $white;
+}
+
+img {
+    border: 1px;
+    border-style: solid;
+    border-color: $green;
+    border-width: 15px;
+    margin: 5px;
 }
 
 @for $i from 1 through 6 {
   h#{$i} {
-    font-family: $fontHeader;
+    font-family: $fontUbuntu;
+    color: $red;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-transform: lowercase;
   }
 }
 

@@ -1,18 +1,26 @@
 // Colors
 $darkGrey: #323232;
-$white: #f8f8ff;
-$black: #2f2f2f;
-$blue: #3366cc;
+// $white: #f8f8ff;
+$white: #FAFAFA;
+$black: #2f2f2f; // Post
+$blue: #659DBD;
+$red: #BD5A5A;
+$green: #77A88D;
+$charcoal: #1a1a1a;
 
-$backgroundDarker: #252627;
-$backgroundDark: #292a2d;
+// $backgroundDarker: #252627; // pre + header
+// $backgroundDark: #1a1a1d;
+$backgroundDarker: #1C1C1C;
+$backgroundDark: #0F0F0F;
+$backgroundCode: #000000;
 
 //Fonts
 $fontHeader: 'Fira Mono', monospace;
 $fontParagraph: 'Fira Sans', sans-serif;
 $fontCode: 'JetBrains Mono', monospace;
 $fontFancy: 'Iosevka', monospace; 
+$fontUbuntu: 'Ubuntu Mono', monospace;
 
 // Content
 $breakLarge: 992px;
-$width: 760px;
+$width: 850px;

@@ -10,17 +10,20 @@ summaryLength = 15
 author = "pspiagicw"
 user = "pspiagicw"
 hostname = "falconite"
+published = true
+readingTime = true
 
 footerHtml = 'Made with ♥  using Hugo.'
 
 [[params.social]]
 name = "github"
 url = "https://github.com/pspiagicw"
-# icon = "fa-brands fa-github"
+icon = "fa-brands fa-github"
 
 [[params.social]]
 name = "email"
-url = "mailto:pspiagicw@gmail.com" # no need for "mailto:" at the start
+url = "mailto:pspiagicw@gmail.com"
+icon = "fa-regular fa-envelope"
 
 [menu]
 
@@ -38,3 +41,28 @@ weight = 2
 name = "about"
 url = "/about"
 weight = 3
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = true
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = 'prefix'
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = true
+    noHl = false
+    style = 'catppuccin-mocha'
+    tabWidth = 4
+
+[related]
+  threshold = 10
+  includeNewer = true
+  toLower = true
+  
+  [[related.indices]]
+    name = "tags"
+    weight = 90

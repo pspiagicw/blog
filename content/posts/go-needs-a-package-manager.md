@@ -5,6 +5,7 @@ author = ["pspiagicw"]
 tags = ["golang"]
 categories = ["golang"]
 draft = false
+summary = "Remember 'leftpad' ? Apparently Go doesn't."
 +++
 
 Anybody remember 'leftpad' ?

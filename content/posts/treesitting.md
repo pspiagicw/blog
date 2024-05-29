@@ -1,6 +1,6 @@
 +++
 title = "Tree-Sitting"
-author = ["pspiagicw"]
+authors = ["pspiagicw"]
 date = 2024-03-25
 tags = ["linux", "emacs", "neovim", "editors"]
 categories = ["editors"]

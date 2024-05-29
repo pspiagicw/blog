@@ -24,7 +24,7 @@
                 <div class="postHeader">
                     <span class="postTitle">{{ .Title }}</span>
                     {{ $formattedDate := .Date.Format "2006-01-02" }}
-                    <time class="postDate" datetime="{{ $formattedDate }}">{{ .Date | time.Format ":date_long" }}</time>
+                    <time class="postDate" datetime="{{ $formattedDate }}">{{ .Date | time.Format ":date_medium" }}</time>
                 </div>
                 <div class="postExcerpt">
                     <p>{{ .Summary }}</p>

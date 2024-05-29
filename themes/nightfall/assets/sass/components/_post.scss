@@ -2,16 +2,20 @@
 
 .postDate {
   float: right;
-  color: $white;
+  color: $red;
+  font-family: $fontUbuntu;
+  text-weight: bold;
 }
 
 .postTitle {
-  color: $blue;
+  color: $green;
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: lowercase;
   font-family: $fontHeader;
   font-size: 1.2em;
   float: left;
+  margin-left: 5px;
+  font-weight: normal !important;
 }
 
 .postHeader {
@@ -23,15 +27,20 @@
 }
 
 .postListItem {
-  padding: 20px;
-  background-color: $black;
-  margin-bottom: 20px;
+  padding: 15px;
+  background-color: $charcoal;
+  margin-bottom: 25px;
+  // border: 1px;
+  // border-style: dotted;
+  // border-color: $white;
 }
 
 .postExcerpt {
   text-align: initial;
   text-decoration: none;
   color: $white;
+  font-family: $fontUbuntu;
+  font-weight: normal !important;
 }
 
 .headerContainer {

@@ -36,9 +36,13 @@ Here's a pic for reference
 The screen is effectively divided into 2 parts vertically. The top split is further divided into 3 splits  horizontally.
 The bottom split is split into 2 horizontally splits.
 
-The top-left split is the `Genre` split. The top-middle split is the `Artist | Composer` split. The top-right one is the `Playlist | Album` split.
+- The top-left split is the `Genre` split. 
 
-The bottom-left split is the `Status` split.The bottom-right split is the `MPC-Songs` split.
+- The top-middle split is the `Artist | Composer` split.
+
+- The top-right one is the `Playlist | Album` split.
+
+- The bottom-left split is the `Status` split.The bottom-right split is the `MPC-Songs` split.
 
 Now that we know what each split is called, let's begin!
 
@@ -99,13 +103,11 @@ Using `general.el` I have created some of my own keybindings. My keybindings als
 (defun move-mpc-down ()
   (interactive)
   (evil-next-visual-line)
-  (mpc-select)
- )
+  (mpc-select))
 (defun move-mpc-up ()
   (interactive)
   (evil-previous-visual-line)
-  (mpc-select)
- )
+  (mpc-select))
 ```
 
 Below are the keybindings I use for MPC-mode.
@@ -130,8 +132,7 @@ The `mpc-play-at-point` simply plays whatever you have selected directly , clear
  "<" 'mpc-prev
  "R" 'mpc-playlist-delete
  "RET" 'mpc-select
- "x" 'mpc-play-at-point
- )
+ "x" 'mpc-play-at-point)
 ```
 
 

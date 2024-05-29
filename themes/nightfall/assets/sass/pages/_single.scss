@@ -5,10 +5,17 @@
 }
 
 .postMetadata {
-    font-family: $fontCode;
+    font-family: $fontUbuntu;
+    color: $green;
     display: block;
     background: $backgroundDarker;
-    padding: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 20px;
+}
+
+li {
+    font-family: $fontUbuntu;
 }
 
 dt, dd {
