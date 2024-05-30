@@ -8,21 +8,21 @@ categories = ["programming"]
 
 Do you have the need to create graphs? Visualize highly numerical data , or just look at beautifully generated graphs and get turned on!
 
-**Well like any other situation Python has you covered!**
+> Well like any other situation Python has you covered!
 
 Matplotlib provides easy and efficient way of creating graphs.It is a python module , so you need `pip` to install it. `Pip` is python's modular structure allowing , us to share our code with others.
 
 `pip` can install any module from PyPI , python's official module location , or as cool people call it repository.
 To install use `pip install` command.
 
-```sh
-pip install --user matplotlib
+```sh {linenos=false}
+$ pip install --user matplotlib
 ```
 
 Now that matplotlib is installed. We have to import it in Python , **importing** in python is easy!
 
-```sh
-import matplotlib
+```sh {linenos=false}
+$ import matplotlib
 ```
 
 But we don't need to import matplotlib itself, `matplotlib.pyplot` provides most of the features we need. The rest of matplotlib can be used to create extremely complex graphs.
@@ -30,7 +30,7 @@ Pyplot is inspired from _MATLAB_ . If you have used _MATLAB_ before , it has the
 This guide only focuses on PyPlot API , for a more object-based approach , see matplotlib's documentation, or refer to this guide.
 
 
-### Important Funcs {#important-funcs}
+## Important Funcs {#important-funcs}
 
 PyPlot provides some useful functions mainly `pyplot.show()` and `pyplot.savefig()`.
 These provide functionality to show and save the graphs we create!.
@@ -66,7 +66,7 @@ import matplotlib.pyplot as plt
 ```
 
 
-### Basic Plotting {#basic-plotting}
+## Basic Plotting {#basic-plotting}
 
 For plotting basic lines , `plt.plot()` function is enough, it takes list of x and y coordinates as arguments.
 
@@ -87,7 +87,7 @@ The graph created is
 {{< figure src="/images/simple-plot-matplotlib.png" caption="Figure 1: Simple Plot" >}}
 
 
-### Simple Scattering {#simple-scattering}
+## Simple Scattering {#simple-scattering}
 
 Scatter plot simply shows all the coordinates/points without connecting them with a line.
 
@@ -110,7 +110,7 @@ The end result
 {{< figure src="/images/scatter-plot-matplotlib.png" caption="Figure 2: Scattering Example" >}}
 
 
-### Histograms {#histograms}
+## Histograms {#histograms}
 
 Histograms in matplotlib is as easy as just giving the list of values you want a histogram of.Matplotlib automatically calculates the rest!
 
@@ -124,7 +124,7 @@ plt.hist([ random.randint(5,100) for _ in range(300) ])
 It provides a good view of how the data is distributed.
 
 
-### Showing Images. {#showing-images-dot}
+## Showing Images. {#showing-images-dot}
 
 One more useful function , I use most of the time is `plt.imshow()` . When working with a lot of images data ,  this can display your image with extra info/special filters etc.
 
@@ -144,7 +144,7 @@ plt.show()
 {{< figure src="/images/mnist-plot-matplotlib.png" caption="Figure 4: MNIST Number in Matplotlib" >}}
 
 
-### Aesthetics. {#aesthetics-dot}
+## Aesthetics. {#aesthetics-dot}
 
 Graphs being almost 100% visual feedback , you might need to add some bling to it.
 Matplotlib supports everything a graph might have.Make sure to read it's documentation later.
@@ -210,7 +210,7 @@ You can also customize matplotlib itself, using `styles`.
 By default matplotlib's style is boring,I am using dracula style for my graphs.You can change everything from fonts to background. More info is present in matplotlib's documentation.
 If you want to learn to use matplotlib , you have to read it.
 
-Anyway , here's how to use a default dark-style(included in matplotlib).
+Here's how to use a default dark-style(included in matplotlib).
 
 ```python
 plt.style.use('dark_background')
@@ -218,7 +218,7 @@ plt.style.use('dark_background')
 ```
 
 
-### Bon Voyage! {#bon-voyage}
+## Bon Voyage! {#bon-voyage}
 
 That's basic matplotlib for you.You should definately look at their documentation.
 You can also look at the Object API for matplotlib. It is a little advanced , but is highly configurable.
