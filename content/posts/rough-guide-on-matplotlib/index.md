@@ -84,7 +84,7 @@ plt.show()
 
 The graph created is
 
-{{< figure src="/images/simple-plot-matplotlib.png" caption="Figure 1: Simple Plot" >}}
+{{< figure src="simple-plot-matplotlib.png" caption="Figure 1: Simple Plot" >}}
 
 
 ## Simple Scattering {#simple-scattering}
@@ -107,7 +107,7 @@ plt.show()
 
 The end result
 
-{{< figure src="/images/scatter-plot-matplotlib.png" caption="Figure 2: Scattering Example" >}}
+{{< figure src="scatter-plot-matplotlib.png" caption="Figure 2: Scattering Example" >}}
 
 
 ## Histograms {#histograms}
@@ -119,7 +119,7 @@ plt.hist([ random.randint(5,100) for _ in range(300) ])
 
 ```
 
-{{< figure src="/images/simple-hist-matplotlib.png" caption="Figure 3: Simple Histogram" >}}
+{{< figure src="simple-hist-matplotlib.png" caption="Figure 3: Simple Histogram" >}}
 
 It provides a good view of how the data is distributed.
 
@@ -141,7 +141,7 @@ plt.imshow(image)
 plt.show()
 ```
 
-{{< figure src="/images/mnist-plot-matplotlib.png" caption="Figure 4: MNIST Number in Matplotlib" >}}
+{{< figure src="mnist-plot-matplotlib.png" caption="Figure 4: MNIST Number in Matplotlib" >}}
 
 
 ## Aesthetics. {#aesthetics-dot}
@@ -169,7 +169,7 @@ for x,y in zip(x_coordinates,y_coordinates):
     plt.show()
 ```
 
-{{< figure src="/images/labels-matplotlib.png" caption="Figure 5: Labels in Matplotlib" >}}
+{{< figure src="labels-matplotlib.png" caption="Figure 5: Labels in Matplotlib" >}}
 
 To plot one graph over another , use the plot/scatter function without using `plt.show()` or `plt.savefig()` first.
 
@@ -179,7 +179,7 @@ plt.scatter([ 5 , 6 ] , [ 2, 5 ] , label='Group of people')
 plt.show()
 ```
 
-{{< figure src="/images/multiple-plot-matplotlib.png" caption="Figure 6: Multiple Plots in Matplotlib" >}}
+{{< figure src="multiple-plot-matplotlib.png" caption="Figure 6: Multiple Plots in Matplotlib" >}}
 
 To show a legend in the graph use the `plt.legend()` function .
 
@@ -204,7 +204,7 @@ plt.plot(x_coodinates,y_coordinates,label='Line',linestyle='--',linewidth=3.5,ma
 plt.show()
 ```
 
-{{< figure src="/images/ultimate-custom-matplotlib.png" >}}
+{{< figure src="ultimate-custom-matplotlib.png" >}}
 
 You can also customize matplotlib itself, using `styles`.
 By default matplotlib's style is boring,I am using dracula style for my graphs.You can change everything from fonts to background. More info is present in matplotlib's documentation.
@@ -220,7 +220,7 @@ plt.style.use('dark_background')
 
 ## Bon Voyage! {#bon-voyage}
 
-That's basic matplotlib for you.You should definately look at their documentation.
+That's basic matplotlib for you.You should definitely look at their documentation.
 You can also look at the Object API for matplotlib. It is a little advanced , but is highly configurable.
 
 With the required info, you can make basic graphs , with text. I personally use matplotlib to create graphs for my Physics classes and of-course Data Visualization in ML.

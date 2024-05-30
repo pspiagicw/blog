@@ -5,6 +5,7 @@ author = ["pspiagicw"]
 tags = ["linux", "python", "devops"]
 categories = ["python"]
 draft = false
+summary = "A simple (probably old, cause Python) guide for setting up a project."
 +++
 
 I recently dived back into Python and got to build a fully featured Python application.

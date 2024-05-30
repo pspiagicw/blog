@@ -4,6 +4,7 @@ authors = ["pspiagicw"]
 date = 2024-03-25
 tags = ["linux", "emacs", "neovim", "editors"]
 categories = ["editors"]
+summary = "Do you lust for tree-sitter in your own custom language ? Let me satisfy your cravings."
 draft = false
 +++
 
@@ -31,14 +32,16 @@ By the end of this post, you will be able to fix just that (Atleast in your edit
 ---
 
 Before:
-![Before](/images/tree-sitting/before.png)
+
+![Before](before.png)
 
 After:
-![After](/images/tree-sitting/after.png)
+
+![After](after.png)
 
 ---
 
-## `Tree-Sitter`
+## Tree-Sitter
 
 I like using `neovim`.
 
@@ -54,7 +57,7 @@ See the [tree-sitter official docs](https://tree-sitter.github.io/tree-sitter) f
 
 ---
 
-## `Dependencies`
+## Dependencies
 
 You will need 
 - Node (The `docs` mention `v6.0` or higher, but my advice is to use the latest version)
@@ -65,7 +68,7 @@ You can also install `tree-sitter-cli` from `npm`, and you will have to configur
 
 ---
 
-## `Getting Started`
+## Getting Started
 
 - Create a directory called `tree-sitter-hotshot`.
 - Inside this directory, create a `grammar.js` file.
@@ -84,7 +87,7 @@ module.exports = grammar({
 ```
 ---
 
-## `Grammar`
+## Grammar
 
 Tree-Sitter grammar works on `rules`. A `rule` in essence is
 
@@ -103,7 +106,7 @@ The grammar currently has a single rule, that matches the text `hello`.
 
 Generate the parser by running the following command:
 
-```zsh
+```zsh {linenos=false}
 tree-sitter generate
 ```
 It should create a shitload of files in the current directory.
@@ -116,29 +119,12 @@ The important files are
 - `grammar.js`
 - `package.json`
 
-<!-- ### `package.json` -->
-<!---->
-<!-- `tree-sitter` should have generated a `package.json` file, in the current directory. -->
-<!---->
-<!-- Edit the `package.json` file to add the `file-type` field to the `tree-sitter` section. -->
-<!---->
-<!-- ```json -->
-<!-- // other-code -->
-<!--   "tree-sitter": [ -->
-<!--     { -->
-<!--       "scope": "source.hotshot", -->
-<!--       "injection-regex": "^hotshot$", // don't forget to add the comma on this line -->
-<!--       "file-types": ["ht"] // add this line -->
-<!--     } -->
-<!-- // other-code -->
-<!-- ``` -->
-<!---->
 
 ---
 
-## `Writing the Grammar`
+## Writing the Grammar
 
-### `expression`
+### expression
 
 In my language, most statement returns some value.
 
@@ -205,19 +191,14 @@ In essence it means,
 
 The `integer` rule uses `Regular Expressions`, to declare one or more consecutive digits to be a `integer`.
 
-*If you want to implement rules in `tree-sitter`, you need to be comfortable with `regex`*
+> *If you want to implement rules in `tree-sitter`, you need to be comfortable with `regex`*
 
----
 
-## `A friendly tip!`
+> There are multiple times in this post, you will be required to use `tree-sitter` to test and parse source code.
+>
+> It goes without saying, you need to run `tree-sitter generate` each time, before doing any testing or parsing.
 
-There are multiple times in this post, you will be required to use `tree-sitter` to test and parse source code.
-
-It goes without saying, you need to run `tree-sitter generate` each time, before doing any testing or parsing.
-
----
-
-### `testing the parser`
+### testing the parser
 
 We can write a few `hotshot` programs to test if the parsing is accurate.
 
@@ -229,14 +210,11 @@ Save this under `programs/integer.ht`. We will use the `programs` directory to s
 69
 ```
 
----
 
-*Tree-Sitter has a full fledged testing framework embedded into it. 
-But it's not recommended for beginners. It is also quite not useful for such a small grammar.*
-
-*You can refer it [here](https://tree-sitter.github.io/tree-sitter/creating-parsers#command-test) later*
-
----
+> *Tree-Sitter has a full fledged testing framework embedded into it. 
+> But it's not recommended for beginners. It is also quite not useful for such a small grammar.*
+>
+> *You can refer it [here](https://tree-sitter.github.io/tree-sitter/creating-parsers#command-test) later*
 
 We will be using a simple command to test the parser.
 
@@ -267,7 +245,7 @@ You can clearly see the AST built for our language here.
 
 ---
 
-### `comments`
+### comments
 
 We can add support for comments by adding the following rule to the grammar:
 
@@ -298,9 +276,13 @@ That's the reason I have added `comments` to the `extras` field.
 
 If your language integrates comments into the syntax tree, you can add it to the `statement` rule.
 
----
+> *If comments are not part of the AST, why are they parsed?*
+> 
+> They are parsed because they are still important to the source code.
+> Features like syntax highlighting and indentation still apply to comments.
 
-### `more expressions`
+
+### more expressions
 
 Now that we have added support for `integers` and `comments`, we can add support for `strings` and `booleans`.
 
@@ -357,16 +339,11 @@ If you run `tree-sitter parse programs/data.ht`. You should get a output like th
      (boolean [8, 0] - [8, 5]))))
 ```
 
----
 
-*If comments are not part of the AST, why are they parsed?*
-
-They are parsed because they are still important to the source code.
-Features like syntax highlighting and indentation still apply to comments.
 
 ---
 
-### `hello-world`
+### hello-world
 
 Let's add support for the most overrated program of all time, the `hello-world` program.
 
@@ -448,17 +425,14 @@ Add the following code. It has quite a few rules, but don't fret.
 
 - Identifiers are defined as a sequence of one or more alphabets.
 
----
+> `returnables` are different from `statements`.
+> 
+> `hotshot` has few statements that aren't supposed to evaluate into values, like function declaration etc.
+>
+> They will be syntax highlighted differently thus separating them from other expressions is required.
+> 
+> I have made separate rule for those that evaluate to values.
 
-`returnables` are different from `statements`.
-
-`hotshot` has few statements that aren't supposed to evaluate into values, like function declaration etc.
-
-They will be syntax highlighted differently thus separating them from other expressions is required.
-
-I have made separate rule for those that evaluate to values.
-
----
 
 ```scheme
 (source_file [0, 0] - [3, 0]
@@ -551,7 +525,7 @@ The `hello-world` program should parse much cleanly now.
 
 ---
 
-### `let`
+### let
 
 Let's examine the `let` statement
 
@@ -567,12 +541,12 @@ But if I put `fcall` as a expression, there would no way of differenciating the 
 
 It's the reason I added the `returnable` , `sparen` and `paren` rules.
 
-There is way to prevent adding them.
-
-*It's to use precedence in defining rules. 
-It tells tree-sitter to give precedence to one kind of statements over another.*
-
-But `precedence` is a big topic and a overkill for such a simple language.
+> There is way to prevent adding them.
+> 
+> *It's to use precedence in defining rules. 
+> It tells tree-sitter to give precedence to one kind of statements over another.*
+> 
+> But `precedence` is a big topic and a overkill for such a simple language.
 
 For the `let` statements, add the following code.
 ```javascript
@@ -618,7 +592,7 @@ It should produce the following AST.
 
 ---
 
-### `control-flow`
+### control-flow
 
 Now that we have added support for `let` statements, we can add support for `control-flow` statements.
 
@@ -628,7 +602,7 @@ We can skim over these quite quickly as they are easy to implement and test.
 
 ---
 
-### `if`
+### if
 
 `if` statements in `hotshot` have a simple syntax.
 Both the `body` and `else` have a single statement.
@@ -717,7 +691,7 @@ Both the `body` and `else` have a single statement.
 
 ---
 
-### `while`
+### while
 
 `while` statements in `hotshot` have the following syntax.
 
@@ -802,7 +776,7 @@ Both the `body` and `else` have a single statement.
 
 ---
 
-### `cond`
+### cond
 
 `cond` is a tricky statement.
 
@@ -814,7 +788,7 @@ It's syntax is this
     (condition2 body2))
 ```
 
-- The `condition` is a `returnable` expression. The body is a single `statement`
+- The `condition` is a `returnable` expression. The `body` is a single `statement`
 
 ```lisp
 ; programs/cond.ht ;
@@ -887,7 +861,7 @@ It's syntax is this
 
 ---
 
-### `functions`
+### functions
 
 Now that we have added support for `control-flow` statements, we can add support for function declaration.
 
@@ -967,7 +941,7 @@ Example
 
 ---
 
-### `lambda`
+### lambda
 
 `lambda` is a name-less function.
 
@@ -1046,23 +1020,23 @@ You can bind it to a variable, meaning it is a `returnable`.
 
 --- 
 
-## `testing`
+## testing
 
 Ensure all the programs we wrote earlier are still parsing correctly.
 
-```sh
-tree-sitter parse --quiet --stat programs/*.ht
+```sh {linenos=false}
+$ tree-sitter parse --quiet --stat programs/*.ht
 ```
 
 It should give the following output.
 
-```txt
-Total parses: 9; successful parses: 9; failed parses: 0; success percentage: 100.00%; average speed: 6000 bytes/ms
+```sh {linenos=false}
+$ Total parses: 9; successful parses: 9; failed parses: 0; success percentage: 100.00%; average speed: 6000 bytes/ms
 ```
 
 ---
 
-## `end`
+## end
 
 We have successfully implemented the parsing of a LISP-like language. 
 
@@ -1079,9 +1053,8 @@ But there are some advantages to writing a tree-sitter parser like this.
 
 - Having syntax highlighting to your custom language is useful while developing a `interpreter` or a `compiler` for it.
 
-BTW [Hotshot's Tree-Sitter](https://github.com/pspiagicw/tree-sitter-hotshot) can be referenced for the entire code.
+> BTW [Hotshot's Tree-Sitter](https://github.com/pspiagicw/tree-sitter-hotshot) can be referenced for the entire code.
 
----
 
 ## `next-post`
 

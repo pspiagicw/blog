@@ -64,7 +64,16 @@ img {
     margin-bottom: 25px;
     text-transform: lowercase;
     text-decoration: underline;
+    font-weight: bold;
   }
+}
+
+h2 { 
+    color: $red;
+}
+
+h3 {
+    color: $blue;
 }
 
 @-ms-viewport{

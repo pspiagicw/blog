@@ -5,6 +5,7 @@ date = 2022-11-15
 tags = ["linux", "emacs", "neovim", "editors"]
 categories = ["editors"]
 draft = false
+summary = "Understand why your editor is so fast (most times)"
 +++
 
 When's the last time you looked into how your editor works ?
