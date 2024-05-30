@@ -11,6 +11,10 @@ body {
   line-height: 150%;
 }
 
+ul {
+    list-style-type: "◊ ";
+}
+
 a {
   color: $red;
   font-weight: bold;

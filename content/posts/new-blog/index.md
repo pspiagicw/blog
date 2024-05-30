@@ -2,7 +2,7 @@
 title = "New Blog Design"
 date = 2024-05-30
 authors = ["pspiagicw"]
-draft = true
+draft = false
 summary = "A revealing review of my own blog"
 +++
 
@@ -25,16 +25,16 @@ Let me rant systematically
 
 ## Colorscheme
 
-- New 
+Here is a screenshot of the old homepage.
 
-- Old
+{{< figure src="old-homepage.png" >}}
 
 The colorscheme I wanted was a very dark almost black theme, with flat/matte colors. 
 They don't pop, but provide enough constrast for HTML elements to differentiate themselves.
 
-I would say the best tool to use is `ChatGPT`, I only provided a few dark colors and it completed the rest of the colorscheme for me.
+I would say the best tool to use is `ChatGPT` (For somebody with 0% color knowledge), I only provided a few dark colors and it completed the rest of the colorscheme for me.
 
-> I was using the `ChatGPT-3.5` model that is freely available.
+> I was using the `ChatGPT-3.5`  model that is freely available.
 
 I don't know how, but it has a innate sense of colors within it's text-only model.
 
@@ -52,6 +52,9 @@ $backgroundDarker: #1C1C1C;
 $backgroundDark: #0F0F0F;
 $backgroundCode: #000000;
 ```
+Here's the end result!
+
+{{< figure src="new-homepage.png" >}}
 
 ## Fonts
 
@@ -66,7 +69,9 @@ In the same ferver, I moved to these 3 fonts for this blog
 - Ubuntu Mono (for normal text, like the one you are reading!)
 
 It makes the blog much more readable and so much more nerdy.
-I don't care if you don't like it.
+
+{{< figure src="old-blog.png" >}}
+{{< figure src="new-blog.png" >}}
 
 ## Elements
 
@@ -79,18 +84,16 @@ Like `blockquotes`.
 Earlier they were not at all contrasted, you would think that's a mistake.
 But now they are clearly bordered with full visibility to the text written inside them.
 
-The code blocks were also replaced with `Line Number` and other useful stuff.
+{{< figure src="./old-note.png" >}}
+{{< figure src="./new-note.png" >}}
 
+## List
 
-## HomePage
+The list looks much more clean now, with very visible summary and shorten dates.
 
-- New
+{{< figure src="./old-list.png" >}}
+{{< figure src="./new-list.png" >}}
 
-- Old
-
-I didn't change much of the homepage, other than the font, and adding icons.
-
-Most of the aesthetic changed because of the colorscheme
 
 ## Conclusion
 
