@@ -1,0 +1,12 @@
+(fn countit ()
+        (let counter 1)
+        (lambda () 
+                (inc counter)
+                counter
+            ))
+
+(let c (countit))
+(assert (c) 2 "Closure doesn't work")
+(assert (c) 3 "Closure doesn't work")
+(assert (c) 4 "Closure doesn't work")
+(assert (c) 5 "Closure doesn't work")

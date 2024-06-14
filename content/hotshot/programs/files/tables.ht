@@ -1,0 +1,30 @@
+(let arr {1 2 3})
+
+(push arr 8)
+(assert (pop arr) 8 "Pop failed!") ; Should print 8 ;
+(assert (car arr) 1 "Car failed") ; Should print 1 ;
+(assert (cdr arr) {2 3} "CDR failed!") ; Should print [2 3] ;
+
+(echo (list 1 2 "something" 1)) ; Should print [1 2 "something"1 ] ;
+
+(let arr1 {1 2 3 4 5})
+(let arr2 {6 7 8 9 0})
+
+(assert (extend arr1 arr2) {1 2 3 4 5 6 7 8 9 0} "Extend failed!") ; Should print [1 2 3 4 5 6 7 8] ;
+(assert (len arr1) 5 "Len failed!")
+(assert (reverse arr1) {5 4 3 2 1} "Reverse failed!")
+(assert (last arr1) 5 "Last failed!")
+(assert (count arr1 1) 1 "Count failed!")
+
+(assert [0]arr1 1 "Access failed!")
+
+(let employee {})
+(set ['name]employee "Hotshooter")
+(set ['age]employee 21)
+(set [1]employee 'something)
+(set ['1]employee 'something-else)
+
+
+(assert ['age]employee 21 "Hash access failed!")
+(assert [1]employee 'something "Numerical access failed!")
+(assert ['1]employee 'something-else "String access failed!")

@@ -1,0 +1,7 @@
+(fn factorial (n)
+  (cond ((< n 2) 1)
+        (true (* n (factorial (- n 1))))))
+
+
+(assert (factorial 5) 120 "factorial failed!")
+(assert (factorial 10) 3628800 "factorial failed!")

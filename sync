@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Hotshot!
+rm -rf content/hotshot
+git clone https://github.com/pspiagicw/hotshot content/hotshot
+rm -rf content/hotshot/.git
+mv content/hotshot/README.md content/hotshot/index.md
+
