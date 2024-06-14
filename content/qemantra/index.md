@@ -120,7 +120,7 @@ You will need to enter
   - A valid CPU core Count
   - A valid RAM size
 
-> [!NOTE]
+
 > Attaching a disk is optional. 
 
 ![disk](/qemantra/gifs/disk.gif)
@@ -159,7 +159,7 @@ Provide a external disk to attach. This would be attached in addition to the exi
 
 Enable or disable KVM. By default `kvm` is enabled. To disable use `-kvm false`.
 
-> [!WARNING]
+
 > Features such as SMP depend on KVM.
 
 #### `--iso`
@@ -197,7 +197,7 @@ qemantra rename
 - It would show prompts to change the details of any given VM.
 - Shows current settings in brackets.
 
-> [!IMPORTANT]
+
 >  Edit is different from `rename`. For changing the name, see [rename](#rename).
 
 ```sh

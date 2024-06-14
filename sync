@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-myProjects=("dotback" "qemantra" "sinister" "groom" "hotshot")
+myProjects=("qemantra" "hotshot" "sinister" "groom" "dotback")
 
 for project in ${myProjects[@]}; do
     rm -rf content/$project
@@ -9,4 +9,9 @@ for project in ${myProjects[@]}; do
     rm -rf content/$project/.git
     mv content/$project/README.md content/$project/index.md
     sed -i "s|\./gif|/$project/gif|" content/$project/index.md
+    sed -i 's/> \[!NOTE\]//' content/$project/index.md
+    sed -i 's/> \[!IMPORTANT\]//' content/$project/index.md
+    sed -i 's/> \[!WARNING\]//' content/$project/index.md
+    sed -i 's/> \[!TIP\]//' content/$project/index.md
+    sed -i 's/> \[!CAUTION\]//' content/$project/index.md
 done
