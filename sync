@@ -5,7 +5,7 @@ myProjects=("hotshot" "qemantra" "sinister" "groom" "dotback")
 
 for project in ${myProjects[@]}; do
     rm -rf content/$project
-    git clone https://github.com/pspiagicw/$project content/$project
+    git clone --depth 1 https://github.com/pspiagicw/$project content/$project
     rm -rf content/$project/.git
     mv content/$project/README.md content/$project/index.md
 done
