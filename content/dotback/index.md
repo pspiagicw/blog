@@ -79,7 +79,7 @@ location = "~/.gitconfig"
 
 > You can run `dotback config` to get info about the current config.
 
-![config](./gifs/config.gif)
+![config](/dotback/gifs/config.gif)
 
 ## Usage
 
@@ -94,7 +94,7 @@ Simply run `dotback backup` to backup configured in the config file.
 - It would backup everything to `storeDir`.
 - This ignores `.git` and `.gitignore` files within any backup folder.
 
-![demo](./gifs/backup.gif)
+![demo](/dotback/gifs/backup.gif)
 
 - You can also specify selective rules for backup. 
 
@@ -110,7 +110,7 @@ dotback backup nvim
 dotback backup --ignore nvim neomutt
 ```
 
-![ignore](./gifs/ignore.gif)
+![ignore](/dotback/gifs/ignore.gif)
 
 - You can provide `--dry-run` flag to not actually backup anything.
 

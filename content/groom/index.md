@@ -64,7 +64,7 @@ command = "go fmt ./..."
 
 > You can run `groom --example-config` to get a working example config.
 
-![help](./gifs/help.gif)
+![help](/groom/gifs/help.gif)
 
 ### Task
 
@@ -114,7 +114,7 @@ Run `groom` without any arguments to list all configured tasks.
 
 > Use `--simple` to list all tasks without any fancy printing. Useful with scripts.
 
-![list](./gifs/list.gif)
+![list](/groom/gifs/list.gif)
 
 ### Executing tasks
 
@@ -122,7 +122,7 @@ Provide a list of tasks to execute and watch `groom` execute them!
 
 >  Use the `--dry-run` argument to show the log without actually running anything.
 
-![build](./gifs/build.gif)
+![build](/groom/gifs/build.gif)
 
 ### Neovim Plugin
 
@@ -132,7 +132,7 @@ It allows you to run tasks without leaving your editor.
 
 > Find it [here](https://github.com/pspiagicw/groom.nvim)
 
-![plugin](./gifs/plugin.gif)
+![plugin](/groom/gifs/plugin.gif)
 
 ## Contributing
 

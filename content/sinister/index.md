@@ -58,14 +58,14 @@ gox install github.com/pspiagicw/sinister@latest
 - If the config file is set up, you can run `sinister update` to update the database.
 - This will query the RSS feeds for the latest videos and update the databaseo
 
-![update](./gifs/update.gif)
+![update](/sinister/gifs/update.gif)
 
 ### `status`
 
 - This shows the state of the database.
 - It gives you general statistics like unwatched videos, watched videos, etc.
 
-![status](./gifs/status.gif)
+![status](/sinister/gifs/status.gif)
 
 ### `download`
 
@@ -75,14 +75,14 @@ gox install github.com/pspiagicw/sinister@latest
 - The download will be in 720p in the mp4 format.
 - After downloading, it will mark the video as watched.
 
-![download](./gifs/download.gif)
+![download](/sinister/gifs/download.gif)
 
 ### `mark`
 
 - This can be used to mark a video as watched.
 - It can multi-select videos to mark as watched.
 
-![mark](./gifs/mark.gif)
+![mark](/sinister/gifs/mark.gif)
 
 ### `auto`
 
@@ -93,11 +93,11 @@ gox install github.com/pspiagicw/sinister@latest
 - It can filter videos according to flags provided.
 - See `sinister auto --help` for more information.
 
-![auto](./gifs/auto.gif)
+![auto](/sinister/gifs/auto.gif)
 
 - Filters include `--days`
 
-![auto-filter](./gifs/auto-filter.gif)
+![auto-filter](/sinister/gifs/auto-filter.gif)
 
 ## Youtube RSS Feeds
 
