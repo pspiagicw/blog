@@ -1,3 +1,9 @@
++++
+title = 'groom'
+author = 'pspiagicw'
+date = 2024-06-15
++++
+
 # 🧹 `groom`
 
 `groom` is a yet another os-agnostic task runner.

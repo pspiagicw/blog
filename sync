@@ -14,4 +14,5 @@ for project in ${myProjects[@]}; do
     sed -i 's/> \[!WARNING\]//' content/$project/index.md
     sed -i 's/> \[!TIP\]//' content/$project/index.md
     sed -i 's/> \[!CAUTION\]//' content/$project/index.md
+    sed -i "1i +++\ntitle = '$project'\nauthor = 'pspiagicw'\ndate = $(date '+%F')\n+++\n" content/$project/index.md
 done

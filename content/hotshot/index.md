@@ -1,3 +1,9 @@
++++
+title = 'hotshot'
+author = 'pspiagicw'
+date = 2024-06-15
++++
+
 This documentation is available on [GitHub](https://github.com/pspiagicw/hotshot) or [my website](https://falconite.xyz/hotshot)
 
 # Contents

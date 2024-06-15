@@ -1,3 +1,9 @@
++++
+title = 'sinister'
+author = 'pspiagicw'
+date = 2024-06-15
++++
+
 # `sinister`
 
 `sinister` is a tool to sync and download videos from Youtube.

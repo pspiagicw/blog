@@ -1,3 +1,9 @@
++++
+title = 'dotback'
+author = 'pspiagicw'
+date = 2024-06-15
++++
+
 # `dotback`
 
 `dotback` backs up your dotfiles.
