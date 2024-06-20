@@ -1,0 +1,11 @@
+a = 1
+name = "pspiagicw"
+status = false
+
+print(a)
+print(name)
+print(status)
+
+name = "pspiagicw"
+
+print(a)

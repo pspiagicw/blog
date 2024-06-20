@@ -11,14 +11,18 @@
             {{ with .GetTerms "authors" }}
                 {{ partial "taxonomy/authors.html" . }}
             {{ end }}
-            {{ if .Site.Params.published | default true }}
+            {{ if and (not .Params.repo) (.Site.Params.published | default true) }}
                 <dt>{{ i18n "published" }}</dt>
                 {{ $formattedDate := .Date.Format "2006-01-02" }}
                 <dd><time datetime="{{ $formattedDate }}">{{ .Date | time.Format ":date_medium" }}</time></dd>
             {{ end }}
-            {{ if .Site.Params.readingTime | default true }}
+            {{ if and (not .Params.repo) (.Site.Params.readingTime | default true) }}
                 <dt>{{ i18n "reading_time" }}</dt>
                 <dd>{{ i18n "reading_time_desc" .ReadingTime }}</dd>
+            {{ end }}
+            {{ if .Params.repo }}
+                <dt>Repo</dt> 
+                <dd><a href="{{ .Params.repo }}">{{ .Params.repo }}</a></dd>
             {{ end }}
         </dl>
     </section>

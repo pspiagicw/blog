@@ -1,0 +1,4 @@
+# todo
+
+- [x] Make the repl better!
+- [ ] Add some extensive `class` 'eval' tests.

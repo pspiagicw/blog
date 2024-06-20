@@ -3,9 +3,12 @@ package interpreter
 import (
 	"fmt"
 
+	"github.com/charmbracelet/lipgloss"
 	"github.com/pspiagicw/goreland"
 	"github.com/pspiagicw/hotshot/argparse"
 	"github.com/pspiagicw/hotshot/ast"
+	"github.com/pspiagicw/hotshot/compiler"
+	"github.com/pspiagicw/hotshot/decompiler"
 	"github.com/pspiagicw/hotshot/eval"
 	"github.com/pspiagicw/hotshot/lexer"
 	"github.com/pspiagicw/hotshot/object"
@@ -17,6 +20,10 @@ func printHeader() {
 	fmt.Println("Welcome to hotshot!")
 	fmt.Println("Use `(exit)` to exit the REPL")
 }
+func getPrompt() string {
+	prompt := lipgloss.NewStyle().Foreground(lipgloss.Color("#FF00FF")).Render(">>> ")
+	return prompt
+}
 
 func StartREPL(opts *argparse.Opts) {
 
@@ -24,7 +31,7 @@ func StartREPL(opts *argparse.Opts) {
 
 	env := object.NewEnvironment()
 	e := eval.NewEvaluator(func(message string) {
-		goreland.LogError("Runtime Error: %s", message)
+		goreland.LogError("%s", message)
 	})
 
 	rg, err := regolith.New(&regolith.Config{
@@ -35,6 +42,9 @@ func StartREPL(opts *argparse.Opts) {
 	if err != nil {
 		goreland.LogFatal("Error initializing regolith: %v", err)
 	}
+
+	symbols := compiler.NewSymbolTable()
+	constants := []object.Object{}
 
 	for {
 		input, err := rg.Input()
@@ -55,6 +65,13 @@ func StartREPL(opts *argparse.Opts) {
 			fmt.Print("=> ")
 			fmt.Println(result.String())
 		}
+		c := compiler.NewWithState(symbols, constants)
+		err = c.Compile(program)
+
+		if err != nil {
+			goreland.LogError("Error compiling the program: %v", err)
+		}
+		decompiler.Print(c.Bytecode())
 	}
 
 }

@@ -38,3 +38,18 @@ dd {
 dt::after {
     content: ":";
 }
+
+// .project-banner {
+//   position: fixed;
+//   top: 20%;
+//   transform: rotate(45deg);
+//   z-index: 1000;
+// }
+//
+
+.project-banner {
+  width: 10%;
+  height: auto;
+  display: block;
+}
+

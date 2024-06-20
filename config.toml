@@ -5,6 +5,7 @@ theme = "nightfall"
 # description = "Welcome to my humble abode."
 publishDir = "../public"
 summaryLength = 15
+enableRobotsTXT = true
 [params]
 
 author = "pspiagicw"
