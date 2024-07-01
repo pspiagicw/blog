@@ -5,10 +5,8 @@ myProjects=("qemantra" "hotshot" "sinister" "groom" "dotback" "fener" "kato")
 
 for project in ${myProjects[@]}; do
     rm -rf content/$project
-    mkdir content/$project
-    pushd content/$project
-    wget https://raw.githubusercontent.com/pspiagicw/$project/main/README.md
-    popd
+    git clone --depth 1 https://github.com/pspiagicw/$project content/$project
+    rm -rf content/$project/.git
     mv content/$project/README.md content/$project/index.md
     sed -i "s|\./gif|/$project/gif|" content/$project/index.md
     sed -i 's/> \[!NOTE\]//' content/$project/index.md
