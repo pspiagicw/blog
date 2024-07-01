@@ -52,6 +52,23 @@ blockquote {
     border-color: $white;
 }
 
+table {
+    padding: 20px;
+    width: 60%;
+}
+th, td {
+  border-bottom: 1px solid $white;
+  text-align: center;
+  padding: 15px;
+  font-family: $fontUbuntu;
+}
+
+
+tr:hover {
+    background-color: $charcoal;
+
+}
+
 img {
     border: 1px;
     border-style: solid;

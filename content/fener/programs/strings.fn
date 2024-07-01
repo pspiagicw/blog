@@ -1,5 +1,0 @@
-print("Hello," + "World")
-print("Hello"[0])
-print(len("hello"))
-
-print(string(1))

@@ -1,7 +1,7 @@
 +++
 title = 'groom'
 author = 'pspiagicw'
-date = 2024-06-18
+date = 2024-07-01
 +++
 
 # 🧹 `groom`

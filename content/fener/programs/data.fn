@@ -1,4 +1,0 @@
-print(2)
-print("Some string")
-print(true)
-print(false)

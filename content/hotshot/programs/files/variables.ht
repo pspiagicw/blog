@@ -1,3 +1,0 @@
-(let name "pspiagicw")
-
-(assert name "pspiagicw" "variables failed")

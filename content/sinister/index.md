@@ -1,9 +1,7 @@
 +++
 title = 'sinister'
 author = 'pspiagicw'
-date = 2024-06-18
-[params]
-    repo = "https://github.com/pspiagicw/sinister"
+date = 2024-07-01
 +++
 
 # `sinister`
@@ -36,13 +34,13 @@ You can install `sinister` by downloading a binary from the [releases](https://g
 
 Or if you have the `Go` compiler installed. Use
 
-```sh {linenos=false}
+```sh
 go install github.com/pspiagicw/sinister@latest
 ```
 
 If you use [`gox`](https://github.com/pspiagicw/gox) to manage binary packages, you can run
 
-```sh {linenos=false}
+```
 gox install github.com/pspiagicw/sinister@latest
 ```
 
