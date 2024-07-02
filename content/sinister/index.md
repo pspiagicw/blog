@@ -1,7 +1,7 @@
 +++
 title = 'sinister'
 author = 'pspiagicw'
-date = 2024-07-01
+date = 2024-07-02
 +++
 
 # `sinister`

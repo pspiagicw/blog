@@ -1,7 +1,7 @@
 +++
 title = 'hotshot'
 author = 'pspiagicw'
-date = 2024-07-01
+date = 2024-07-02
 +++
 
 This documentation is available on [GitHub](https://github.com/pspiagicw/hotshot) or [my website](https://falconite.xyz/hotshot)

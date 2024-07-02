@@ -6,6 +6,8 @@ myProjects=("qemantra" "hotshot" "sinister" "groom" "dotback" "fener" "kato")
 for project in ${myProjects[@]}; do
     rm -rf content/$project
     git clone --depth 1 https://github.com/pspiagicw/$project content/$project
+    find content/$project -type f -not -iname README.md -not -iname *.gif -delete
+    find content/$project -type d -empty -delete
     rm -rf content/$project/.git
     mv content/$project/README.md content/$project/index.md
     sed -i "s|\./gif|/$project/gif|" content/$project/index.md
