@@ -37,17 +37,22 @@ pre code {
 
 code {
   font-family: $fontFancy;
-  font-size: 102%;
-  background: $backgroundCode;
-  padding: 6px;
+  font-size: 80%;
+  background: $purple;
+  padding: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
   font-weight: bold;
-  letter-spacing: 1px;
+}
+
+code a {
+    background: $backgroundCode;
 }
 
 blockquote {
     border: 1px;
     border-style: solid;
-    padding: 20px;
+    padding: 10px;
     margin: 20px 0px 20px 0px;
     border-color: $white;
 }
