@@ -2,7 +2,7 @@
 title = 'nixing my life!'
 author = ["pspiagicw"]
 date = 2024-08-11
-summary = "How NixOS became my ultimate goal"
+summary = "How NixOS became by ultimate freedom"
 +++
 
 Isolation is a very important function to me. 
@@ -13,71 +13,64 @@ Since I have been building multiple projects across various domains.
 
 Let me describe this ordeal in depth.
 
-## Roles
+## The itch
 
-I have been always coding on my own since high school and never thought it as a task.
-But once college came about, the `hobby` became `study`.
+I always had a itch to keep my life (Photos, Documents, Games) separate from my programming (Editors, Programming, Projects).
 
-My hobby and study have to be kept separate. Thus the isolation anxiety began.
+This itch developed not only due to the privacy problems but also the fact that my main computing device was used by family members.
+
+It also makes it easy to use during my lazy days. I don't want to manage Xmonad when I want to browse through some photos or just watch a movie.
+
+## separate OS
+
+The solution is to run 2 operating systems. One user-friendly Ubuntu/PopOS types for ease of access where all my multimedia including my photos and games would be managed.
+A separate dual-booted specialty operating system with all the window-managers, terminal emulators and editors I want. Obviously running either Gentoo or Arch!
+
+
+This had quite a few problems
+
+- I had to shutdown and boot again whenever I wanted to do something else.
+- This was on a i3 6th-Gen (mobile) and a hard-drive to boot everything.
+
+Nevertheless it was extremely slow and cubersome, but I had lots of time and it sufficed for me.
 
 ## distrobox
 
-The first and most simple solution was to use distrobox.
-Use a `PopOS` distro on my main laptop. 
-Use distrobox and it's separate home directory feature.
-`distrobox` can keep a separate home directory for each distribution you use.
+The lockdown ended and I had to attend University in-person. 
+
+The University requirements were simple, you should be able to go from debugging a kernel to playing `Witcher 3` within seconds.
+The previous setup didn't help this endeavour.
+
+The solution I settled on was to use distrobox.
+Use a `PopOS` distro as my main OS. And use a separate Arch Linux distro on the shell.
+By using distrobox and it's separate home directory feature, I could have a separate home directory for my programming stuff.
+
+Also my new laptop with a fast SSD helped me achieving this.
 
 `distrobox` for the uninitiated is a CLI tool to run multiple linux distro simultaenously through docker.
 Instead of using `docker` as a throwaway build/development environment, it encourages docker to be used as a complete CLI environment
 You can use it for everything including GUI apps and even running games through `Steam`.
-It can install sound, graphics drivers and connect this secondary distro to your main distro very tightly.
+It can install sound, graphics drivers and connect this secondary distro to your main distro.
 
-This meant, my development tools (Python, poetry, Go, neovim) all were separated from normal life (Photos, College Work, GUI apps).
-
-But the college  had a problem. 
-The Python and Machine Learning courses meant I had to install large collections of Python libraries.
-These included the behemoth `Tensorflow`, `OpenCV` and minor ones like `sklearn`. 
-Although they were kept in a separate environment by `conda` or `miniconda`. 
-I didn't like the pollution `conda` did on my environment.
-
-So I launched a ran a separate VM for those tools. 
-I would fire up those tools when required.
-
-This is also one of the reasons to develop my tool [qemantra](https://github.com/pspiagicw/qemantra).
+This meant, my development tools (Python, poetry, Go, neovim) all were separated from normal life (Photos, College Work, Games and GUI apps).
 
 ## HomeLab
 
-My homelab ran docker for almost a year.
-Then I became tired with maintaining all those tools and removed most of them.
+When I came back from college, I had some money I could invest in a home-lab. It was a pre-owned Lenovo ThinkCentere M600.
 
-Then I kept the homelab for a remote development machine. Meaning
-- All editors, compilers and other tools installed on my homelab.
-- To develop, I simply ssh into my home lab.
+It was one of the most powerful desktop I had held in my hand. 
+I learnt the entire home-lab thing and got a perfect solution.
 
-This meant I can development from anywhere (in my home) with any machine.
+Use a desktop laptop with PopOS/Mint. Whenever I want to program, simply SSH into the homelab.
+But maintaining docker and reverse proxy is hard. It required manual intervention atleast once a day, mostly because of my shitty WIFI.
 
-If I use cloudflare tunnels I can work from anywhere in the world!
-
-I was very happy with this setup, but I had some hiccups.
-
-I was using `Ubuntu Server` meant I get the most stable packages, also they are fucking old!
-
-Most of my programs and development environment (Neovim Plugins) depends on latest `neovim`. 
-Also most other tools were not in the repository or up-to-date, thus I had to manually compile/download them.
-
-This included the `Go` compiler. Most of other binary packages were maintained in the /usr directory.
-On top of this I had my own tools (`kato`, `groom` and `sinister`).
-
-My projects required their own dependencies which were polluting my environment. 
-For example my CLI tools required `vhs` and`qemu`.
-
-Plus the multiple formatters, linters ,language servers and debuggers. Most of these were managed by `Mason`.
-
-But updating all of these tools was a pain.
+The next problem I faced is that "running a stable, server operating system is opposite of using latest editors, packages etc."
+I had to manually compile/download mostly everything, including the `Go` compiler, `neovim` and tools like `ripgrep`.
+Managing everything was irritating and took a lot of my time.
 
 ## Enter NixOS
 
-I had used Nix 5 years back, back then I was a distrohopper and didnt explore and adapt to the workflow NixOS provided.
+I had used Nix 5 years back, back when I was a distrohopper and didn't explore and adapt to the workflow NixOS provided.
 
 I came to NixOS with high expectectations due to the hype by both developers and Linux enthusiasts. AND DID IT DELIVER!
 
@@ -108,8 +101,8 @@ My custom Nix packaged apps are available [here](https://github.com/pspiagicw/pa
 
 ## Per project
 
-One awesome feature I would use day and night is including a `flake.nix` in every project folder. 
-This along with `direnv` allows storing a environment with all packages needed seaparately.
+One awesome feature that changed my workflow is including a `flake.nix` in every project folder. 
+This along with `direnv` allows starting a environment with all packages isolated.
 
 Imagine a `virtual environment` of everything you need, the compiler, the debugger, formatter etc. 
 That's what using this feature looks like.
@@ -162,11 +155,10 @@ Here's how my Go development `flake.nix` looks like
 This automatically installs the `go` compiler, the `gopls` language server protocol, the `delve` debugger and my custom task runner `groom`.
 These tools are unique to that folder, meaning it will only be available when I am inside that directory.
 
-You also need `direnv` to identify a `flake.nix` and load it automatically into the shell.
-
+You also need `direnv` to identify a `flake.nix` and load it automatically into the shell. 
+Using NixOS on the host system means that configuration is done automatically.
 
 ## Obsession
-
 
 My obsession with software isolation is complete, I have the right tool to fuel this obsession and I don't think I am going anywhere else soon.
 
