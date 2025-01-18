@@ -1,100 +1,158 @@
 +++
-title = "modern programming languages"
+title = "Modern Programming Languages"
 authors = ["pspiagicw"]
 date = 2025-01-17
 draft = false
 summary = "A modern programming language must have these features."
 +++
 
-Welcome to my first post of 2025, hopefully quality and frequency of my posts increase.
+Welcome to my first post of 2025! Hopefully, the quality and frequency of my posts will improve this year.
 
-One thing I hate about modern programming languages are the uncessary bullcrap I have to bother with.
-For example, I started from scratch on a new laptop today, I had to install all the compilers/editors I needed.
+One thing I hate about modern programming languages is the unnecessary complications they bring.  
+For example, I started fresh on a new laptop today, and I had to install all the compilers and editors I needed.  
+This got me thinking: why is installing a language's compiler or interpreter not enough?  
 
-That's when installing the language compiler/interpreter is not enough. That's where this list comes from.
+That's where this list comes from—essential features every modern programming language should have.
 
-## batteries included approach
+## Batteries-Included Approach
 
-The first few pages of `Head First Python` stresses on the fact that Python comes batteries included, meaning unlike Java or C++, you have all the libraries you need right there with the language.
-Most languages are `batteries-included` in similar ways,
+The first few pages of *Head First Python* stress the idea that Python is "batteries included," meaning it provides many libraries out of the box.  
+Most modern languages follow a similar philosophy, but I believe we need to expand the definition.
 
-But I think we need to update that definition. I have the following proposal.
+Here’s my proposal for what "batteries included" should mean in 2025:
 
-A modern programming language should have
-- A have a language server bundled with it, or atleast easily installed through the language tools.
-- A have a formatter included with it.
-- A dependency management, most languages have these (`rust` has `Cargo`, `go` has `Go`).
-- A build system included with it. It should tighly integrate with the language. Bonus points for VCS hooks.
-- A project management system. It should be able to create projects with template code.
-- A test runner. It should handle all types of tests including benchmarks and examples.
-- A system of installing binary/executable packages easily using the package manager.
-- A simple system of publishing any package or binary/executable.
-- Keep my home folder clean.
+- A bundled or easily installable language server.
+- A built-in code formatter.
+- Dependency management (like `Cargo` for Rust or `go` for Go).
+- An integrated build system that tightly aligns with the language, with bonus points for VCS hooks.
+- A project management system to create templates with starter code.
+- A test runner that handles all types of tests, including benchmarks and examples.
+- A package manager that supports installing and managing binaries or executables.
+- A straightforward, secure system for publishing packages or binaries.
+- A filesystem structure that keeps my home folder clean.
 
-> The following rants only include languages I have worked with. Any other language can just be easily pointed out.
 
-## include a fucking language-server
+> The following rants are limited to languages I’ve worked with. Other languages may have similar flaws.
 
-I installed lua through my package manager, although I know lua is designed as an embedded language, the process of installing the language-server is not easy.
-Plus getting it to run on a bare-bones debian installation is quite the struggle.
+## Include a Proper Language Server
 
-Including a language-server should be step one in any new language geared to be used seriously.
+When I installed Lua through my package manager, I found that setting up its language server was unnecessarily difficult.  
+Running it on a bare-bones Debian installation was even worse.
 
-`Rust` is better, it has to be installed with a simple command, similar thing with `Go`. 
-Python falls in a similar category, but with a cruel twist. The language server for Python is written in JavaScript/TypeScript. 
+For example:
+- Lua's language server (`lua-language-server`) often requires manual builds or additional tools to work.  
+- Rust makes it easy with `rust-analyzer`, which can be installed with a single command:  `rustup component add rust-analyzer`.  
+- Go provides `gopls`, which integrates seamlessly with most editors.  
+- Python, however, has multiple language servers you can use, like pyright, pylsp, and jedi.
+    - Pyright (written in JavaScript/TypeScript) requires Node.js to install.
+    - Pylsp (Python Language Server Protocol) is written in Python but requires additional configuration to work with plugins like jedi.
+    - Jedi is often used directly in editors but lacks some of the features modern developers expect.
 
-You might guess why that angers me, I need another language for this one to used properly!!!
+The sheer number of options for Python creates confusion, especially for newcomers.
 
-## most old languages don't have formatters
+While choice can be a good thing, having a single, official language server would simplify the development experience.
 
-Most old languages don't have formatters. This is understandable as they were not designed with this collabrative aspect in mind. 
-They were designed for corporations by corporations, not for nerds in their bedroom.
+A language server should be included or installable with minimal effort.
 
-But it is time that most languages should have a formatter included with it. 
+## Add Formatters to Old Languages
 
-## dependency management
+Most older languages don’t include code formatters, which is understandable since they were designed before collaborative coding became mainstream.  
+However, in today’s world, built-in formatters should be standard.
 
-This is a modern need, with collabrative coding, but most languages mutated for it. 
-Most languages either have a included solution or stick to a third-party solution which is tightly integrated.
+For example:
+- Python: Tools like `black` and `autopep8` are separate installations.  
+- JavaScript: `prettier` dominates, but it requires installation through `npm`.  
+- Ruby: `rubocop` provides linting and formatting but is not part of the core language.  
+- C++: You’ll likely end up using `clang-format`, which is part of LLVM but not bundled with the language.
 
-## build system
+While these tools exist, integrating them into the language would simplify workflows for developers.
 
-This is one quite a peculiar one. Cause most people end up using the build-system in their text editor, or something like `make`.
-But adding a built-system integrated with the language, one can utilize the optimizations, `code-gen`, documentation etc elegantly.
+## Modern Dependency Management
 
-This is not something you see often, but dependency-management tools usually bundle this or have it easily pluggable.
-It makes it easy for `git hooks` to be integrated.
+With collaborative coding now ubiquitous, modern dependency management is a necessity.  
+Many languages include their own solutions, like `Cargo` for Rust and `go.mod` for Go.  
+However, some languages rely on third-party tools, like Python (`pip`) and JavaScript (`npm`).  
 
-## project management system
+Even within these ecosystems, fragmentation exists:  
+- Python: Alternatives like `poetry` and `pipenv` attempt to improve on `pip`.  
+- JavaScript: `yarn` offers an alternative to `npm` with better caching and performance.  
+- Ruby: `bundler` is the de facto dependency manager but requires separate installation.  
+- C++: No standard solution exists; developers use tools like `vcpkg`, `Conan`, or `CMake` for dependency management.  
 
-This sounds similar to the above 2 issues, but it simply refers to the creation of template projects. 
-This is usually supported by frameworks or plugins. 
+While flexibility is nice, it often leads to confusion for newcomers.
 
-## tests need running
+## Build Systems Should Be Standard
 
-Having a testing framework and a beautiful test runner is simply neccessary.
-I don't need to fiddle with testing frameworks, I need all the assert variants and I need the test-data shown properly.
-It should also include options for integration, fuzzy and benchmark testing. If you have come this far, include a test-coverage scanner.
+Build systems are often overlooked because many developers rely on text editors or tools like `make`.  
+However, an integrated build system that leverages language-specific optimizations, code generation, and documentation would be far superior.
 
-## binaries and packages
+Languages like Java eventually developed tools like `Gradle` and `Maven` to fill this gap, but they remain separate installations.  
+Rust integrates its build system (`Cargo`) directly into the language ecosystem, which is a far better approach.
 
-All languages come with a package-manager that can execute binaries or executables, `pip`/`cargo`/`go`/`npm`, all include this feature. 
-But some are not up to the mark.
 
-They should have a specified directory where the binaries are installed. 
-If dependencies are a thing (for interpreted languages), keep them separate and uninstall them properly.
-Should be able to update everything without much problem.
+## Project Management Tools
 
-## publishing should be as easy as downloading
+This ties into the above points but focuses on creating template projects.  
+Frameworks and plugins often handle this, but why not include it natively?
 
-Publishing a package online should be a secure and safe, yet easy method. I don't need to install a separate package to publish the package. 
-The format for the details of my package shouldn't change suddenly.
+For example:
+- Rust: `cargo new` creates a project with boilerplate files and directories.  
+- Go: `go mod init` sets up a module with all required metadata.  
+- Python: Django and Flask provide project scaffolding tools but are specific to the framework.  
 
-## keep my file system clean
+A universal, language-wide project management system would be a game-changer.
 
-Your language doesn't need to keep cache/packages/binaries and other stuff directly in my home folder (Looking at you `Go`!). 
-Either hide it using the `.dotfiles` technique or do one better use the fucking `~/.cache`, `~/.config` and `~/.local` folders for once.
+## Tests Need Running
 
-# End
+Every language should include a comprehensive testing framework with a great test runner.  
+It should support all types of testing—unit, integration, fuzzing, and benchmarking—and provide clear, detailed results.  
 
-I think should would be the end of my rant. Please take above points into consideration while building your next language.
+For example:
+- Rust: `cargo test` is built into the ecosystem.  
+- Go: `go test` supports testing as a first-class citizen.  
+- Python: Tools like `unittest` and `pytest` are great but require separate installations.  
+- JavaScript: Popular libraries like `Jest` and `Mocha` dominate but are not bundled with the language.
+
+Include coverage tools and fuzzing support, too!
+
+## Binaries and Packages
+
+Package managers like `pip`, `cargo`, `go`, and `npm` allow for the execution of binaries and executables, but some implementations are lacking.
+
+For example:
+- Python: Tools like `pipx` emerged to solve the problem of globally installing CLI tools without polluting the main Python environment.
+- JavaScript: `npx` runs binaries temporarily without polluting your environment.  
+- Rust: `cargo install` places binaries in a predictable `~/.cargo/bin` folder.  
+- Go: While `go install` allows fetching binaries, the installation defaults to `$HOME/go/bin`, cluttering the home directory.
+
+Languages should adopt predictable, clean methods for handling binaries and dependencies.
+
+## Publishing Should Be Easy
+
+Publishing packages should be secure yet straightforward.  
+I shouldn’t need to install additional tools just to publish.  
+
+For example:
+- Python: Once had multiple ways to publish packages (`setup.py`, `distutils`, `wheel`). Now, tools like `poetry` simplify the process, but it’s still not included with the language.  
+- Rust: `cargo publish` makes publishing seamless.  
+- Go: Publishing binaries requires manual setup, often involving GitHub releases or custom scripts.
+
+Languages should aim for simplicity and stability in their publishing ecosystems.
+
+## Keep My File System Clean
+
+Languages should avoid cluttering my home folder with cache, packages, binaries, or other files.  
+
+For example:
+- Go: Creates a `~/go` directory in the home folder, often owned by `root`.  
+- Python: `pip` sometimes leaves behind unused files in the home directory or environment.  
+- Rust: Places binaries in `~/.cargo/bin`, which is a good example of organization.  
+- This is unnecessary when proper standards like XDG (`~/.cache`, `~/.config`, `~/.local`) exist.
+
+Follow the standards, keep my home folder clean, and make me happy.
+
+## Conclusion
+
+That’s the end of my rant. If you’re building a programming language, please consider these points!  
+
+Modern programming languages can reduce developer frustration and improve the experience with thoughtful design and inclusion of these features.  
