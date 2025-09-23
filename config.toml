@@ -43,6 +43,11 @@ name = "about"
 url = "/about"
 weight = 3
 
+[[menu.header]]
+name = "projects"
+url = "/projects"
+weight = 4
+
 [markup]
   [markup.highlight]
     anchorLineNos = true
