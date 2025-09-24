@@ -1,7 +1,7 @@
 +++
 title = 'kato'
 author = 'pspiagicw'
-date = 2024-07-02
+date = 2025-09-24
 +++
 
 # kato
@@ -117,6 +117,8 @@ For more help per command, run `kato help [command]`
 ### seek
 
 - Control song position interactively.
+- Use `l/h` to move right or left
+- Or use number keys to adjust percent directory (1=10%, 9=90%, 0=100%)
 
 ![seek](/kato/gifs/seek.gif)
 

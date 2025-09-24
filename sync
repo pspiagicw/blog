@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-myProjects=("qemantra" "hotshot" "sinister" "groom" "dotback" "fener" "kato")
+myProjects=("hotshot" "sinister" "groom" "dotback" "kato")
 
 for project in ${myProjects[@]}; do
     rm -rf content/$project

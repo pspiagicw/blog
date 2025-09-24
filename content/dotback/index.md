@@ -1,7 +1,7 @@
 +++
 title = 'dotback'
 author = 'pspiagicw'
-date = 2024-07-02
+date = 2025-09-24
 +++
 
 # `dotback`
@@ -36,14 +36,9 @@ You can download the binary from the [releases](https://github.com/pspiagicw/dot
 If you have the `Go` compiler installed, you can also install it using the following command.
 
 ```sh {linenos=false}
-go install github.com/pspiagicw/gox@latest
+go install github.com/pspiagicw/dotback@latest
 ```
 
-If you use [`gox`](https://github.com/pspiagicw/gox) to manage your go binaries, you can run.
-
-```sh {linenos=false}
-gox install github.com/pspiagicw/gox@latest
-```
 
 # Configuration
 

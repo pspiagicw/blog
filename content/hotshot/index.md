@@ -1,7 +1,7 @@
 +++
 title = 'hotshot'
 author = 'pspiagicw'
-date = 2024-07-02
+date = 2025-09-24
 +++
 
 This documentation is available on [GitHub](https://github.com/pspiagicw/hotshot) or [my website](https://falconite.xyz/hotshot)
@@ -30,7 +30,12 @@ This documentation is available on [GitHub](https://github.com/pspiagicw/hotshot
  - [Import](#import)
     - [import](#import)
     - [stdlib](#stdlib)
- - [Internals]()
+ - [Internals](#internals)
+    - [lexer](#lexer)
+    - [parser](#parser)
+    - [eval](#eval)
+    - [compiler](#compiler)
+    - [vm](#vm)
 
 This is `hotshot`. A LISP based language written in Golang.
 
@@ -113,6 +118,11 @@ go test ./lexer
 ```sh
 go test -v ./...
 ```
+
+# Development
+
+Anybody is free to develop `hotshot`. You will need knowledge of Go and preferably understanding of *Compiler Theory*
+.
 
 # Contribution
 

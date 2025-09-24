@@ -1,7 +1,7 @@
 +++
 title = 'groom'
 author = 'pspiagicw'
-date = 2024-07-02
+date = 2025-09-24
 +++
 
 # 🧹 `groom`
@@ -55,17 +55,29 @@ commands = [
     "python -m exaple-project",
 ]
 
-# Tasks can contain dependencies, and environment variables defined
+# Tasks can contain 
+# - dependencies
+# - custom directory to run
+# - environment variables to setup
 [task.test]
 environment = [ "TESTS=1" ]
 directory = "test"
 command = "python -m unittest"
 depends = [
-    "format"
+    "format",
+    "tags"
 ]
 
 [task.format]
 command = "go fmt ./..."
+
+# You can make `groom` execute your command in a shell
+# As opposed to executed directly
+# Useful for shell features like globbing
+[task.tags]
+shell = "bash"
+command = "ctags *.go"
+# This becomes "bash -c 'ctags *.go'"
 ```
 
 > You can run `groom --example-config` to get a working example config.
@@ -95,6 +107,8 @@ It can contain
     - A single line describing the purpose of the task.
 - Directory
     - A absolute path to change the working directory before executing the commands.
+- Shell
+    - A specific shell (for now only `bash` is supported) to be used for execution.
 
 ```toml
 [task.build]
@@ -107,7 +121,7 @@ environment = ["DEBUG_BUILD=0"]
 commands = [
     "gcc -c main.o main.c",
     "gcc -c game.o game.c",
-    "gcc -o $name game.o main.o"
+    "gcc -o $name game.o main.o",
 ]
 
 ```
