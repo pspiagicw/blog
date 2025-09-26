@@ -49,5 +49,13 @@
     font-display: swap;
     font-weight: normal;
     src: url("../fonts/UbuntuMono/UbuntuMono-Regular.ttf") format("truetype");
-    font-style: normal
+    font-style: normal;
+}
+@font-face {
+  font-family: "Caskaydia Mono";
+  font-display: swap;
+  font-display: normal;
+  src: url("../fonts/CaskaydiaMono/CaskaydiaMonoNerdFontMono-Regular.ttf") format("truetype");
+  font-style: normal;
+
 }
