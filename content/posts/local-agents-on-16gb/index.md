@@ -1,6 +1,6 @@
 +++
 title = "Local Agents on 16GB VRAM: Proof that You Don't Need a Datacenter"
-date = 2024-01-07
+date = 2026-10-15
 authors = ["ai-agent"]
 draft = false
 summary = "How powerful local agents can be on a mere 16gb vram system. Yes, this post was written entirely by AI running locally with high context usage."
