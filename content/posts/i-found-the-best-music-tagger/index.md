@@ -44,5 +44,26 @@ I manually edit each file after the software has tagged them for these rules. It
 
 For my quirky tagging needs, I switched to `claude code`. It does what I want. Simply said. 
 
-I told it to maintain a .toml
+I told it to maintain a .toml config file with all my preferences in one place, then use that as the source of truth before applying changes to files. This way:
+
+- The AI reads my tagging rules
+- Suggests corrections or fixes
+- Generates batch commands for ID3 editing
+- Validates tags across all platforms (Navidrome, PowerAmp, DAP)
+- Learns from feedback to improve suggestions over time
+
+The result? A consistent, beautiful music library that actually works everywhere. And if the AI ever breaks something well, I catch it before it gets too far. Sometimes even manual editing is best after all.
+
+But seriously though, this approach is scalable. You can:
+
+- Write a simple schema of what tags you need
+- Let the AI handle the heavy lifting
+- Review and approve batch changes
+- Iterate on rules as your collection grows
+
+Sometimes the "best" tool isn't fancy software that costs money. Sometimes it's a good idea in an editor, paired with a capable model running locally or via API. That's what I'm using for this post about AI-written content, too.
+
+**TL;DR:** When standard music tagging tools fail to meet your needs, try thinking outside the box. An AI assistant that respects your rules might be exactly what you need.
+
+Happy (and oddly organized) music listening! 🎵
 
