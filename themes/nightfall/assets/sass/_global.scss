@@ -2,6 +2,7 @@
 
 body {
   font-family: $fontParagraph;
+  font-size: 14px; /* reduced by ~2px to integer */
   color: $white;
   background-color: $backgroundDark;
   margin: 0;
@@ -89,7 +90,7 @@ img {
     margin-top: 25px;
     margin-bottom: 25px;
     text-transform: lowercase;
-    text-decoration: underline;
+    text-decoration: none; /* removed underline for headings */
     font-weight: bold;
   }
 }

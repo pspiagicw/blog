@@ -12,7 +12,7 @@
   text-decoration: none;
   text-transform: lowercase;
   font-family: $fontHeader;
-  font-size: 1.2em;
+  font-size: 0.85rem; /* slightly smaller than body (14px * 0.85 = ~12px) */
   float: left;
   margin-left: 5px;
   font-weight: normal !important;
@@ -27,12 +27,9 @@
 }
 
 .postListItem {
-  padding: 15px;
+  padding: 10px; /* reduced from 15px */
   background-color: $charcoal;
-  margin-bottom: 25px;
-  // border: 1px;
-  // border-style: dotted;
-  // border-color: $white;
+  margin-bottom: 20px; /* reduced from 25px */
 }
 
 .postExcerpt {

@@ -2,10 +2,10 @@ baseURL = '/'
 languageCode = 'en-us'
 title = 'falconite'
 theme = "nightfall"
-# description = "Welcome to my humble abode."
 publishDir = "public"
 summaryLength = 15
 enableRobotsTXT = true
+
 [params]
 
 author = "pspiagicw"
@@ -14,7 +14,8 @@ hostname = "falconite"
 published = true
 readingTime = true
 
-footerHtml = 'Made with ♥  using Hugo.'
+footerHtml = 'Made with ♥ using Hugo.'
+
 
 [[params.social]]
 name = "github"
@@ -26,12 +27,13 @@ name = "email"
 url = "mailto:pspiagicw@gmail.com"
 icon = "fa-regular fa-envelope"
 
+
 [menu]
 
-[[menu.header]]
-name = "home"
-url = "/"
-weight = 1
+# [[menu.header]]
+# name = "home"
+# url = "/"
+# weight = 1
 
 [[menu.header]]
 name = "writing"
@@ -43,10 +45,10 @@ name = "about"
 url = "/about"
 weight = 3
 
-[[menu.header]]
-name = "projects"
-url = "/projects"
-weight = 4
+# [[menu.header]]
+# name = "projects"
+# url = "/projects"
+# weight = 4
 
 [markup]
   [markup.highlight]
