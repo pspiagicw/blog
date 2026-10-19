@@ -4,6 +4,7 @@ authors = ["pspiagicw"]
 date = 2024-07-26
 summary = "Experience of adding a bytecode-compiler to my LISP interpreter"
 draft = true
+tags = ["compiler", "golang", "lisp"]
 +++
 
 After working on `hotshot` on since the last few months, I finally completed writing a bytecode-compiler for it.

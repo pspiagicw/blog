@@ -4,6 +4,7 @@ author = "pspiagicw"
 date = 2025-09-26
 draft = false
 summary = "Tiling window management at it's best."
+tags = ["linux", "niri", "window-manager"]
 +++
 
 I started using X11 window managers almost as soon as I switched to Linux, youtuber [DistroTube](https://www.youtube.com/distrotube) and [Luke Smith](https://www.youtube.com/@LukeSmithxyz) guided me into this world.

@@ -4,6 +4,7 @@ author = "pspiagicw"
 date = 2026-05-08
 draft = false
 summary = "Fuck AI!"
+tags = ["ai", "blogging"]
 +++
 
 I can literally make spelling mistakes, make grammatical errors and probably use explitives. But the human population will consider it better than AI-written bullshit.

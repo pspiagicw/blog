@@ -4,6 +4,7 @@ draft = false
 author = "pspiagicw"
 date = 2026-05-08
 summary = "When shit hit's the fan, you need a real OS"
+tags = ["linux", "hardware", "homelab"]
 +++
 
 Recently I got myself into a weird situation.

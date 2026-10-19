@@ -4,6 +4,7 @@ date = 2024-05-30
 authors = ["pspiagicw"]
 draft = false
 summary = "A revealing review of my own blog"
+tags = ["blogging", "hugo"]
 +++
 
 You must be reading this post on the new redesigned blog theme.

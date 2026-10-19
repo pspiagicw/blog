@@ -4,6 +4,7 @@ authors = ["pspiagicw"]
 date = 2025-01-17
 draft = false
 summary = "A modern programming language must have these features."
+tags = ["programming", "devops"]
 +++
 
 Welcome to my first post of 2025! Hopefully, the quality and frequency of my posts will improve this year.

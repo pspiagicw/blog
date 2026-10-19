@@ -2,8 +2,9 @@
 title = "Building my dream NAS"
 author = "pspiagicw"
 date = 2025-05-25
-draft = false
+draft = true
 summary = "in 2026, nas is a required asset."
+tags = ["homelab", "nas", "hardware"]
 +++
 
 I started tinkering with NAS and homelab stuff around 3 years go. I started with a old used laptop, one which didn't have a screen, had missing keys and didn't even have a battery inside it.

@@ -3,6 +3,7 @@ title = 'nixing my life!'
 author = ["pspiagicw"]
 date = 2024-08-11
 summary = "How NixOS became by ultimate freedom"
+tags = ["linux", "nixos", "homelab"]
 +++
 
 Isolation is a very important function to me. 

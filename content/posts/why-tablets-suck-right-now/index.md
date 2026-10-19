@@ -4,6 +4,7 @@ author = "pspiagicw"
 date = 2026-05-08
 draft = false
 summary = "The tablet market is ruined on purpose"
+tags = ["hardware", "tablets", "android"]
 +++
 
 I want a tablet. I already have a tablet. But it's cheap, slow and can't run smoothly at even 60fps.

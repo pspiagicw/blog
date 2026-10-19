@@ -4,6 +4,7 @@ authors = ["pspiagicw"]
 date = 2024-06-10
 draft = false
 summary = "Github added some stuff in their README rendering, just exploring those!"
+tags = ["github", "markdown"]
 +++
 
 If you have been reading a few GitHub README's lately, you would have observed few glaring changes.

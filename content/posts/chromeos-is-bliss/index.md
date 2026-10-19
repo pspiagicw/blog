@@ -4,6 +4,7 @@ author = "pspiagicw"
 date = 2025-05-25
 draft = false
 summary = "If you want simplicity, try ChromeOS"
+tags = ["chromeos", "linux", "hardware"]
 +++
 
 I was always a Google fanboy, even after I turned to Linux as my rescue prince.

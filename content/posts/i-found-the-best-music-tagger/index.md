@@ -4,6 +4,7 @@ author = "pspiagicw"
 date = 2026-05-28
 draft = true
 summary = "The best tool is a chat-bot!"
+tags = ["music", "ai"]
 +++
 
 Let me explain first!!

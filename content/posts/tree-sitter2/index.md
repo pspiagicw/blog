@@ -4,6 +4,7 @@ draft = false
 author = "pspiagicw"
 date = 2024-05-26
 summary = "You have a tree-sitter grammar. You just need syntax highlighting."
+tags = ["neovim", "editors", "tree-sitter"]
 +++
 
 If you haven't read the previous post, you might wan't to check it out [here](https://falconite.xyz/posts/tree-sitter/).

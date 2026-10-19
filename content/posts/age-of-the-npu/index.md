@@ -3,6 +3,7 @@ title = "Age of the NPU"
 author = "pspiagicw"
 date = 2024-06-14
 summary = "CPU, GPU and now the NPU!"
+tags = ["hardware", "ai"]
 +++
 
 Apple just had their WWDC, which unveiled their masterplan to rename the acronym of A.I.
