@@ -1,5 +1,10 @@
 @import "../utils/variables";
 
-.listHeader, .listContent {
-    text-align: left;
+.listHeader h1 {
+  margin: 4px 0 20px;
+  font-size: 24px;
+}
+
+.listContent {
+  margin-bottom: 24px;
 }

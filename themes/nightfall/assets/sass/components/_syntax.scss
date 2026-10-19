@@ -1,0 +1,44 @@
+// Low-saturation Chroma highlighting built from the design tokens, so code
+// blocks follow light/dark mode with the rest of the page.
+// Requires `noClasses = false` under [markup.highlight].
+
+.chroma { color: var(--on-surface); }
+.chroma .line { display: flex; }
+.chroma .ln, .chroma .lnt {
+  margin-right: 0.4em;
+  padding-right: 1em;
+  color: var(--muted);
+  opacity: 0.6;
+  user-select: none;
+}
+.chroma .ln a, .chroma .lnt a { color: inherit; text-decoration: none; }
+.chroma .hl { display: block; background: var(--neutral-bg); }
+
+// comments
+.chroma .c, .chroma .ch, .chroma .cm, .chroma .c1, .chroma .cs,
+.chroma .cp, .chroma .cpf { color: var(--muted); font-style: italic; }
+
+// keywords
+.chroma .k, .chroma .kc, .chroma .kd, .chroma .kn, .chroma .kp,
+.chroma .kr, .chroma .nt, .chroma .ow { color: var(--accent); font-weight: 600; }
+.chroma .kt { color: var(--accent); }
+
+// strings
+.chroma .s, .chroma .sa, .chroma .sb, .chroma .sc, .chroma .dl, .chroma .sd,
+.chroma .s2, .chroma .se, .chroma .sh, .chroma .si, .chroma .sx, .chroma .sr,
+.chroma .s1, .chroma .ss { color: var(--ok-fg); }
+
+// numbers and constants
+.chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi, .chroma .il,
+.chroma .mo, .chroma .no, .chroma .bp { color: var(--warn-fg); }
+
+// names
+.chroma .nf, .chroma .fm, .chroma .nc, .chroma .nn { font-weight: 600; }
+.chroma .nb, .chroma .na, .chroma .nd, .chroma .nv, .chroma .vc,
+.chroma .vg, .chroma .vi { color: var(--neutral-fg); }
+
+// diffs and errors
+.chroma .gi { color: var(--ok-fg); background: var(--ok-bg); }
+.chroma .gd { color: var(--error-fg); background: var(--error-bg); }
+.chroma .err { color: var(--error-fg); }
+.chroma .gh, .chroma .gu { color: var(--accent); font-weight: 600; }

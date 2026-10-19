@@ -1,61 +1,41 @@
-@font-face{
-    font-family: "Fira Mono";
-    font-display: swap;
-    src: url("../fonts/FiraMono/FiraMono-Medium.eot");
-    src: local("Fira Mono"),
-         url("../fonts/FiraMono/FiraMono-Medium.eot") format("embedded-opentype"),
-         url("../fonts/FiraMono/FiraMono-Medium.woff") format("woff"),
-         url("../fonts/FiraMono/FiraMono-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-style: normal;
-}
-
+// JetBrains Mono, SIL Open Font License (static/fonts/JetBrainsMono/OFL.txt)
 @font-face {
-    font-family: "Open Sans";
-    src: url("../fonts/OpenSans/OpenSans-Regular.eot");
-    src: url("../fonts/OpenSans/OpenSans-Regular.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/OpenSans/OpenSans-Regular.woff") format("woff"),
-    url("../fonts/OpenSans/OpenSans-Regular.ttf") format("truetype"),
-    url("../fonts/OpenSans/OpenSans-Regular.svg#OpenSansRegular") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Fira Sans";
-    font-weight: normal;
-    font-display: swap;
-    src: url("../fonts/FiraSans/FiraSans-Regular.ttf") format("truetype");
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "JetBrains Mono";
-    font-weight: normal;
-    font-display: swap;
-    src: url("../fonts/JetBrainsMono/JetBrainsMono-Regular.ttf") format("truetype");
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Iosevka";
-    font-weight: normal;
-    font-display: swap;
-    src: url("../fonts/Iosevka/iosevka-regular.ttf") format("truetype");
-    font-style: normal;
-}
-@font-face {
-    font-family: "Ubuntu Mono";
-    font-display: swap;
-    font-weight: normal;
-    src: url("../fonts/UbuntuMono/UbuntuMono-Regular.ttf") format("truetype");
-    font-style: normal;
-}
-@font-face {
-  font-family: "Caskaydia Mono";
-  font-display: swap;
-  font-display: normal;
-  src: url("../fonts/CaskaydiaMono/CaskaydiaMonoNerdFontMono-Regular.ttf") format("truetype");
+  font-family: "JetBrains Mono";
+  src: url("../fonts/JetBrainsMono/jetbrains-mono-400.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../fonts/JetBrainsMono/jetbrains-mono-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Cascadia Mono, SIL Open Font License (static/fonts/CascadiaMono/OFL.txt)
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("../fonts/CascadiaMono/cascadia-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("../fonts/CascadiaMono/cascadia-mono-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("../fonts/CascadiaMono/cascadia-mono-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }

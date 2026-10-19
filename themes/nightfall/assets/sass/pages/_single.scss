@@ -1,55 +1,118 @@
 @import "../utils/variables";
 
-.postWrapper {
-    text-align: left;
+.post h1 { font-size: 24px; margin: 4px 0 12px; }
+.post h2 { font-size: 18px; margin: 32px 0 8px; }
+.post h3 { font-size: 15px; margin: 24px 0 6px; }
+.post h4, .post h5, .post h6 { font-size: 14px; margin: 20px 0 6px; }
+
+.postBody {
+  font-family: $fontProse;
+  font-size: 14px;
 }
 
-.postMetadata {
-    font-family: $fontUbuntu;
-    color: $green;
-    display: block;
-    background: $backgroundDarker;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-left: 20px;
+// Headings, code and tables inside a post stay in the UI font
+.postBody :is(h1, h2, h3, h4, h5, h6, pre, code, table) {
+  font-family: $fontMono;
 }
 
-li {
-    font-family: $fontUbuntu;
+.postBody p, .postBody li {
+  font-size: inherit;
 }
 
-dt, dd {
-    line-height: 1.5;
+.postBody ul {
+  padding-left: 2ch;
+  list-style-type: "- ";
 }
 
-dl {
-    display: grid;
-    grid-template-columns: max-content auto;
+.postBody li::marker {
+  color: var(--muted);
 }
 
-dt {
-    grid-column-start: 1;
+// Key: value list under the title
+.meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 16px;
+  margin: 0 0 28px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--outline);
+  font-size: 13px;
 }
 
-dd {
-    grid-column-start: 2;
+.meta dt { color: var(--muted); }
+.meta dt::after { content: ":"; }
+.meta dd { margin: 0; }
+
+.post pre {
+  background: var(--surface);
+  border: 1px solid var(--outline);
+  border-radius: $radiusCard;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
-dt::after {
-    content: ":";
+.post pre code {
+  font-family: inherit;
 }
 
-// .project-banner {
-//   position: fixed;
-//   top: 20%;
-//   transform: rotate(45deg);
-//   z-index: 1000;
-// }
-//
+.post :not(pre) > code {
+  background: var(--neutral-bg);
+  color: var(--neutral-fg);
+  padding: 1px 5px;
+  border-radius: $radiusTag;
+  font-size: 0.9em;
+}
+
+.post blockquote {
+  margin: 16px 0;
+  padding: 4px 16px;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+
+.post hr {
+  border: none;
+  border-top: 1px dashed var(--outline);
+  margin: 32px 0;
+}
+
+.post table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+
+.post th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.post th, .post td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--outline);
+}
+
+.post figure {
+  margin: 24px 0;
+}
+
+// Older posts set loud inline borders on figures; flatten them to the matte look.
+.post figure img, .post p > img {
+  border: 1px solid var(--outline) !important;
+  border-radius: $radiusCard !important;
+}
+
+.post figcaption, .post figcaption p {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
 
 .project-banner {
-  width: 10%;
-  height: auto;
-  display: block;
+  margin-bottom: 20px;
 }
-

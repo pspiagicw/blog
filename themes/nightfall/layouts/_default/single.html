@@ -3,32 +3,35 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="postWrapper">
+<article class="post">
+    {{ with .Section }}<div class="label">{{ . }}</div>{{ end }}
     <h1>{{ .Title }}</h1>
     {{ if .Params.showMetadata | default true }}
-    <section class="postMetadata">
-        <dl>
-            {{ with .GetTerms "authors" }}
-                {{ partial "taxonomy/authors.html" . }}
-            {{ end }}
-            {{ if and (not .Params.repo) (.Site.Params.published | default true) }}
-                <dt>{{ i18n "published" }}</dt>
-                {{ $formattedDate := .Date.Format "2006-01-02" }}
-                <dd><time datetime="{{ $formattedDate }}">{{ .Date | time.Format ":date_medium" }}</time></dd>
-            {{ end }}
-            {{ if and (not .Params.repo) (.Site.Params.readingTime | default true) }}
-                <dt>{{ i18n "reading_time" }}</dt>
-                <dd>{{ i18n "reading_time_desc" .ReadingTime }}</dd>
-            {{ end }}
-            {{ if .Params.repo }}
-                <dt>Repo</dt> 
-                <dd><a href="{{ .Params.repo }}">{{ .Params.repo }}</a></dd>
-            {{ end }}
-        </dl>
-    </section>
+    <dl class="meta">
+        {{ with .GetTerms "authors" }}
+            {{ partial "taxonomy/authors.html" . }}
+        {{ end }}
+        {{ if and (not .Params.repo) (.Site.Params.published | default true) }}
+            <dt>{{ i18n "published" }}</dt>
+            {{ $formattedDate := .Date.Format "2006-01-02" }}
+            <dd><time datetime="{{ $formattedDate }}">{{ .Date | time.Format ":date_medium" }}</time></dd>
+        {{ end }}
+        {{ if and (not .Params.repo) (.Site.Params.readingTime | default true) }}
+            <dt>{{ i18n "reading_time" }}</dt>
+            <dd>{{ i18n "reading_time_desc" .ReadingTime }}</dd>
+        {{ end }}
+        {{ if .Params.repo }}
+            <dt>Repo</dt>
+            <dd><a href="{{ .Params.repo }}">{{ .Params.repo }}</a></dd>
+        {{ end }}
+        {{ with .Params.tags }}
+            <dt>tags</dt>
+            <dd>{{ range . }}<span class="chip">{{ . }}</span> {{ end }}</dd>
+        {{ end }}
+    </dl>
     {{ end }}
-    <div>
+    <div class="postBody">
         {{ .Content }}
     </div>
-</div>
+</article>
 {{ end }}

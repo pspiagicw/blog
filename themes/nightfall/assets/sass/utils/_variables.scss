@@ -1,42 +1,17 @@
-// Colors
-$darkGrey: #323232;
-// $white: #f8f8ff;
-$white: #FAFAFA;
-$black: #2f2f2f; // Post
-$blue: #659DBD;
-$red: #BD5A5A;
-$green: #77A88D;
-$charcoal: #1a1a1a;
-$purple: #6A0DAD;
-$magenta: #B03A71;
+// "matte terminal" design tokens -- see DESIGN.md in the repo root.
+// Colours live in CSS custom properties (defined in _global.scss) so they can
+// switch with prefers-color-scheme; SCSS variables hold only static values.
 
-// $backgroundDarker: #252627; // pre + header
-// $backgroundDark: #1a1a1d;
-$backgroundDarker: #1C1C1C;
-$backgroundDark: #0F0F0F;
-$backgroundCode: #000000;
-// $darkGrey: #E5E5E5; // replacing darkGrey
-// $white: #000000;
-// $black: #2C2C2C; // replacing the dark black to a slightly softer black
-// $blue: #659DBD;
-// $red: #BD5A5A;
-// $green: #77A88D;
-// $charcoal: #D8D8D8; // replacing the dark charcoal to a light charcoal
-// $purple: #6A0DAD;
-// $magenta: #B03A71;
-//
-// $backgroundDarker: #BD5A5A; // replacing backgroundDarker
-// $backgroundDark: #F2F2F2; // replacing backgroundDark
-// $backgroundCode: #E5E5E5; // a light background for code
+// Fonts: JetBrains Mono for headings, chrome and code; Cascadia Mono for reading text
+$fontMono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+$fontProse: "Cascadia Mono", "Cascadia Code", ui-monospace, Menlo, Consolas, monospace;
 
+// Shape
+$radiusCard: 8px;
+$radiusChip: 4px;
+$radiusTag: 3px;
 
-//Fonts
-$fontHeader: 'Fira Mono', monospace;
-$fontParagraph: 'Fira Sans', sans-serif;
-$fontCode: 'JetBrains Mono', monospace;
-$fontFancy: 'Iosevka', monospace; 
-$fontUbuntu: 'Caskaydia Mono', monospace;
-
-// Content
-$breakLarge: 992px;
-$width: 850px;
+// Layout
+$gutter: 16px;
+$prose: 120ch;
+$breakSmall: 768px;

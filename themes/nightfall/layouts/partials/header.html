@@ -1,17 +1,16 @@
 <header class="headerWrapper">
     <div class="header">
-        <div>
-            <a href="{{ .Site.BaseURL }}">
-                <span class="terminal">{{ .Site.Params.user }}@{{ .Site.Params.hostname }} $</span>
-            </a>
-        </div>
+        <p class="terminal">
+            <a href="{{ .Site.BaseURL }}">{{ .Site.Params.user }}@{{ .Site.Params.hostname }}<span class="prompt">$</span></a>
+        </p>
         <input class="side-menu" type="checkbox" id="side-menu">
-        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <label class="hamb" for="side-menu" aria-label="menu"><span class="hamb-line"></span></label>
         <nav class="headerLinks">
             <ul>
+                {{ $current := . }}
                 {{ range .Site.Menus.header }}
                 <li>
-                    <a href="{{ .URL | absURL }}" title="{{ .Title }}" >
+                    <a href="{{ .URL | absURL }}" title="{{ .Title }}" {{ if $current.IsMenuCurrent "header" . }}aria-current="page"{{ end }}>
                         ~/{{- .Name -}}
                     </a>
                 </li>

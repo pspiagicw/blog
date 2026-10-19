@@ -1,11 +1,15 @@
 @import "../utils/variables";
 
 .footer {
-  padding: 15px;
-  text-align: center;
-  background-color: $backgroundDarker;
-}
+  max-width: $prose;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px $gutter 24px;
+  border-top: 1px dashed var(--outline);
+  font-size: 11px;
+  color: var(--muted);
 
-.footerLink {
-  color: $white;
+  a {
+    color: inherit;
+  }
 }

@@ -1,19 +1,27 @@
 @import "../utils/variables";
 
+.socialNavbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 8px;
 
-.socialNavbar {
-  ul {
-    list-style: none;
-    padding: 0;
-    li {
-      display: inline;
-    }
-  }
   a {
-    color: $white;
-    text-shadow: $black 0px 0px 2px;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    margin: 10px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--outline);
+    border-radius: $radiusCard;
+    background: var(--surface);
+    color: var(--muted);
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  a:hover {
+    border-color: var(--accent);
+    color: var(--on-surface);
   }
 }

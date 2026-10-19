@@ -1,9 +1,30 @@
+@import "../utils/variables";
+
+// Centre the homepage block both ways, like the old theme
+.indexContent {
+  display: flex;
+  align-items: center;
+}
+
+.indexContent .main {
+  width: 100%;
+}
+
 .indexWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .indexHeader {
-    font-size: 3em;
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.indexIntro {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 13px;
 }

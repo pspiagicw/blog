@@ -1,58 +1,34 @@
 @import "../utils/variables";
 
-.postDate {
-  float: right;
-  color: $red;
-  font-family: $fontUbuntu;
-  text-weight: bold;
+.postList {
+  display: grid;
+  gap: 12px;
+}
+
+// Whole card is a link; hover changes only the border colour
+.postListItem {
+  display: block;
+  padding: 14px 16px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+
+.postListItem:hover {
+  color: inherit;
+  border-color: var(--accent);
 }
 
 .postTitle {
-  color: $green;
-  text-decoration: none;
-  text-transform: lowercase;
-  font-family: $fontHeader;
-  font-size: 0.85rem; /* slightly smaller than body (14px * 0.85 = ~12px) */
-  float: left;
-  margin-left: 5px;
-  font-weight: normal !important;
-}
-
-.postHeader {
-  overflow: hidden;
-}
-
-.postsList {
-  margin-top: 20px;
-}
-
-.postListItem {
-  padding: 10px; /* reduced from 15px */
-  background-color: $charcoal;
-  margin-bottom: 20px; /* reduced from 25px */
+  display: block;
+  margin: 2px 0 4px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .postExcerpt {
-  text-align: initial;
-  text-decoration: none;
-  color: $white;
-  font-family: $fontUbuntu;
-  font-weight: normal !important;
-}
-
-.headerContainer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.noDecoration {
-  text-decoration: none;
-}
-
-a,
-a:link,
-a:visited,
-a:hover,
-a:active{
-  text-decoration: none;
+  margin: 0;
+  font-family: $fontProse;
+  font-size: 13px;
+  color: var(--muted);
 }

@@ -4,8 +4,9 @@
 
 {{ define "main" }}
 
-<div>
+<div class="post">
     <div class="listHeader">
+        <div class="label">{{ len .Pages }} {{ if eq (len .Pages) 1 }}entry{{ else }}entries{{ end }}</div>
         <h1>{{ .Title }}</h1>
     </div>
 
@@ -15,25 +16,15 @@
     </div>
     {{ end }}
 
-    <div>
+    <div class="postList" role="list">
         {{ range .Pages }}
-
-        <a href="{{ .Permalink }}">
-            <!-- [html-validate-disable-next prefer-native-element] -->
-            <div class="postListItem" role="listitem">
-                <div class="postHeader">
-                    <span class="postTitle">{{ .Title }}</span>
-                    {{ $formattedDate := .Date.Format "2006-01-02" }}
-                    <time class="postDate" datetime="{{ $formattedDate }}">{{ .Date | time.Format ":date_medium" }}</time>
-                </div>
-                <div class="postExcerpt">
-                    <p>{{ .Summary }}</p>
-                </div>
-            </div>
+        <a class="postListItem card" href="{{ .Permalink }}" role="listitem">
+            {{ $formattedDate := .Date.Format "2006-01-02" }}
+            <time class="label" datetime="{{ $formattedDate }}">{{ .Date | time.Format ":date_medium" }}</time>
+            <span class="postTitle">{{ .Title }}</span>
+            <p class="postExcerpt">{{ .Summary | plainify }}</p>
         </a>
-
-
-        {{end}}
+        {{ end }}
     </div>
 </div>
 
